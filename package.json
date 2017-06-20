@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "PDFfiller API node.js client",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint lib/** -c ./.eslintrc"
+  },
+  "homepage": "https://docs.pdffiller.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdffiller/pdffiller-nodejs-api-client"
+  },
   "keywords": [
     "pdffiller",
     "api",
@@ -11,5 +18,10 @@
     "pdffiller-api"
   ],
   "author": "API Team (integrations@pdffiller.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0"
+  }
 }

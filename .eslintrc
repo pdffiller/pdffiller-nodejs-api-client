@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "comma-dangle": "off",
+    "no-new": "off",
+    "operator-assignment": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "consistent-return": "off",
+    "linebreak-style": "off"
+  },
+  "settings": {
+    "import/ignore": ["node_modules"]
+  },
+  "globals": {}
+}
