@@ -1,10 +1,16 @@
 {
   "name": "pdffiller_nodejs_api_client",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "PDFfiller API node.js client",
   "main": "index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint lib/** -c ./.eslintrc"
+    "precommit": "npm run lint",
+    "lint": "./node_modules/.bin/eslint lib/** -c ./.eslintrc",
+    "test": "node node_modules/.bin/mocha",
+    "test-watch": "node node_modules/.bin/mocha -w"
+  },
+  "engines": {
+    "node": ">= 4.8.3"
   },
   "homepage": "https://docs.pdffiller.com/",
   "repository": {
@@ -22,6 +28,9 @@
   "devDependencies": {
     "eslint": "^4.0.0",
     "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.3.0"
+    "eslint-plugin-import": "^2.3.0",
+    "husky": "^0.13.4",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1"
   }
 }
