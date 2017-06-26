@@ -32,5 +32,9 @@
     "husky": "^0.13.4",
     "mocha": "^3.4.2",
     "should": "^11.2.1"
+  },
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
   }
 }
