@@ -31,7 +31,9 @@
     "eslint-plugin-import": "^2.3.0",
     "husky": "^0.13.4",
     "mocha": "^3.4.2",
-    "should": "^11.2.1"
+    "should": "^11.2.1",
+    "should-sinon": "0.0.5",
+    "sinon": "^2.3.5"
   },
   "dependencies": {
     "request": "^2.81.0",

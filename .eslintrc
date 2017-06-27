@@ -19,5 +19,8 @@
   "settings": {
     "import/ignore": ["node_modules"]
   },
-  "globals": {}
+  "globals": {
+    "describe": true,
+    "it": true
+  }
 }
