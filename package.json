@@ -4,7 +4,7 @@
   "description": "PDFfiller API node.js client",
   "main": "index.js",
   "scripts": {
-    "precommit": "npm run lint",
+    "precommit": "npm run lint; npm run test",
     "lint": "./node_modules/.bin/eslint lib/** -c ./.eslintrc",
     "test": "node node_modules/.bin/mocha",
     "test-watch": "node node_modules/.bin/mocha -w"
@@ -31,6 +31,7 @@
     "eslint-plugin-import": "^2.3.0",
     "husky": "^0.13.4",
     "mocha": "^3.4.2",
+    "nock": "^9.0.13",
     "should": "^11.2.1",
     "should-sinon": "0.0.5",
     "sinon": "^2.3.5"

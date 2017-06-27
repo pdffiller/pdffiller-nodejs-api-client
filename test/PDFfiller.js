@@ -1,11 +1,22 @@
 const should = require('should'); // eslint-disable-line
 const sinon = require('sinon');
 require('should-sinon');
+const nock = require('nock');
 
 const PDFfiller = require('../index.js')();
 const config = require('../config.json');
+const constants = require('../lib/constants');
 
 const mockToken = 'mocksecuretoken';
+nock(constants.BASE_URL)
+  .post(constants.AUTH_ENDPOINT)
+  .times(5)
+  .reply(200, {
+    access_token: mockToken,
+    refresh_token: mockToken,
+    expires_in: 86400,
+    token_type: 'token'
+  });
 
 describe('PDFfiller', () => {
   describe('get and set token', () => {
