@@ -3,9 +3,9 @@ const sinon = require('sinon');
 require('should-sinon');
 const nock = require('nock');
 
-const PDFfiller = require('../index.js')();
-const config = require('../config.json');
-const constants = require('../lib/constants');
+const PDFfiller = require('../../index.js')();
+const config = require('../../config.json');
+const constants = require('../../lib/constants/index');
 
 const mockToken = 'mocksecuretoken';
 nock(constants.BASE_URL)
@@ -22,7 +22,7 @@ describe('PDFfiller', () => {
   describe('get and set token', () => {
     it('should set token', () => {
       PDFfiller.setAccessToken(mockToken);
-      PDFfiller.token.should.be.equal(mockToken);
+      PDFfiller.__accessToken.should.be.equal(mockToken);
     });
     it('should get token', () => {
       PDFfiller.getAccessToken().should.be.equal(mockToken);
@@ -30,7 +30,7 @@ describe('PDFfiller', () => {
   });
 
   describe('authorization', () => {
-    const autoUpdateTokenStub = sinon.stub(PDFfiller.api, 'autoUpdateToken');
+    const autoUpdateTokenStub = sinon.stub(PDFfiller, 'autoUpdateToken');
 
     it('shouldn`t call autoUpdateToken, when autoUpdate false', (done) => {
       PDFfiller.autoTokenUpdate = false;
@@ -69,19 +69,6 @@ describe('PDFfiller', () => {
         username: config.username,
         password: config.password
       }).should.be.a.Promise();
-    });
-
-    it('should have token data in promise', (done) => {
-      PDFfiller.authorization({
-        grant_type: config.grant_type,
-        client_id: config.client_id,
-        client_secret: config.client_secret,
-        username: config.username,
-        password: config.password
-      }).then((data) => {
-        data.should.have.properties(['token_type', 'expires_in', 'access_token', 'refresh_token']);
-        done();
-      });
     });
 
     it('should set token after success authorization', (done) => {

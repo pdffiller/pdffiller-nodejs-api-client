@@ -7,6 +7,6 @@ PDFfiller.authorization({
   client_secret: config.client_secret,
   username: config.username,
   password: config.password
-}).then(() => {
-  PDFfiller.getTokens().then(data => console.log(data), err => console.log(err));
-}, err => console.log(err));
+}).then(() => PDFfiller.getUserInfo())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));

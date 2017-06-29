@@ -6,8 +6,8 @@
   "scripts": {
     "precommit": "npm run lint; npm run test",
     "lint": "./node_modules/.bin/eslint lib/** -c ./.eslintrc",
-    "test": "node node_modules/.bin/mocha",
-    "test-watch": "node node_modules/.bin/mocha -w"
+    "test": "node node_modules/.bin/mocha --recursive",
+    "test-watch": "node node_modules/.bin/mocha -w --recursive"
   },
   "engines": {
     "node": ">= 4.8.3"

@@ -13,7 +13,7 @@ If you have any problems feel free to contact us:
 * Join our Gitter chat room for technical advice https://gitter.im/pdffiller/pdffiller-php-api-client
 
 ## License
-This software is licensed under the following MIT license
+This software is licensed under the following MIT [license](https://github.com/pdffiller/pdffiller-nodejs-api-client/blob/master/README.md)
 
 ## Author
 API Team (integrations@pdffiller.com)

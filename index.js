@@ -5,4 +5,4 @@
  * (MIT License)
  */
 
-module.exports = require('./lib/PDFfiller');
+module.exports = require('./lib/');
