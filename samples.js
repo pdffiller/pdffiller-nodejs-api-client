@@ -1,4 +1,4 @@
-const PDFfiller = require('./index.js')();
+const PDFfiller = require('./index.js').init();
 const config = require('./config.json');
 
 PDFfiller.authorization({
@@ -9,4 +9,4 @@ PDFfiller.authorization({
   password: config.password
 }).then(() => PDFfiller.getUserInfo())
   .then(data => console.log(data))
-  .catch(err => console.log(err));
+  .catch(err => console.error(err));

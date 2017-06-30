@@ -3,7 +3,7 @@ const sinon = require('sinon');
 require('should-sinon');
 const nock = require('nock');
 
-const PDFfiller = require('../../index.js')();
+const PDFfiller = require('../../index.js').init();
 const config = require('../../config.json');
 const constants = require('../../lib/constants/index');
 
@@ -20,11 +20,8 @@ nock(constants.BASE_URL)
 
 describe('PDFfiller', () => {
   describe('get and set token', () => {
-    it('should set token', () => {
+    it('should set and get setted token', () => {
       PDFfiller.setAccessToken(mockToken);
-      PDFfiller.__accessToken.should.be.equal(mockToken);
-    });
-    it('should get token', () => {
       PDFfiller.getAccessToken().should.be.equal(mockToken);
     });
   });
