@@ -1,9 +1,22 @@
 {
   "name": "pdffiller_nodejs_api_client",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "PDFfiller API node.js client",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "precommit": "npm run lint; npm run test",
+    "lint": "./node_modules/.bin/eslint lib/** -c ./.eslintrc",
+    "test": "node node_modules/.bin/mocha --recursive",
+    "test-watch": "node node_modules/.bin/mocha -w --recursive"
+  },
+  "engines": {
+    "node": ">= 4.8.3"
+  },
+  "homepage": "https://docs.pdffiller.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdffiller/pdffiller-nodejs-api-client"
+  },
   "keywords": [
     "pdffiller",
     "api",
@@ -11,5 +24,20 @@
     "pdffiller-api"
   ],
   "author": "API Team (integrations@pdffiller.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0",
+    "husky": "^0.13.4",
+    "mocha": "^3.4.2",
+    "nock": "^9.0.13",
+    "should": "^11.2.1",
+    "should-sinon": "0.0.5",
+    "sinon": "^2.3.5"
+  },
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  }
 }
