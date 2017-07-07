@@ -19,18 +19,17 @@ npm i git://github.com/pdffiller/pdffiller-nodejs-api-client.git --save
 Require module and init one. Currently PDFfiller module is a singleton.
 
 ```
-const PDFfiller = require('pdffiller-nodejs-api-client').init({
-  autoTokenUpdate: false // optional parameter, default true, auto update access token
-});
+const PDFfiller = require('pdffiller-nodejs-api-client');
 ```
 ## Authentication
 You can set up token, for future request:
 
 ```
-PDFfiller.setAccessToken('your_access_token');
+PDFfiller.authorization('your_access_token');
 ```
 
-Or access tokens will automatically initialize when you’re successfully retrieved from the given user's credentials (after PDFFiller.authorization(credentials); method return Promise with access_token data (more information about this data you can find in [our documentation](https://docs.pdffiller.com))), according to the example below:
+Or access tokens will automatically initialize when you’re successfully retrieved from the given user's credentials
+The second parameter `autoUpdate` when you set up it as `true` we will auto update your token when it expire
 
 ```
 PDFfiller.authorization({
@@ -39,7 +38,7 @@ PDFfiller.authorization({
   client_secret: 'your_client_secret',
   username: 'username@mail.com',
   password: 'your_password'
-}).then(accessTokenData => console.log(accessTokenData))
+}, true).then(accessTokenData => console.log(accessTokenData))
   .catch(err => console.error(err));
 ```
 
@@ -49,7 +48,7 @@ When your authorization has been completed successfully you can use client for r
 
 Use a method to retrieve a list of all applications:
 ```
-PDFfiller.getApplications()
+PDFfiller.applications.get()
   .then(applications => console.log(applications))
   .catch(err => console.error(err));
 ```
@@ -57,7 +56,7 @@ PDFfiller.getApplications()
 ## Tokens
 Use a method to retrieve a list of all tokens:
 ```
-PDFfiller.getTokens()
+PDFfiller.tokens.get()
   .then(tokens => console.log(tokens))
   .catch(err => console.error(err));
 ```
@@ -65,7 +64,7 @@ PDFfiller.getTokens()
 ## User information
 Use a method to retrieve a information about user:
 ```
-PDFfiller.getUserInfo()
+PDFfiller.user.get()
   .then(userInfo => console.log(userInfo))
   .catch(err => console.error(err));
 ```

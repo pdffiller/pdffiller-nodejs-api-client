@@ -1,4 +1,4 @@
-const PDFfiller = require('./index.js').init();
+const PDFfiller = require('./index.js');
 const config = require('./config.json');
 
 PDFfiller.authorization({
