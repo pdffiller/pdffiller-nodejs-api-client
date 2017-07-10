@@ -99,7 +99,7 @@ PDFfiller.applications.update(id, {
 
 Use a method to delete an application by id:
 ```
-PDFfiller.applications.delete(id)
+PDFfiller.applications.remove(id)
   .then(result => console.log(result))
   .catch(err => console.error(err));
 ```

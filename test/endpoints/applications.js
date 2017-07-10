@@ -1,6 +1,4 @@
 const should = require('should'); // eslint-disable-line
-const sinon = require('sinon'); // eslint-disable-line
-require('should-sinon');
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
@@ -28,7 +26,7 @@ describe('PDFfiller applications', () => {
       .get(constants.APPLICATIONS_ENDPOINT)
       .reply(200, { items: applicationsMock });
 
-    PDFfiller.applications.all()
+    return PDFfiller.applications.all()
       .then((response) => {
         response.items[0].id.should.be.equal(applicationsMock[0].id);
       });
@@ -39,7 +37,7 @@ describe('PDFfiller applications', () => {
       .get(constants.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
       .reply(200, applicationsMock[0]);
 
-    PDFfiller.applications.get(1)
+    return PDFfiller.applications.get(1)
       .then((response) => {
         response.id.should.be.equal(applicationsMock[0].id);
       });
@@ -50,7 +48,7 @@ describe('PDFfiller applications', () => {
       .post(constants.APPLICATIONS_ENDPOINT)
       .reply(200, applicationsMock[0]);
 
-    PDFfiller.applications.create(applicationsMock[0])
+    return PDFfiller.applications.create(applicationsMock[0])
       .then((response) => {
         response.id.should.be.equal(applicationsMock[0].id);
       });
@@ -61,7 +59,7 @@ describe('PDFfiller applications', () => {
       .put(constants.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
       .reply(200, applicationsMock[0]);
 
-    PDFfiller.applications.update(1, applicationsMock[0])
+    return PDFfiller.applications.update(1, applicationsMock[0])
       .then((response) => {
         response.id.should.be.equal(applicationsMock[0].id);
       });
@@ -72,7 +70,7 @@ describe('PDFfiller applications', () => {
       .delete(constants.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
       .reply(200, { total: 1 });
 
-    PDFfiller.applications.delete(1)
+    return PDFfiller.applications.remove(1)
       .then((response) => {
         response.total.should.be.equal(1);
       });
@@ -83,7 +81,7 @@ describe('PDFfiller applications', () => {
       .get(constants.APPLICATIONS_USERS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
       .reply(200, { user_id: 111, email: 'user@mail.com' });
 
-    PDFfiller.applications.users('1')
+    return PDFfiller.applications.users('1')
       .then((response) => {
         response.user_id.should.be.equal(111);
       });

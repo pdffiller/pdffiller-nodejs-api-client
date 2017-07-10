@@ -1,6 +1,4 @@
 const should = require('should'); // eslint-disable-line
-const sinon = require('sinon'); // eslint-disable-line
-require('should-sinon');
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
@@ -24,7 +22,7 @@ describe('PDFfiller tokens', () => {
       .get(constants.TOKENS_ENDPOINT)
       .reply(200, { items: tokensMock });
 
-    PDFfiller.tokens.all()
+    return PDFfiller.tokens.all()
       .then((response) => {
         response.items[0].id.should.be.equal(tokensMock[0].id);
       });
@@ -35,7 +33,7 @@ describe('PDFfiller tokens', () => {
       .get(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
       .reply(200, tokensMock[0]);
 
-    PDFfiller.tokens.get(1)
+    return PDFfiller.tokens.get(1)
       .then((response) => {
         response.id.should.be.equal(tokensMock[0].id);
       });
@@ -46,7 +44,7 @@ describe('PDFfiller tokens', () => {
       .post(constants.TOKENS_ENDPOINT)
       .reply(200, tokensMock[0]);
 
-    PDFfiller.tokens.create(tokensMock[0])
+    return PDFfiller.tokens.create(tokensMock[0].data)
       .then((response) => {
         response.id.should.be.equal(tokensMock[0].id);
       });
@@ -57,21 +55,20 @@ describe('PDFfiller tokens', () => {
       .put(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
       .reply(200, tokensMock[0]);
 
-    PDFfiller.tokens.update(1, tokensMock[0])
+    return PDFfiller.tokens.update(1, tokensMock[0].data)
       .then((response) => {
         response.id.should.be.equal(tokensMock[0].id);
       });
   });
 
   it('should delete token', () => {
-    const scope = nock(constants.BASE_URL)
+    nock(constants.BASE_URL)
       .delete(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
       .reply(200, { total: 1 });
 
-    PDFfiller.tokens.delete(1)
+    return PDFfiller.tokens.remove(1)
       .then((response) => {
         response.total.should.be.equal(1);
-        scope.done();
       });
   });
 });

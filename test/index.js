@@ -1,6 +1,5 @@
 const should = require('should'); // eslint-disable-line
 const sinon = require('sinon'); // eslint-disable-line
-require('should-sinon');
 const nock = require('nock');
 
 const PDFfiller = require('../index.js').PDFfiller;
@@ -25,7 +24,7 @@ describe('PDFfiller authorization', () => {
       .post(constants.AUTH_ENDPOINT)
       .reply(200, mockAuthResponce);
 
-    PDFfiller.authorization({
+    return PDFfiller.authorization({
       grant_type: config.grant_type,
       client_id: config.client_id,
       client_secret: config.client_secret,
