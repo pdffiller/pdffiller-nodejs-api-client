@@ -3,7 +3,8 @@
 [![Join the chat at https://gitter.im/pdffiller/pdffiller-php-api-client](https://badges.gitter.im/pdffiller/pdffiller-php-api-client.svg)](https://gitter.im/pdffiller/pdffiller-php-api-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [PDFfiller API](https://api.pdffiller.com)
-You can sign up for the API [here](https://developers.pdffiller.com/#tab-pricing)
+You can sign up for the API [here](https://developers.pdffiller.com/#tab-pricing).
+[API Docs](https://docs.pdffiller.com/).
 
 ## Requirements
 
@@ -16,19 +17,21 @@ npm i git://github.com/pdffiller/pdffiller-nodejs-api-client.git --save
 ```
 
 ### Quick getting started steps
-Require module and init one. Currently PDFfiller module is a singleton.
+Require module and init one. You can require PDFfiller module as a singleton and use it in anywhere your app:
 
 ```
-const PDFfiller = require('pdffiller-nodejs-api-client');
+const PDFfiller = require('pdffiller-nodejs-api-client').PDFfiller;
 ```
+Or like require PDFfiller module as a constructor:
+
+```
+const PDFfillerConstructor = require('pdffiller-nodejs-api-client').PDFfillerConstructor;
+const PDFfiller = new PDFfillerConstructor();
+```
+
 ## Authentication
-You can set up token, for future request:
 
-```
-PDFfiller.authorization('your_access_token');
-```
-
-Or access tokens will automatically initialize when you’re successfully retrieved from the given user's credentials
+Access tokens will automatically initialize when you’re successfully retrieved from the given user's credentials
 The second parameter `autoUpdate` when you set up it as `true` we will auto update your token when it expire
 
 ```
@@ -44,28 +47,67 @@ PDFfiller.authorization({
 
 When your authorization has been completed successfully you can use client for retrieving, creating, updating or deleting information from your profile.
 
+Also you can set up token, for future request:
+
+```
+PDFfiller.setAccessToken('your_access_token');
+```
+
+and get current access token:
+
+```
+PDFfiller.getAccessToken();
+```
+
 ## Application
 
 Use a method to retrieve a list of all applications:
 ```
-PDFfiller.applications.get()
+PDFfiller.applications.all()
   .then(applications => console.log(applications))
   .catch(err => console.error(err));
 ```
 
-## Tokens
-Use a method to retrieve a list of all tokens:
+Use a method to retrieve an applications by id:
 ```
-PDFfiller.tokens.get()
-  .then(tokens => console.log(tokens))
+PDFfiller.applications.get(id)
+  .then(application => console.log(application))
   .catch(err => console.error(err));
 ```
 
-## User information
-Use a method to retrieve a information about user:
+Use a method to create an application:
 ```
-PDFfiller.user.get()
-  .then(userInfo => console.log(userInfo))
+PDFfiller.applications.create({
+  name: 'app name',
+  description: 'app description',
+  domain: 'http://domain.com'
+})
+  .then(application => console.log(application))
+  .catch(err => console.error(err));
+```
+
+Use a method to update an application by id:
+```
+PDFfiller.applications.update(id, {
+  name: 'app name',
+  description: 'app description',
+  domain: 'http://domain.com'
+})
+  .then(application => console.log(application))
+  .catch(err => console.error(err));
+```
+
+Use a method to delete an application by id:
+```
+PDFfiller.applications.delete(id)
+  .then(result => console.log(result))
+  .catch(err => console.error(err));
+```
+
+Use a method to get application users:
+```
+PDFfiller.applications.users(id)
+  .then(users => console.log(users))
   .catch(err => console.error(err));
 ```
 
