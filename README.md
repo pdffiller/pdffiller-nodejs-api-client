@@ -1,9 +1,9 @@
-# pdffiller-nodejs-api-client
+# pdffiller-nodejs-api-client (api-v2)
 
 [![Join the chat at https://gitter.im/pdffiller/pdffiller-php-api-client](https://badges.gitter.im/pdffiller/pdffiller-php-api-client.svg)](https://gitter.im/pdffiller/pdffiller-php-api-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [PDFfiller API](https://api.pdffiller.com)
-You can sign up for the API [here](https://developers.pdffiller.com/#tab-pricing).
+You can sign up for the API [here](https://developers.pdffiller.com/#tab-features).
 [API Docs](https://docs.pdffiller.com/).
 
 ## Requirements
