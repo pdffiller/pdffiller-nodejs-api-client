@@ -22,12 +22,6 @@ Require module and init one. You can require PDFfiller module as a singleton and
 ```
 const PDFfiller = require('pdffiller-nodejs-api-client').PDFfiller;
 ```
-Or like require PDFfiller module as a constructor:
-
-```
-const PDFfillerConstructor = require('pdffiller-nodejs-api-client').PDFfillerConstructor;
-const PDFfiller = new PDFfillerConstructor();
-```
 
 ## Authentication
 

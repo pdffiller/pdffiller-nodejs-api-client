@@ -5,24 +5,18 @@ const nock = require('nock');
 const PDFfiller = require('../index.js').PDFfiller;
 const config = require('../config.json');
 const constants = require('../lib/constants/index');
-
-const mockAuthResponce = {
-  access_token: 'mockToken',
-  refresh_token: 'mockToken',
-  expires_in: 86400,
-  token_type: 'token'
-};
+const mocks = require('./mocks/mocksData');
 
 describe('PDFfiller authorization', () => {
   it('should set and get a token', () => {
-    PDFfiller.setAccessToken(mockAuthResponce.access_token);
-    PDFfiller.getAccessToken().should.be.equal(mockAuthResponce.access_token);
+    PDFfiller.setAccessToken(mocks.auth.access_token);
+    PDFfiller.getAccessToken().should.be.equal(mocks.auth.access_token);
   });
 
   it('should authorize and set a token', () => {
     nock(constants.BASE_URL)
       .post(constants.AUTH_ENDPOINT)
-      .reply(200, mockAuthResponce);
+      .reply(200, mocks.auth);
 
     return PDFfiller.authorization({
       grant_type: config.grant_type,
@@ -31,8 +25,8 @@ describe('PDFfiller authorization', () => {
       username: config.username,
       password: config.password
     }).then((data) => {
-      data.access_token.should.be.equal(mockAuthResponce.access_token);
-      PDFfiller.getAccessToken().should.be.equal(mockAuthResponce.access_token);
+      data.access_token.should.be.equal(mocks.auth.access_token);
+      PDFfiller.getAccessToken().should.be.equal(mocks.auth.access_token);
     });
   });
 });

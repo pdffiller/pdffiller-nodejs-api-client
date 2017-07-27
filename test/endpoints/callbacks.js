@@ -3,43 +3,35 @@ const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
 const constants = require('../../lib/constants/index');
-
-const callbacksMock = [
-  {
-    id: 1,
-    document_id: 1,
-    event_id: 'fill_request.done',
-    callback_url: 'http://api.pdffiller.com'
-  }
-];
+const mocks = require('../mocks/mocksData');
 
 describe('PDFfiller callbacks', () => {
   it('should get callbacks list', () => {
     nock(constants.BASE_URL)
       .get(constants.CALLBACKS_ENDPOINT)
-      .reply(200, { items: callbacksMock });
+      .reply(200, { items: mocks.callbacks });
 
     return PDFfiller.callbacks.all()
       .then((response) => {
-        response.items[0].id.should.be.equal(callbacksMock[0].id);
+        response.items[0].id.should.be.equal(mocks.callbacks[0].id);
       });
   });
 
   it('should get callback by id', () => {
     nock(constants.BASE_URL)
       .get(constants.CALLBACKS_BY_ID_ENDPOINT.replace('{callback_id}', '1'))
-      .reply(200, callbacksMock[0]);
+      .reply(200, mocks.callbacks[0]);
 
     return PDFfiller.callbacks.get('1')
       .then((response) => {
-        response.id.should.be.equal(callbacksMock[0].id);
+        response.id.should.be.equal(mocks.callbacks[0].id);
       });
   });
 
   it('should create callback', () => {
     nock(constants.BASE_URL)
       .post(constants.CALLBACKS_ENDPOINT)
-      .reply(200, callbacksMock[0]);
+      .reply(200, mocks.callbacks[0]);
 
     return PDFfiller.callbacks.create({
       document_id: 1,
@@ -47,21 +39,21 @@ describe('PDFfiller callbacks', () => {
       callback_url: 'http://api.pdffiller.com'
     })
       .then((response) => {
-        response.id.should.be.equal(callbacksMock[0].id);
+        response.id.should.be.equal(mocks.callbacks[0].id);
       });
   });
 
   it('should update callback', () => {
     nock(constants.BASE_URL)
       .put(constants.CALLBACKS_BY_ID_ENDPOINT.replace('{callback_id}', '1'))
-      .reply(200, callbacksMock[0]);
+      .reply(200, mocks.callbacks[0]);
 
     return PDFfiller.callbacks.update(1, {
       event_id: 'signature_request.done',
       callback_url: 'http://api.newpdffiller.com'
     })
       .then((response) => {
-        response.id.should.be.equal(callbacksMock[0].id);
+        response.id.should.be.equal(mocks.callbacks[0].id);
       });
   });
 

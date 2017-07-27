@@ -3,61 +3,50 @@ const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
 const constants = require('../../lib/constants/index');
-
-const tokensMock = [
-  {
-    id: 123,
-    hash: 'some_hash_string',
-    data: {
-      key_1: 'Foo',
-      key_2: 'Bar',
-      key_3: '12345'
-    }
-  }
-];
+const mocks = require('../mocks/mocksData');
 
 describe('PDFfiller tokens', () => {
   it('should get tokens list', () => {
     nock(constants.BASE_URL)
       .get(constants.TOKENS_ENDPOINT)
-      .reply(200, { items: tokensMock });
+      .reply(200, { items: mocks.tokens });
 
     return PDFfiller.tokens.all()
       .then((response) => {
-        response.items[0].id.should.be.equal(tokensMock[0].id);
+        response.items[0].id.should.be.equal(mocks.tokens[0].id);
       });
   });
 
   it('should get token by id', () => {
     nock(constants.BASE_URL)
       .get(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
-      .reply(200, tokensMock[0]);
+      .reply(200, mocks.tokens[0]);
 
     return PDFfiller.tokens.get(1)
       .then((response) => {
-        response.id.should.be.equal(tokensMock[0].id);
+        response.id.should.be.equal(mocks.tokens[0].id);
       });
   });
 
   it('should create token', () => {
     nock(constants.BASE_URL)
       .post(constants.TOKENS_ENDPOINT)
-      .reply(200, tokensMock[0]);
+      .reply(200, mocks.tokens[0]);
 
-    return PDFfiller.tokens.create(tokensMock[0].data)
+    return PDFfiller.tokens.create(mocks.tokens[0].data)
       .then((response) => {
-        response.id.should.be.equal(tokensMock[0].id);
+        response.id.should.be.equal(mocks.tokens[0].id);
       });
   });
 
   it('should update token', () => {
     nock(constants.BASE_URL)
       .put(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
-      .reply(200, tokensMock[0]);
+      .reply(200, mocks.tokens[0]);
 
-    return PDFfiller.tokens.update(1, tokensMock[0].data)
+    return PDFfiller.tokens.update(1, mocks.tokens[0].data)
       .then((response) => {
-        response.id.should.be.equal(tokensMock[0].id);
+        response.id.should.be.equal(mocks.tokens[0].id);
       });
   });
 

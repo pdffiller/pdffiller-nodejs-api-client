@@ -7,6 +7,6 @@ PDFfiller.authorization({
   client_secret: config.client_secret,
   username: config.username,
   password: config.password
-}).then(() => PDFfiller.templates.download('125148171'))
+}).then(() => PDFfiller.templates.get('125148171'))
   .then(data => console.log(data))
   .catch(data => console.log(data));

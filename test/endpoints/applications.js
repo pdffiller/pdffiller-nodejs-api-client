@@ -3,65 +3,50 @@ const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
 const constants = require('../../lib/constants/index');
-
-const applicationsMock = [
-  {
-    id: 'fd203a534c31ad20',
-    secret: '9MAoB51ooCW8yKAiuyszuNJyN21C9Oui',
-    name: 'Custom name',
-    description: 'application description',
-    domain: 'domain.com',
-    logo: 'logo url',
-    redirect_uri: 'http://www.domain.com',
-    embedded_client: {
-      domain: 'domain.com',
-      allow_all_domains: true
-    }
-  },
-];
+const mocks = require('../mocks/mocksData');
 
 describe('PDFfiller applications', () => {
   it('should get applications list', () => {
     nock(constants.BASE_URL)
       .get(constants.APPLICATIONS_ENDPOINT)
-      .reply(200, { items: applicationsMock });
+      .reply(200, { items: mocks.applications });
 
     return PDFfiller.applications.all()
       .then((response) => {
-        response.items[0].id.should.be.equal(applicationsMock[0].id);
+        response.items[0].id.should.be.equal(mocks.applications[0].id);
       });
   });
 
   it('should get application by id', () => {
     nock(constants.BASE_URL)
       .get(constants.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
-      .reply(200, applicationsMock[0]);
+      .reply(200, mocks.applications[0]);
 
     return PDFfiller.applications.get(1)
       .then((response) => {
-        response.id.should.be.equal(applicationsMock[0].id);
+        response.id.should.be.equal(mocks.applications[0].id);
       });
   });
 
   it('should create application', () => {
     nock(constants.BASE_URL)
       .post(constants.APPLICATIONS_ENDPOINT)
-      .reply(200, applicationsMock[0]);
+      .reply(200, mocks.applications[0]);
 
-    return PDFfiller.applications.create(applicationsMock[0])
+    return PDFfiller.applications.create(mocks.applications[0])
       .then((response) => {
-        response.id.should.be.equal(applicationsMock[0].id);
+        response.id.should.be.equal(mocks.applications[0].id);
       });
   });
 
   it('should update application', () => {
     nock(constants.BASE_URL)
       .put(constants.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
-      .reply(200, applicationsMock[0]);
+      .reply(200, mocks.applications[0]);
 
-    return PDFfiller.applications.update(1, applicationsMock[0])
+    return PDFfiller.applications.update(1, mocks.applications[0])
       .then((response) => {
-        response.id.should.be.equal(applicationsMock[0].id);
+        response.id.should.be.equal(mocks.applications[0].id);
       });
   });
 

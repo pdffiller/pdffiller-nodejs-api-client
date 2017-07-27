@@ -3,63 +3,54 @@ const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
 const constants = require('../../lib/constants/index');
-
-const foldersMock = [
-  {
-    folder_id: 1111,
-    name: 'Custom name',
-    documents_count: 1,
-    folders_count: 0,
-    parent_id: 2222
-  }
-];
+const mocks = require('../mocks/mocksData');
 
 describe('PDFfiller folders', () => {
   it('should get folders list', () => {
     nock(constants.BASE_URL)
       .get(constants.FOLDERS_ENDPOINT)
-      .reply(200, { items: foldersMock });
+      .reply(200, { items: mocks.folders });
 
     return PDFfiller.folders.all()
       .then((response) => {
-        response.items[0].folder_id.should.be.equal(foldersMock[0].folder_id);
+        response.items[0].folder_id.should.be.equal(mocks.folders[0].folder_id);
       });
   });
 
   it('should get folder by id', () => {
     nock(constants.BASE_URL)
       .get(constants.FOLDERS_BY_ID_ENDPOINT.replace('{folder_id}', '1'))
-      .reply(200, foldersMock[0]);
+      .reply(200, mocks.folders[0]);
 
     return PDFfiller.folders.get('1')
       .then((response) => {
-        response.folder_id.should.be.equal(foldersMock[0].folder_id);
+        response.folder_id.should.be.equal(mocks.folders[0].folder_id);
       });
   });
 
   it('should create folder', () => {
     nock(constants.BASE_URL)
       .post(constants.FOLDERS_ENDPOINT)
-      .reply(200, foldersMock[0]);
+      .reply(200, mocks.folders[0]);
 
     return PDFfiller.folders.create({
       name: 'folder_name'
     })
       .then((response) => {
-        response.folder_id.should.be.equal(foldersMock[0].folder_id);
+        response.folder_id.should.be.equal(mocks.folders[0].folder_id);
       });
   });
 
   it('should update folder', () => {
     nock(constants.BASE_URL)
       .put(constants.FOLDERS_BY_ID_ENDPOINT.replace('{folder_id}', '1'))
-      .reply(200, foldersMock[0]);
+      .reply(200, mocks.folders[0]);
 
     return PDFfiller.folders.update(1, {
       name: 'new_folder_name'
     })
       .then((response) => {
-        response.folder_id.should.be.equal(foldersMock[0].folder_id);
+        response.folder_id.should.be.equal(mocks.folders[0].folder_id);
       });
   });
 

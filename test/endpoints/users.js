@@ -3,22 +3,17 @@ const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
 const constants = require('../../lib/constants/index');
-
-const userMock = {
-  id: 123456789,
-  email: 'some-email@domain.com',
-  avatar: 'urlToAvatarIfExists'
-};
+const mocks = require('../mocks/mocksData');
 
 describe('PDFfiller user', () => {
   it('should get user info', () => {
     nock(constants.BASE_URL)
       .get(constants.USERS_ENDPOINT)
-      .reply(200, userMock);
+      .reply(200, mocks.user);
 
     return PDFfiller.user.get()
       .then((response) => {
-        response.id.should.be.equal(userMock.id);
+        response.id.should.be.equal(mocks.user.id);
       });
   });
 });
