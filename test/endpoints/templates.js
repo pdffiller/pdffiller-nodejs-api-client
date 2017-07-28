@@ -13,7 +13,7 @@ describe('PDFfiller templates', () => {
 
     return PDFfiller.templates.all()
       .then((response) => {
-        response.items[0].id.should.be.equal(mocks.templates[0].id);
+        response.items.should.deepEqual(mocks.templates);
       });
   });
 
@@ -24,7 +24,7 @@ describe('PDFfiller templates', () => {
 
     return PDFfiller.templates.get(1)
       .then((response) => {
-        response.id.should.be.equal(mocks.templates[0].id);
+        response.should.deepEqual(mocks.templates[0]);
       });
   });
 
@@ -35,7 +35,7 @@ describe('PDFfiller templates', () => {
 
     return PDFfiller.templates.create('fileurl/filename.pdf')
       .then((response) => {
-        response.id.should.be.equal(mocks.templates[0].id);
+        response.should.deepEqual(mocks.templates[0]);
       });
   });
 
@@ -49,7 +49,7 @@ describe('PDFfiller templates', () => {
       folder_id: 11
     })
       .then((response) => {
-        response.id.should.be.equal(mocks.templates[0].id);
+        response.should.deepEqual(mocks.templates[0]);
       });
   });
 
@@ -82,7 +82,7 @@ describe('PDFfiller templates', () => {
 
     return PDFfiller.templates.roles('1')
       .then((response) => {
-        response.items[0].id.should.be.equal(mocks.roles[0].id);
+        response.items.should.deepEqual(mocks.roles);
       });
   });
 
@@ -104,7 +104,7 @@ describe('PDFfiller templates', () => {
 
     return PDFfiller.templates.fields(1)
       .then((response) => {
-        response.type.should.be.equal(mocks.fields.type);
+        response.should.deepEqual(mocks.fields);
       });
   });
 
@@ -143,7 +143,7 @@ describe('PDFfiller templates', () => {
       folder_id: 1
     })
       .then((response) => {
-        response.id.should.be.equal(mocks.templates[0].id);
+        response.should.deepEqual(mocks.templates[0]);
       });
   });
 
@@ -157,7 +157,7 @@ describe('PDFfiller templates', () => {
       callback_url: 'some-url'
     })
       .then((response) => {
-        response.hash.should.be.equal(mocks.constructor.hash);
+        response.should.deepEqual(mocks.constructor);
       });
   });
 
@@ -168,29 +168,29 @@ describe('PDFfiller templates', () => {
 
     return PDFfiller.templates.getConstructor(1)
       .then((response) => {
-        response.items[0].hash.should.be.equal(mocks.constructorList.items[0].hash);
+        response.should.deepEqual(mocks.constructorList);
       });
   });
 
   it('should delete one share link to a document by hash', () => {
     nock(constants.BASE_URL)
       .delete(`${constants.TEMPLATES_CONSTRUCTOR_ENDPOINT.replace('{template_id}', '1')}/hash_string`)
-      .reply(200, { message: 'One URL to the documents was deleted' });
+      .reply(200, mocks.remove);
 
     return PDFfiller.templates.removeConstructorByHash(1, 'hash_string')
       .then((response) => {
-        response.message.should.be.equal('One URL to the documents was deleted');
+        response.should.deepEqual(mocks.remove);
       });
   });
 
   it('should all share links to a document by id', () => {
     nock(constants.BASE_URL)
       .delete(constants.TEMPLATES_CONSTRUCTOR_ENDPOINT.replace('{template_id}', '1'))
-      .reply(200, { message: 'All URLs to the documents were deleted' });
+      .reply(200, mocks.remove);
 
     return PDFfiller.templates.removeConstructor(1)
       .then((response) => {
-        response.message.should.be.equal('All URLs to the documents were deleted');
+        response.should.deepEqual(mocks.remove);
       });
   });
 });

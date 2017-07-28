@@ -13,7 +13,7 @@ describe('PDFfiller fillable form', () => {
 
     return PDFfiller.fillableForms.all()
       .then((response) => {
-        response.items[0].fillable_form_id.should.be.equal(mocks.fillable[0].fillable_form_id);
+        response.items.should.deepEqual(mocks.fillable);
       });
   });
 
@@ -24,7 +24,7 @@ describe('PDFfiller fillable form', () => {
 
     return PDFfiller.fillableForms.get(1)
       .then((response) => {
-        response.fillable_form_id.should.be.equal(mocks.fillable[0].fillable_form_id);
+        response.should.deepEqual(mocks.fillable[0]);
       });
   });
 
@@ -49,7 +49,7 @@ describe('PDFfiller fillable form', () => {
       additional_documents: ['docs1', 'docs2']
     })
       .then((response) => {
-        response.fillable_form_id.should.be.equal(mocks.fillable[0].fillable_form_id);
+        response.should.deepEqual(mocks.fillable[0]);
       });
   });
 
@@ -69,7 +69,7 @@ describe('PDFfiller fillable form', () => {
       reusable: true
     })
       .then((response) => {
-        response.fillable_form_id.should.be.equal(mocks.fillable[0].fillable_form_id);
+        response.should.deepEqual(mocks.fillable[0]);
       });
   });
 
@@ -102,7 +102,7 @@ describe('PDFfiller fillable form', () => {
 
     return PDFfiller.fillableForms.allFilled(1)
       .then((response) => {
-        response.items[0].filled_form_id.should.be.equal(mocks.filled[0].filled_form_id);
+        response.items.should.deepEqual(mocks.filled);
       });
   });
 
@@ -113,7 +113,7 @@ describe('PDFfiller fillable form', () => {
 
     return PDFfiller.fillableForms.getFilled(1, 1)
       .then((response) => {
-        response.filled_form_id.should.be.equal(mocks.filled[0].filled_form_id);
+        response.should.deepEqual(mocks.filled[0]);
       });
   });
 
@@ -135,7 +135,7 @@ describe('PDFfiller fillable form', () => {
 
     return PDFfiller.fillableForms.filledExport(1, 1)
       .then((response) => {
-        response.id.should.be.equal(mocks.export.id);
+        response.should.deepEqual(mocks.export);
       });
   });
 
@@ -157,7 +157,7 @@ describe('PDFfiller fillable form', () => {
 
     return PDFfiller.fillableForms.filledAllAdditional(1, 1)
       .then((response) => {
-        response.items[0].name.should.be.equal(mocks.additional[0].name);
+        response.items.should.deepEqual(mocks.additional);
       });
   });
 
@@ -168,7 +168,7 @@ describe('PDFfiller fillable form', () => {
 
     return PDFfiller.fillableForms.filledAdditional(1, 1, 1)
       .then((response) => {
-        response.name.should.be.equal(mocks.additional[0].name);
+        response.should.deepEqual(mocks.additional[0]);
       });
   });
 

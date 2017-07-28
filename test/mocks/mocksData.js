@@ -129,6 +129,7 @@ const templates = {
       'your_custom_or_global_callback_url', 'another_custom_or_global_callback_url'
     ]
   },
+  remove: { message: 'removed' }
 };
 
 const fillableForms = {
@@ -183,6 +184,42 @@ const fillableForms = {
   additional: [{ name: 'docs1', files: [{ id: 119031, filename: 'filename.pdf', ip: '109.237.93.134', date_created: '2017-03-10 10:06:33' }] }]
 };
 
+const signatureRequests = {
+  signatureRequest: [{
+    signature_request_id: 22969,
+    document_id: 20802117,
+    document_name: 'file.pdf',
+    date_created: 1491491820,
+    date_signed: 0,
+    method: 'sendtoeach',
+    status: 'IN_PROGRESS',
+    envelope_name: '``',
+    security_pin: 'enhanced',
+    sign_in_order: false,
+    recipients: []
+  }],
+  recipients: [{
+    id: 57664,
+    user_id: 45454545,
+    email: 'some-email@domain.com',
+    name: 'John Doe',
+    status: 'NOT_SENT',
+    order: 0,
+    ip: '255.255.255.255',
+    require_photo: false,
+    message_subject: 'some text',
+    message_text: 'some text',
+    date_created: 1491491820,
+    date_signed: 0,
+    access: 'full',
+    phone_authenticate: '``',
+    additional_documents: [],
+    roles: [{ id: 57664, name: 'Developers' }],
+    callbacks: [{ id: 12345, event_id: 'signature_request.done', callback_url: 'http://apicallbacks.pdffiller.com' }]
+  }],
+  additional_documents: [{ name: 'docs1', files: [{ id: 119031, filename: 'filename.pdf', ip: '109.237.93.134', date_created: '2017-03-10 10:06:33' }] }]
+};
+
 module.exports = {
   auth,
   applications,
@@ -194,4 +231,5 @@ module.exports = {
   user,
   templates,
   fillableForms,
+  signatureRequests
 };

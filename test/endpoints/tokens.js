@@ -3,50 +3,50 @@ const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
 const constants = require('../../lib/constants/index');
-const mocks = require('../mocks/mocksData');
+const mocks = require('../mocks/mocksData').tokens;
 
 describe('PDFfiller tokens', () => {
   it('should get tokens list', () => {
     nock(constants.BASE_URL)
       .get(constants.TOKENS_ENDPOINT)
-      .reply(200, { items: mocks.tokens });
+      .reply(200, { items: mocks });
 
     return PDFfiller.tokens.all()
       .then((response) => {
-        response.items[0].id.should.be.equal(mocks.tokens[0].id);
+        response.items.should.deepEqual(mocks);
       });
   });
 
   it('should get token by id', () => {
     nock(constants.BASE_URL)
       .get(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
-      .reply(200, mocks.tokens[0]);
+      .reply(200, mocks[0]);
 
     return PDFfiller.tokens.get(1)
       .then((response) => {
-        response.id.should.be.equal(mocks.tokens[0].id);
+        response.should.deepEqual(mocks[0]);
       });
   });
 
   it('should create token', () => {
     nock(constants.BASE_URL)
       .post(constants.TOKENS_ENDPOINT)
-      .reply(200, mocks.tokens[0]);
+      .reply(200, mocks[0]);
 
-    return PDFfiller.tokens.create(mocks.tokens[0].data)
+    return PDFfiller.tokens.create(mocks[0].data)
       .then((response) => {
-        response.id.should.be.equal(mocks.tokens[0].id);
+        response.should.deepEqual(mocks[0]);
       });
   });
 
   it('should update token', () => {
     nock(constants.BASE_URL)
       .put(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
-      .reply(200, mocks.tokens[0]);
+      .reply(200, mocks[0]);
 
-    return PDFfiller.tokens.update(1, mocks.tokens[0].data)
+    return PDFfiller.tokens.update(1, mocks[0].data)
       .then((response) => {
-        response.id.should.be.equal(mocks.tokens[0].id);
+        response.should.deepEqual(mocks[0]);
       });
   });
 
