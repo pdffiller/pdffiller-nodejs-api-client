@@ -8,7 +8,7 @@ You can sign up for the API [here](https://developers.pdffiller.com/#tab-feature
 
 ## Requirements
 
-* Node.js v4.8.3
+* Node.js v4.8.4
 
 ## Installation
 
