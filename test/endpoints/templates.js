@@ -9,9 +9,14 @@ describe('PDFfiller templates', () => {
   it('should get templates list', () => {
     nock(constants.BASE_URL)
       .get(constants.TEMPLATES_ENDPOINT)
+      .query({
+        folder_id: 0
+      })
       .reply(200, { items: mocks.templates });
 
-    return PDFfiller.templates.all()
+    return PDFfiller.templates.all({
+      folder_id: 0
+    })
       .then((response) => {
         response.items.should.deepEqual(mocks.templates);
       });
@@ -111,9 +116,14 @@ describe('PDFfiller templates', () => {
   it('should return child documents', () => {
     nock(constants.BASE_URL)
       .get(constants.TEMPLATES_FILLED_DOCS_ENDPOINT.replace('{template_id}', '1'))
+      .query({
+        per_page: 15
+      })
       .reply(200, { total: 1 });
 
-    return PDFfiller.templates.filled(1)
+    return PDFfiller.templates.childs(1, {
+      per_page: 15
+    })
       .then((response) => {
         response.total.should.be.equal(1);
       });

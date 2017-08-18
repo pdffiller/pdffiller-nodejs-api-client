@@ -9,9 +9,14 @@ describe('PDFfiller applications', () => {
   it('should get applications list', () => {
     nock(constants.BASE_URL)
       .get(constants.APPLICATIONS_ENDPOINT)
+      .query({
+        per_page: 15
+      })
       .reply(200, { items: mocks });
 
-    return PDFfiller.applications.all()
+    return PDFfiller.applications.all({
+      per_page: 15
+    })
       .then((response) => {
         response.items.should.deepEqual(mocks);
       });
@@ -64,9 +69,14 @@ describe('PDFfiller applications', () => {
   it('should get application users list', () => {
     nock(constants.BASE_URL)
       .get(constants.APPLICATIONS_USERS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
+      .query({
+        per_page: 15
+      })
       .reply(200, { user_id: 111, email: 'user@mail.com' });
 
-    return PDFfiller.applications.users('1')
+    return PDFfiller.applications.users('1', {
+      per_page: 15
+    })
       .then((response) => {
         response.user_id.should.be.equal(111);
       });

@@ -9,9 +9,14 @@ describe('PDFfiller folders', () => {
   it('should get folders list', () => {
     nock(constants.BASE_URL)
       .get(constants.FOLDERS_ENDPOINT)
+      .query({
+        per_page: 15
+      })
       .reply(200, { items: mocks });
 
-    return PDFfiller.folders.all()
+    return PDFfiller.folders.all({
+      per_page: 15
+    })
       .then((response) => {
         response.items.should.deepEqual(mocks);
       });

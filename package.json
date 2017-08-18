@@ -7,7 +7,8 @@
     "precommit": "npm run lint; npm run test",
     "lint": "./node_modules/.bin/eslint lib/** -c ./.eslintrc",
     "test": "node node_modules/.bin/mocha --recursive",
-    "test-watch": "node node_modules/.bin/mocha -w --recursive"
+    "test-watch": "node node_modules/.bin/mocha -w --recursive",
+    "coverage": "node_modules/.bin/istanbul cover _mocha --recursive -- -i ./test/**"
   },
   "engines": {
     "node": ">= 4.8.3"
@@ -30,6 +31,7 @@
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.3.0",
     "husky": "^0.13.4",
+    "istanbul": "^0.4.5",
     "mocha": "^3.4.2",
     "nock": "^9.0.13",
     "should": "^11.2.1",

@@ -9,9 +9,14 @@ describe('PDFfiller custom logos', () => {
   it('should get custom logos list', () => {
     nock(constants.BASE_URL)
       .get(constants.CUSTOM_LOGOS_ENDPOINT)
+      .query({
+        per_page: 15
+      })
       .reply(200, { items: mocks });
 
-    return PDFfiller.customLogos.all()
+    return PDFfiller.customLogos.all({
+      per_page: 15
+    })
       .then((response) => {
         response.items.should.deepEqual(mocks);
       });

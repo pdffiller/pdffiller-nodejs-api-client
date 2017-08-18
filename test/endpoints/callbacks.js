@@ -9,9 +9,14 @@ describe('PDFfiller callbacks', () => {
   it('should get callbacks list', () => {
     nock(constants.BASE_URL)
       .get(constants.CALLBACKS_ENDPOINT)
+      .query({
+        per_page: 15
+      })
       .reply(200, { items: mocks });
 
-    return PDFfiller.callbacks.all()
+    return PDFfiller.callbacks.all({
+      per_page: 15
+    })
       .then((response) => {
         response.items.should.deepEqual(mocks);
       });

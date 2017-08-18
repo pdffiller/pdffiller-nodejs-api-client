@@ -9,9 +9,14 @@ describe('PDFfiller fillable form', () => {
   it('should get fill requests list', () => {
     nock(constants.BASE_URL)
       .get(constants.FILLABLE_FORMS_ENDPOINT)
+      .query({
+        per_page: 15
+      })
       .reply(200, { items: mocks.fillable });
 
-    return PDFfiller.fillableForms.all()
+    return PDFfiller.fillableForms.all({
+      per_page: 15
+    })
       .then((response) => {
         response.items.should.deepEqual(mocks.fillable);
       });
@@ -98,9 +103,14 @@ describe('PDFfiller fillable form', () => {
   it('should get filled forms list', () => {
     nock(constants.BASE_URL)
       .get(constants.FILLABLE_FORMS_FILLED_ENDPOINT.replace('{link_to_fill_id}', '1'))
+      .query({
+        per_page: 15
+      })
       .reply(200, { items: mocks.filled });
 
-    return PDFfiller.fillableForms.allFilled(1)
+    return PDFfiller.fillableForms.allFilled(1, {
+      per_page: 15
+    })
       .then((response) => {
         response.items.should.deepEqual(mocks.filled);
       });

@@ -9,9 +9,14 @@ describe('PDFfiller tokens', () => {
   it('should get tokens list', () => {
     nock(constants.BASE_URL)
       .get(constants.TOKENS_ENDPOINT)
+      .query({
+        per_page: 15
+      })
       .reply(200, { items: mocks });
 
-    return PDFfiller.tokens.all()
+    return PDFfiller.tokens.all({
+      per_page: 15
+    })
       .then((response) => {
         response.items.should.deepEqual(mocks);
       });
