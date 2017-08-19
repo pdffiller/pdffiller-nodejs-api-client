@@ -162,7 +162,7 @@ describe('PDFfiller templates', () => {
       .post(constants.TEMPLATES_CONSTRUCTOR_ENDPOINT.replace('{template_id}', '1'))
       .reply(200, mocks.constructor);
 
-    return PDFfiller.templates.createConstructor(1, {
+    return PDFfiller.templates.createShareLink(1, {
       expire: 6,
       callback_url: 'some-url'
     })
@@ -176,7 +176,7 @@ describe('PDFfiller templates', () => {
       .get(constants.TEMPLATES_CONSTRUCTOR_ENDPOINT.replace('{template_id}', '1'))
       .reply(200, mocks.constructorList);
 
-    return PDFfiller.templates.getConstructor(1)
+    return PDFfiller.templates.getShareLink(1)
       .then((response) => {
         response.should.deepEqual(mocks.constructorList);
       });
@@ -187,7 +187,7 @@ describe('PDFfiller templates', () => {
       .delete(`${constants.TEMPLATES_CONSTRUCTOR_ENDPOINT.replace('{template_id}', '1')}/hash_string`)
       .reply(200, mocks.remove);
 
-    return PDFfiller.templates.removeConstructorByHash(1, 'hash_string')
+    return PDFfiller.templates.removeShareLinkByHash(1, 'hash_string')
       .then((response) => {
         response.should.deepEqual(mocks.remove);
       });
@@ -198,7 +198,7 @@ describe('PDFfiller templates', () => {
       .delete(constants.TEMPLATES_CONSTRUCTOR_ENDPOINT.replace('{template_id}', '1'))
       .reply(200, mocks.remove);
 
-    return PDFfiller.templates.removeConstructor(1)
+    return PDFfiller.templates.removeAllShareLink(1)
       .then((response) => {
         response.should.deepEqual(mocks.remove);
       });

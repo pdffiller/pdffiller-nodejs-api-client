@@ -1,7 +1,5 @@
 # pdffiller-nodejs-api-client (api-v2)
 
-[![Join the chat at https://gitter.im/pdffiller/pdffiller-php-api-client](https://badges.gitter.im/pdffiller/pdffiller-php-api-client.svg)](https://gitter.im/pdffiller/pdffiller-php-api-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [PDFfiller API](https://api.pdffiller.com)
 You can sign up for the API [here](https://developers.pdffiller.com/#tab-features).
 [API Docs](https://docs.pdffiller.com/).
@@ -22,6 +20,12 @@ Require module and init one. You can require PDFfiller module as a singleton and
 ```
 const PDFfiller = require('pdffiller-nodejs-api-client').PDFfiller;
 ```
+
+Or
+```
+import { PDFfiller } from 'pdffiller-nodejs-api-client';
+```
+
 
 ## Authentication
 
@@ -105,11 +109,30 @@ PDFfiller.applications.users(id)
   .catch(err => console.error(err));
 ```
 
+## Working with files
+We send request using request-promise library, so to send a file you can just pass a file stream, for example:
+ ```
+ PDFfiller.templates.create({
+    file: fs.createReadStream('./file.pdf'),
+    name: 'test_file_load.pdf'
+ })
+   .then(createdTemplateInfo => console.log(createdTemplateInfo))
+   .catch(err => console.error(err));
+ ```
+ 
+When you download files we will return Buffer object after it you can save it as in example:
+ ```
+ PDFfiller.templates.download(1);
+   .then(templateFileBuffer => {
+       fs.writeFile('./your_file_name.pdf', templateFileBuffer, () => console.log('successfully saved'));
+   })
+   .catch(err => console.error(err));
+ ```
+ 
 ## Support
 If you have any problems feel free to contact us:
-* On our issues page https://github.com/pdffiller/pdffiller-php-api-client/issues
+* On our issues page https://github.com/pdffiller/pdffiller-nodejs-api-client/issues
 * Via chat or phone at our tech site http://developers.pdffiller.com
-* Join our Gitter chat room for technical advice https://gitter.im/pdffiller/pdffiller-php-api-client
 
 ## License
 This software is licensed under the following MIT [license](https://github.com/pdffiller/pdffiller-nodejs-api-client/blob/master/README.md)

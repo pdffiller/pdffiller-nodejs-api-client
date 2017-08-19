@@ -220,6 +220,21 @@ const signatureRequests = {
   additional_documents: [{ name: 'docs1', files: [{ id: 119031, filename: 'filename.pdf', ip: '109.237.93.134', date_created: '2017-03-10 10:06:33' }] }]
 };
 
+const tools = {
+  merge: {
+    id: 12345678,
+    name: 'PDF_FILE_NAME',
+    type: 'pdf',
+    status: 'complete',
+    created: 1457222400,
+    updated: 1457222400,
+    folder: {
+      id: 12345678,
+      name: 'My_folder'
+    }
+  }
+};
+
 module.exports = {
   auth,
   applications,
@@ -231,5 +246,6 @@ module.exports = {
   user,
   templates,
   fillableForms,
-  signatureRequests
+  signatureRequests,
+  tools,
 };

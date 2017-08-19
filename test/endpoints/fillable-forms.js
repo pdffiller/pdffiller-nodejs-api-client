@@ -143,7 +143,7 @@ describe('PDFfiller fillable form', () => {
       .get(constants.FILLABLE_FORMS_FILLED_EXPORT_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .reply(200, mocks.export);
 
-    return PDFfiller.fillableForms.filledExport(1, 1)
+    return PDFfiller.fillableForms.exportFilled(1, 1)
       .then((response) => {
         response.should.deepEqual(mocks.export);
       });
@@ -154,7 +154,7 @@ describe('PDFfiller fillable form', () => {
       .get(constants.FILLABLE_FORMS_FILLED_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
 
-    return PDFfiller.fillableForms.filledDownload(1, 1)
+    return PDFfiller.fillableForms.downloadFilled(1, 1)
       .then((response) => {
         response.should.be.Object();
       });
@@ -165,7 +165,7 @@ describe('PDFfiller fillable form', () => {
       .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .reply(200, { items: mocks.additional });
 
-    return PDFfiller.fillableForms.filledAllAdditional(1, 1)
+    return PDFfiller.fillableForms.getFilledAllAdditional(1, 1)
       .then((response) => {
         response.items.should.deepEqual(mocks.additional);
       });
@@ -176,7 +176,7 @@ describe('PDFfiller fillable form', () => {
       .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1).replace('{additional_document_id}', 1))
       .reply(200, mocks.additional[0]);
 
-    return PDFfiller.fillableForms.filledAdditional(1, 1, 1)
+    return PDFfiller.fillableForms.getFilledAdditional(1, 1, 1)
       .then((response) => {
         response.should.deepEqual(mocks.additional[0]);
       });
@@ -187,7 +187,7 @@ describe('PDFfiller fillable form', () => {
       .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_BY_ID_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1).replace('{additional_document_id}', 1))
       .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
 
-    return PDFfiller.fillableForms.filledAdditionalDownload(1, 1, 1)
+    return PDFfiller.fillableForms.downloadFilledAdditional(1, 1, 1)
       .then((response) => {
         response.should.be.Object();
       });
@@ -198,7 +198,7 @@ describe('PDFfiller fillable form', () => {
       .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
 
-    return PDFfiller.fillableForms.filledAllAdditionalDownload(1, 1)
+    return PDFfiller.fillableForms.downloadFilledAllAdditional(1, 1)
       .then((response) => {
         response.should.be.Object();
       });

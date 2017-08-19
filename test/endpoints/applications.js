@@ -74,7 +74,7 @@ describe('PDFfiller applications', () => {
       })
       .reply(200, { user_id: 111, email: 'user@mail.com' });
 
-    return PDFfiller.applications.users('1', {
+    return PDFfiller.applications.getUsers(1, {
       per_page: 15
     })
       .then((response) => {
