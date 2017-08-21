@@ -39,7 +39,7 @@ describe('PDFfiller signature requests', () => {
       .reply(200, mocks.signatureRequest[0]);
 
     return PDFfiller.signatureRequests.create({
-      document_id: 1023456789,
+      file: 'http://link-to-file.pdf',
       method: 'sendtogroup',
       envelope_name: 'Envelope API',
       security_pin: 'standard',

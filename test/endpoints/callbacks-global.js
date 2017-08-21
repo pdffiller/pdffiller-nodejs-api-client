@@ -8,7 +8,7 @@ const mocks = require('../mocks/mocksData').callbacksGlobal;
 describe('PDFfiller callbacks global', () => {
   it('should get callback', () => {
     nock(constants.BASE_URL)
-      .get(constants.CALLBACKS_GLOBAL_BY_ID_ENDPOINT)
+      .get(constants.CALLBACKS_GLOBAL_ENDPOINT)
       .reply(200, mocks);
 
     return PDFfiller.callbacksGlobal.get()
@@ -19,10 +19,10 @@ describe('PDFfiller callbacks global', () => {
 
   it('should update callback', () => {
     nock(constants.BASE_URL)
-      .put(constants.CALLBACKS_GLOBAL_BY_ID_ENDPOINT)
+      .put(constants.CALLBACKS_GLOBAL_ENDPOINT)
       .reply(200, mocks);
 
-    return PDFfiller.callbacksGlobal.update(1, {
+    return PDFfiller.callbacksGlobal.update({
       callback_url: 'http://api.newpdffiller.com'
     })
       .then((response) => {
@@ -32,7 +32,7 @@ describe('PDFfiller callbacks global', () => {
 
   it('should delete callback', () => {
     nock(constants.BASE_URL)
-      .delete(constants.CALLBACKS_GLOBAL_BY_ID_ENDPOINT)
+      .delete(constants.CALLBACKS_GLOBAL_ENDPOINT)
       .reply(200, { total: 1 });
 
     return PDFfiller.callbacksGlobal.remove()

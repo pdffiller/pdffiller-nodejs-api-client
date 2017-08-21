@@ -9,6 +9,20 @@ describe('PDFfiller tools', () => {
   it('should merge documents', () => {
     nock(constants.BASE_URL)
       .post(constants.TOOLS_MERGE_ENDPOINT)
+      .reply(200, mocks.merge);
+
+    return PDFfiller.tools.merge({
+      documents: [11111, 11112, 11113],
+      name: 'name',
+      folder_id: 0
+    })
+      .then((response) => {
+        response.should.deepEqual(mocks.merge);
+      });
+  });
+  it('should merge documents with clean cache option', () => {
+    nock(constants.BASE_URL)
+      .post(constants.TOOLS_MERGE_ENDPOINT)
       .query({
         clean_cache: true
       })

@@ -39,6 +39,7 @@ describe('PDFfiller fillable form', () => {
       .reply(200, mocks.fillable[0]);
 
     return PDFfiller.fillableForms.create({
+      file: 'http://link-to-file.pdf',
       access: 'full',
       status: 'public',
       email_required: true,

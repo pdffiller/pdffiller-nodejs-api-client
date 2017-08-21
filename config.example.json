@@ -3,5 +3,6 @@
   "client_id": "client_id",
   "client_secret": "client_secret",
   "username": "username@mail.com",
-  "password": "user password"
+  "password": "user password",
+  "refresh_token": "refresh-token"
 }
