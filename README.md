@@ -14,16 +14,16 @@ You can sign up for the API [here](https://developers.pdffiller.com/#tab-feature
 npm i git://github.com/pdffiller/pdffiller-nodejs-api-client.git --save
 ```
 
-### Quick getting started steps
-Require module and init one. You can require PDFfiller module as a singleton and use it in anywhere your app:
+## Usage
+Require module and init one. You can require PDFfiller module as a singleton and use it in anywhere your app, or require constructor and use it:
 
 ```
 const PDFfiller = require('pdffiller-nodejs-api-client').PDFfiller;
 ```
 
-Or
+Or using ES6:
 ```
-import { PDFfiller } from 'pdffiller-nodejs-api-client';
+import { PDFfiller, PDFFillerConstructor } from 'pdffiller-nodejs-api-client';
 ```
 
 
@@ -33,14 +33,15 @@ Access tokens will automatically initialize when you’re successfully retrieved
 The second parameter `autoUpdate` when you set up it as `true` we will auto update your token when it expire
 
 ```
-PDFfiller.authorization({
-  grant_type: 'password',
-  client_id: 'your_client_id',
-  client_secret: 'your_client_secret',
-  username: 'username@mail.com',
-  password: 'your_password'
-}, true).then(accessTokenData => console.log(accessTokenData))
-  .catch(err => console.error(err));
+PDFfiller.auth.authorize({
+    grant_type: 'password',
+    client_id: 'your_client_id',
+    client_secret: 'your_client_secret',
+    username: 'username@mail.com',
+    password: 'your_password'
+}, true)
+    .then(accessTokenData => console.log(accessTokenData))
+    .catch(err => console.error(err));
 ```
 
 When your authorization has been completed successfully you can use client for retrieving, creating, updating or deleting information from your profile.
@@ -48,13 +49,13 @@ When your authorization has been completed successfully you can use client for r
 Also you can set up token, for future request:
 
 ```
-PDFfiller.setAccessToken('your_access_token');
+PDFfiller.auth.setAccessToken('your_access_token');
 ```
 
 and get current access token:
 
 ```
-PDFfiller.getAccessToken();
+PDFfiller.auth.getAccessToken();
 ```
 
 ## Application
@@ -129,6 +130,37 @@ When you download files we will return Buffer object after it you can save it as
    .catch(err => console.error(err));
  ```
  
+## Callback support
+Methods provide not only Promise api, you can use callbacks if you want. You can pass callback function to all methods in last position:
+```
+PDFfiller.templates.create({
+    file: fs.createReadStream('./file.pdf'),
+    name: 'test_file_load.pdf'
+}, (err, response, body) => {
+    if (err) {
+        console.log(err);
+    }
+    // YOUR CODE
+    }
+);
+ ```
+ 
+```
+PDFfiller.auth.authorize({
+    grant_type: 'password',
+    client_id: 'your_client_id',
+    client_secret: 'your_client_secret',
+    username: 'username@mail.com',
+    password: 'your_password'
+}, false, (err, body) => {
+    if (err) {
+        console.log(err);
+    }
+    // YOUR CODE
+    }
+);
+ ```
+
 ## Support
 If you have any problems feel free to contact us:
 * On our issues page https://github.com/pdffiller/pdffiller-nodejs-api-client/issues
