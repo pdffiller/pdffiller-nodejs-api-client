@@ -11,7 +11,7 @@ describe('PDFfiller user', () => {
       .get(constants.USERS_ENDPOINT)
       .reply(200, mocks);
 
-    return PDFfiller.user.get()
+    return PDFfiller.users.get()
       .then((response) => {
         response.should.deepEqual(mocks);
       });
