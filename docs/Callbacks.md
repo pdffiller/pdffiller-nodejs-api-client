@@ -1,30 +1,23 @@
 <a name="Callbacks"></a>
 
 ## Callbacks
+Callbacks endpoint
+
 **Kind**: global class  
 
 * [Callbacks](#Callbacks)
-    * [new Callbacks()](#new_Callbacks_new)
-    * [.all([searchParams], [callback])](#Callbacks+all) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.get(callbackId, [callback])](#Callbacks+get) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.create(params, [callback])](#Callbacks+create) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.update(callbackId, params, [callback])](#Callbacks+update) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.remove(callbackId, [callback])](#Callbacks+remove) ⇒ <code>Promise</code> \| <code>undefined</code>
-
-
-* * *
-
-<a name="new_Callbacks_new"></a>
-
-### new Callbacks()
-Callbacks endpoint class
+    * [.all([searchParams], [callback])](#Callbacks+all) ⇒ <code>Promise</code>
+    * [.get(callbackId, [callback])](#Callbacks+get) ⇒ <code>Promise</code>
+    * [.create(params, [callback])](#Callbacks+create) ⇒ <code>Promise</code>
+    * [.update(callbackId, params, [callback])](#Callbacks+update) ⇒ <code>Promise</code>
+    * [.remove(callbackId, [callback])](#Callbacks+remove) ⇒ <code>Promise</code>
 
 
 * * *
 
 <a name="Callbacks+all"></a>
 
-### callbacks.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### callbacks.all([searchParams], [callback]) ⇒ <code>Promise</code>
 Returns a list of all callbacks.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
@@ -43,7 +36,7 @@ Returns a list of all callbacks.
 
 <a name="Callbacks+get"></a>
 
-### callbacks.get(callbackId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### callbacks.get(callbackId, [callback]) ⇒ <code>Promise</code>
 Returns a callback by id.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
@@ -58,7 +51,7 @@ Returns a callback by id.
 
 <a name="Callbacks+create"></a>
 
-### callbacks.create(params, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### callbacks.create(params, [callback]) ⇒ <code>Promise</code>
 Create a new callback with given data.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
@@ -76,7 +69,7 @@ Create a new callback with given data.
 
 <a name="Callbacks+update"></a>
 
-### callbacks.update(callbackId, params, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### callbacks.update(callbackId, params, [callback]) ⇒ <code>Promise</code>
 Update a new callback with given data.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
@@ -94,7 +87,7 @@ Update a new callback with given data.
 
 <a name="Callbacks+remove"></a>
 
-### callbacks.remove(callbackId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### callbacks.remove(callbackId, [callback]) ⇒ <code>Promise</code>
 Delete a callback by id.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  

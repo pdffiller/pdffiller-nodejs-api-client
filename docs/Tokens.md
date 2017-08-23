@@ -1,30 +1,23 @@
 <a name="Tokens"></a>
 
 ## Tokens
+Tokens endpoint
+
 **Kind**: global class  
 
 * [Tokens](#Tokens)
-    * [new Tokens()](#new_Tokens_new)
-    * [.all([searchParams], [callback])](#Tokens+all) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.get(tokenId, [callback])](#Tokens+get) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.create(data, [callback])](#Tokens+create) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.update(id, data, [callback])](#Tokens+update) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.remove(tokenId, [callback])](#Tokens+remove) ⇒ <code>Promise</code> \| <code>undefined</code>
-
-
-* * *
-
-<a name="new_Tokens_new"></a>
-
-### new Tokens()
-Tokens endpoint class
+    * [.all([searchParams], [callback])](#Tokens+all) ⇒ <code>Promise</code>
+    * [.get(tokenId, [callback])](#Tokens+get) ⇒ <code>Promise</code>
+    * [.create(data, [callback])](#Tokens+create) ⇒ <code>Promise</code>
+    * [.update(id, data, [callback])](#Tokens+update) ⇒ <code>Promise</code>
+    * [.remove(tokenId, [callback])](#Tokens+remove) ⇒ <code>Promise</code>
 
 
 * * *
 
 <a name="Tokens+all"></a>
 
-### tokens.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### tokens.all([searchParams], [callback]) ⇒ <code>Promise</code>
 Returns a list of all tokens.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
@@ -43,7 +36,7 @@ Returns a list of all tokens.
 
 <a name="Tokens+get"></a>
 
-### tokens.get(tokenId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### tokens.get(tokenId, [callback]) ⇒ <code>Promise</code>
 Returns a token by id.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
@@ -58,11 +51,10 @@ Returns a token by id.
 
 <a name="Tokens+create"></a>
 
-### tokens.create(data, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### tokens.create(data, [callback]) ⇒ <code>Promise</code>
 Create new token with given data.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
-**Returns**: <code>Promise</code> \| <code>undefined</code> - with created token information  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -74,11 +66,10 @@ Create new token with given data.
 
 <a name="Tokens+update"></a>
 
-### tokens.update(id, data, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### tokens.update(id, data, [callback]) ⇒ <code>Promise</code>
 Update token by id with given data.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
-**Returns**: <code>Promise</code> \| <code>undefined</code> - with updated token information  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -91,7 +82,7 @@ Update token by id with given data.
 
 <a name="Tokens+remove"></a>
 
-### tokens.remove(tokenId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### tokens.remove(tokenId, [callback]) ⇒ <code>Promise</code>
 delete token by id
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  

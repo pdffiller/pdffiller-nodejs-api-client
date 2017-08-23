@@ -1,26 +1,15 @@
 <a name="Tools"></a>
 
 ## Tools
+Tools endpoint
+
 **Kind**: global class  
-
-* [Tools](#Tools)
-    * [new Tools()](#new_Tools_new)
-    * [.merge(mergeInfo, [clearCache], [callback])](#Tools+merge) ⇒ <code>Promise</code> \| <code>undefined</code>
-
-
-* * *
-
-<a name="new_Tools_new"></a>
-
-### new Tools()
-Tools endpoint class
-
 
 * * *
 
 <a name="Tools+merge"></a>
 
-### tools.merge(mergeInfo, [clearCache], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### tools.merge(mergeInfo, [clearCache], [callback]) ⇒ <code>Promise</code>
 Merge documents to 1.
 
 **Kind**: instance method of [<code>Tools</code>](#Tools)  

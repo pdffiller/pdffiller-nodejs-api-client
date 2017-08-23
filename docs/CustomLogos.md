@@ -1,29 +1,22 @@
 <a name="CustomLogos"></a>
 
 ## CustomLogos
+CustomLogos endpoint
+
 **Kind**: global class  
 
 * [CustomLogos](#CustomLogos)
-    * [new CustomLogos()](#new_CustomLogos_new)
-    * [.all([searchParams], [callback])](#CustomLogos+all) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.get(customLogoId, [callback])](#CustomLogos+get) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.create(customLogo, [callback])](#CustomLogos+create) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.remove(customLogoId, [callback])](#CustomLogos+remove) ⇒ <code>Promise</code> \| <code>undefined</code>
-
-
-* * *
-
-<a name="new_CustomLogos_new"></a>
-
-### new CustomLogos()
-CustomLogos endpoint class
+    * [.all([searchParams], [callback])](#CustomLogos+all) ⇒ <code>Promise</code>
+    * [.get(customLogoId, [callback])](#CustomLogos+get) ⇒ <code>Promise</code>
+    * [.create(customLogo, [callback])](#CustomLogos+create) ⇒ <code>Promise</code>
+    * [.remove(customLogoId, [callback])](#CustomLogos+remove) ⇒ <code>Promise</code>
 
 
 * * *
 
 <a name="CustomLogos+all"></a>
 
-### customLogos.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### customLogos.all([searchParams], [callback]) ⇒ <code>Promise</code>
 Returns a list of all custom logos.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
@@ -42,7 +35,7 @@ Returns a list of all custom logos.
 
 <a name="CustomLogos+get"></a>
 
-### customLogos.get(customLogoId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### customLogos.get(customLogoId, [callback]) ⇒ <code>Promise</code>
 Returns a custom logo by id.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
@@ -57,11 +50,10 @@ Returns a custom logo by id.
 
 <a name="CustomLogos+create"></a>
 
-### customLogos.create(customLogo, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### customLogos.create(customLogo, [callback]) ⇒ <code>Promise</code>
 Create new custom logo with given data.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
-**Returns**: <code>Promise</code> \| <code>undefined</code> - with created custom logo information  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -73,7 +65,7 @@ Create new custom logo with given data.
 
 <a name="CustomLogos+remove"></a>
 
-### customLogos.remove(customLogoId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### customLogos.remove(customLogoId, [callback]) ⇒ <code>Promise</code>
 delete custom logo by id
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  

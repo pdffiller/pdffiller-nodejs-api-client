@@ -1,30 +1,23 @@
 <a name="Folders"></a>
 
 ## Folders
+Folders endpoint
+
 **Kind**: global class  
 
 * [Folders](#Folders)
-    * [new Folders()](#new_Folders_new)
-    * [.all([searchParams], [callback])](#Folders+all) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.get(folderId, [callback])](#Folders+get) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.create(params, [callback])](#Folders+create) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.update(folderId, params, [callback])](#Folders+update) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.remove(folderId, [callback])](#Folders+remove) ⇒ <code>Promise</code> \| <code>undefined</code>
-
-
-* * *
-
-<a name="new_Folders_new"></a>
-
-### new Folders()
-Folders endpoint class
+    * [.all([searchParams], [callback])](#Folders+all) ⇒ <code>Promise</code>
+    * [.get(folderId, [callback])](#Folders+get) ⇒ <code>Promise</code>
+    * [.create(params, [callback])](#Folders+create) ⇒ <code>Promise</code>
+    * [.update(folderId, params, [callback])](#Folders+update) ⇒ <code>Promise</code>
+    * [.remove(folderId, [callback])](#Folders+remove) ⇒ <code>Promise</code>
 
 
 * * *
 
 <a name="Folders+all"></a>
 
-### folders.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### folders.all([searchParams], [callback]) ⇒ <code>Promise</code>
 Returns a list of all folders.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
@@ -43,7 +36,7 @@ Returns a list of all folders.
 
 <a name="Folders+get"></a>
 
-### folders.get(folderId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### folders.get(folderId, [callback]) ⇒ <code>Promise</code>
 Returns a folder by id.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
@@ -58,11 +51,10 @@ Returns a folder by id.
 
 <a name="Folders+create"></a>
 
-### folders.create(params, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### folders.create(params, [callback]) ⇒ <code>Promise</code>
 Create a new folder with given data.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
-**Returns**: <code>Promise</code> \| <code>undefined</code> - with created folder information  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -76,11 +68,10 @@ Create a new folder with given data.
 
 <a name="Folders+update"></a>
 
-### folders.update(folderId, params, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### folders.update(folderId, params, [callback]) ⇒ <code>Promise</code>
 Update a folder with given data.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
-**Returns**: <code>Promise</code> \| <code>undefined</code> - with updated folder information  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -94,7 +85,7 @@ Update a folder with given data.
 
 <a name="Folders+remove"></a>
 
-### folders.remove(folderId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### folders.remove(folderId, [callback]) ⇒ <code>Promise</code>
 Delete a folder by id.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  

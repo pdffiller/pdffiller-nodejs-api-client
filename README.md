@@ -15,10 +15,11 @@ npm i git://github.com/pdffiller/pdffiller-nodejs-api-client.git --save
 ```
 
 ## Usage
-Require module and init one. You can require PDFfiller module as a singleton and use it in anywhere your app, or require constructor and use it:
+Require module and init one. You can require PDFfiller module as a singleton and use it in anywhere your app, or require constructor and create different instances:
 
 ```
 const PDFfiller = require('pdffiller-nodejs-api-client').PDFfiller;
+const PDFFillerConstructor = require('pdffiller-nodejs-api-client').PDFFillerConstructor;
 ```
 
 Or using ES6:
@@ -131,7 +132,7 @@ When you download files we will return Buffer object after it you can save it as
  ```
  
 ## Callback support
-Methods provide not only Promise api, you can use callbacks if you want. You can pass callback function to all methods in last position:
+Methods provide not only Promise api, you can use callbacks if you want. You can pass callback function to all methods as last argument, in this case methods dont return a Promise:
 ```
 PDFfiller.templates.create({
     file: fs.createReadStream('./file.pdf'),

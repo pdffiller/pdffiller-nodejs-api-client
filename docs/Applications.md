@@ -1,31 +1,24 @@
 <a name="Applications"></a>
 
 ## Applications
+Applications endpoint
+
 **Kind**: global class  
 
 * [Applications](#Applications)
-    * [new Applications()](#new_Applications_new)
-    * [.all([searchParams], [callback])](#Applications+all) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.get(applicationId, [callback])](#Applications+get) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.create(applicationInfo, [callback])](#Applications+create) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.update(applicationId, applicationInfo, [callback])](#Applications+update) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.remove(applicationId, [callback])](#Applications+remove) ⇒ <code>Promise</code> \| <code>undefined</code>
+    * [.all([searchParams], [callback])](#Applications+all) ⇒ <code>Promise</code>
+    * [.get(applicationId, [callback])](#Applications+get) ⇒ <code>Promise</code>
+    * [.create(applicationInfo, [callback])](#Applications+create) ⇒ <code>Promise</code>
+    * [.update(applicationId, applicationInfo, [callback])](#Applications+update) ⇒ <code>Promise</code>
+    * [.remove(applicationId, [callback])](#Applications+remove) ⇒ <code>Promise</code>
     * [.getUsers(applicationId, [searchParams], [callback])](#Applications+getUsers) ⇒ <code>Promise</code>
-
-
-* * *
-
-<a name="new_Applications_new"></a>
-
-### new Applications()
-Applications endpoint class
 
 
 * * *
 
 <a name="Applications+all"></a>
 
-### applications.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### applications.all([searchParams], [callback]) ⇒ <code>Promise</code>
 Returns a list of all applications.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
@@ -44,7 +37,7 @@ Returns a list of all applications.
 
 <a name="Applications+get"></a>
 
-### applications.get(applicationId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### applications.get(applicationId, [callback]) ⇒ <code>Promise</code>
 Returns an application by id.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
@@ -59,11 +52,10 @@ Returns an application by id.
 
 <a name="Applications+create"></a>
 
-### applications.create(applicationInfo, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### applications.create(applicationInfo, [callback]) ⇒ <code>Promise</code>
 Create new application with given data.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
-**Returns**: <code>Promise</code> \| <code>undefined</code> - with created application information  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -81,11 +73,10 @@ Create new application with given data.
 
 <a name="Applications+update"></a>
 
-### applications.update(applicationId, applicationInfo, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### applications.update(applicationId, applicationInfo, [callback]) ⇒ <code>Promise</code>
 update application by id with given data.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
-**Returns**: <code>Promise</code> \| <code>undefined</code> - with updated application information  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -104,7 +95,7 @@ update application by id with given data.
 
 <a name="Applications+remove"></a>
 
-### applications.remove(applicationId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### applications.remove(applicationId, [callback]) ⇒ <code>Promise</code>
 delete application by id
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  

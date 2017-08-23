@@ -1,40 +1,33 @@
 <a name="FillableForms"></a>
 
 ## FillableForms
+FillableForms endpoint
+
 **Kind**: global class  
 
 * [FillableForms](#FillableForms)
-    * [new FillableForms()](#new_FillableForms_new)
-    * [.all([searchParams], [callback])](#FillableForms+all) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.get(linkToFillId, [callback])](#FillableForms+get) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.create(fillableInfo, [callback])](#FillableForms+create) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.update(linkToFillId, fillableInfo, [callback])](#FillableForms+update) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.remove(linkToFillId, [callback])](#FillableForms+remove) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.download(linkToFillId, [callback])](#FillableForms+download) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.allFilled(linkToFillId, [searchParams], [callback])](#FillableForms+allFilled) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.getFilled(linkToFillId, filledFormId, [callback])](#FillableForms+getFilled) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.removeFilled(linkToFillId, filledFormId, [callback])](#FillableForms+removeFilled) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.exportFilled(linkToFillId, filledFormId, [callback])](#FillableForms+exportFilled) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.downloadFilled(linkToFillId, filledFormId, [callback])](#FillableForms+downloadFilled) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.getFilledAllAdditional(linkToFillId, filledFormId, [callback])](#FillableForms+getFilledAllAdditional) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.getFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback])](#FillableForms+getFilledAdditional) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.downloadFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback])](#FillableForms+downloadFilledAdditional) ⇒ <code>Promise</code> \| <code>undefined</code>
-    * [.downloadFilledAllAdditional(linkToFillId, filledFormId, [callback])](#FillableForms+downloadFilledAllAdditional) ⇒ <code>Promise</code> \| <code>undefined</code>
-
-
-* * *
-
-<a name="new_FillableForms_new"></a>
-
-### new FillableForms()
-FillableForms endpoint class
+    * [.all([searchParams], [callback])](#FillableForms+all) ⇒ <code>Promise</code>
+    * [.get(linkToFillId, [callback])](#FillableForms+get) ⇒ <code>Promise</code>
+    * [.create(fillableInfo, [callback])](#FillableForms+create) ⇒ <code>Promise</code>
+    * [.update(linkToFillId, fillableInfo, [callback])](#FillableForms+update) ⇒ <code>Promise</code>
+    * [.remove(linkToFillId, [callback])](#FillableForms+remove) ⇒ <code>Promise</code>
+    * [.download(linkToFillId, [callback])](#FillableForms+download) ⇒ <code>Promise</code>
+    * [.allFilled(linkToFillId, [searchParams], [callback])](#FillableForms+allFilled) ⇒ <code>Promise</code>
+    * [.getFilled(linkToFillId, filledFormId, [callback])](#FillableForms+getFilled) ⇒ <code>Promise</code>
+    * [.removeFilled(linkToFillId, filledFormId, [callback])](#FillableForms+removeFilled) ⇒ <code>Promise</code>
+    * [.exportFilled(linkToFillId, filledFormId, [callback])](#FillableForms+exportFilled) ⇒ <code>Promise</code>
+    * [.downloadFilled(linkToFillId, filledFormId, [callback])](#FillableForms+downloadFilled) ⇒ <code>Promise</code>
+    * [.getFilledAllAdditional(linkToFillId, filledFormId, [callback])](#FillableForms+getFilledAllAdditional) ⇒ <code>Promise</code>
+    * [.getFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback])](#FillableForms+getFilledAdditional) ⇒ <code>Promise</code>
+    * [.downloadFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback])](#FillableForms+downloadFilledAdditional) ⇒ <code>Promise</code>
+    * [.downloadFilledAllAdditional(linkToFillId, filledFormId, [callback])](#FillableForms+downloadFilledAllAdditional) ⇒ <code>Promise</code>
 
 
 * * *
 
 <a name="FillableForms+all"></a>
 
-### fillableForms.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.all([searchParams], [callback]) ⇒ <code>Promise</code>
 Returns a list of all document fill requests.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -53,7 +46,7 @@ Returns a list of all document fill requests.
 
 <a name="FillableForms+get"></a>
 
-### fillableForms.get(linkToFillId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.get(linkToFillId, [callback]) ⇒ <code>Promise</code>
 Information about a created fill request item.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -68,7 +61,7 @@ Information about a created fill request item.
 
 <a name="FillableForms+create"></a>
 
-### fillableForms.create(fillableInfo, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.create(fillableInfo, [callback]) ⇒ <code>Promise</code>
 Creates a new document and shares it via short url.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -104,7 +97,7 @@ Creates a new document and shares it via short url.
 
 <a name="FillableForms+update"></a>
 
-### fillableForms.update(linkToFillId, fillableInfo, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.update(linkToFillId, fillableInfo, [callback]) ⇒ <code>Promise</code>
 Updates a fill request item.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -139,7 +132,7 @@ Updates a fill request item.
 
 <a name="FillableForms+remove"></a>
 
-### fillableForms.remove(linkToFillId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.remove(linkToFillId, [callback]) ⇒ <code>Promise</code>
 Deletes a fill request item.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -154,13 +147,12 @@ Deletes a fill request item.
 
 <a name="FillableForms+download"></a>
 
-### fillableForms.download(linkToFillId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.download(linkToFillId, [callback]) ⇒ <code>Promise</code>
 You can easily export all the completed documents created via LinkToFill as a zip file.
 This method can give three statuses:
 Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content (if files ready to export).
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
-**Returns**: <code>Promise</code> \| <code>undefined</code> - with buffer object or json object with created Job information  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -172,7 +164,7 @@ Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content
 
 <a name="FillableForms+allFilled"></a>
 
-### fillableForms.allFilled(linkToFillId, [searchParams], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.allFilled(linkToFillId, [searchParams], [callback]) ⇒ <code>Promise</code>
 Lists all filled forms for the given fill request.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -191,7 +183,7 @@ Lists all filled forms for the given fill request.
 
 <a name="FillableForms+getFilled"></a>
 
-### fillableForms.getFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.getFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code>
 Information about a specific filled form.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -207,7 +199,7 @@ Information about a specific filled form.
 
 <a name="FillableForms+removeFilled"></a>
 
-### fillableForms.removeFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.removeFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code>
 Deletes a filled form.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -223,7 +215,7 @@ Deletes a filled form.
 
 <a name="FillableForms+exportFilled"></a>
 
-### fillableForms.exportFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.exportFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code>
 Exports filled form data in one of the available formats: json, xls, xlsx, csv, html.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -239,7 +231,7 @@ Exports filled form data in one of the available formats: json, xls, xlsx, csv, 
 
 <a name="FillableForms+downloadFilled"></a>
 
-### fillableForms.downloadFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.downloadFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code>
 Downloads a filled PDF form.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -255,7 +247,7 @@ Downloads a filled PDF form.
 
 <a name="FillableForms+getFilledAllAdditional"></a>
 
-### fillableForms.getFilledAllAdditional(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.getFilledAllAdditional(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code>
 Returns a list of a LinkToFill recipient`s attached additional documents.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -271,7 +263,7 @@ Returns a list of a LinkToFill recipient`s attached additional documents.
 
 <a name="FillableForms+getFilledAdditional"></a>
 
-### fillableForms.getFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.getFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback]) ⇒ <code>Promise</code>
 Returns information about one LinkToFill recipient`s attached additional document.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -288,7 +280,7 @@ Returns information about one LinkToFill recipient`s attached additional documen
 
 <a name="FillableForms+downloadFilledAdditional"></a>
 
-### fillableForms.downloadFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.downloadFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback]) ⇒ <code>Promise</code>
 Downloads a file of a LinkToFill filled form`s additional document.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
@@ -305,7 +297,7 @@ Downloads a file of a LinkToFill filled form`s additional document.
 
 <a name="FillableForms+downloadFilledAllAdditional"></a>
 
-### fillableForms.downloadFilledAllAdditional(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### fillableForms.downloadFilledAllAdditional(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code>
 Downloads a zip-file of all LinkToFill filled form`s additional documents.
 This method can give three statuses:
 Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content (if files ready to export).

@@ -1,28 +1,21 @@
 <a name="Auth"></a>
 
 ## Auth
+Auth endpoint
+
 **Kind**: global class  
 
 * [Auth](#Auth)
-    * [new Auth()](#new_Auth_new)
-    * [.authorize(credentials, [autoUpdate], [callback])](#Auth+authorize) ⇒ <code>Promise</code> \| <code>undefined</code>
+    * [.authorize(credentials, [autoUpdate], [callback])](#Auth+authorize) ⇒ <code>Promise</code>
     * [.getAccessToken()](#Auth+getAccessToken) ⇒ <code>string</code>
     * [.setAccessToken(token)](#Auth+setAccessToken)
 
 
 * * *
 
-<a name="new_Auth_new"></a>
-
-### new Auth()
-Auth endpoint class
-
-
-* * *
-
 <a name="Auth+authorize"></a>
 
-### auth.authorize(credentials, [autoUpdate], [callback]) ⇒ <code>Promise</code> \| <code>undefined</code>
+### auth.authorize(credentials, [autoUpdate], [callback]) ⇒ <code>Promise</code>
 Exchange the client access token
 
 **Kind**: instance method of [<code>Auth</code>](#Auth)  
