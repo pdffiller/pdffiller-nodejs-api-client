@@ -61,7 +61,7 @@ Creates a new callback associated with a specific document event.
 | params | <code>object</code> | Params for creating callback |
 | params.callback_url | <code>string</code> | Callback destination url |
 | params.document_id | <code>number</code> | Document id to associate callback information with |
-| params.event_id | <code>string</code> | id ID of an event which triggers a callback Supported event ids: fill_request.done | signature_request.done | constructor.done |
+| params.event_id | <code>string</code> | ID of an event which triggers a callback. Supported event ids: fill_request.done | signature_request.done | constructor.done |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -79,7 +79,7 @@ Updates a callback.
 | callbackId | <code>number</code> | Id of callback |
 | params | <code>object</code> | for creating callback |
 | params.callback_url | <code>string</code> | Callback destination url |
-| [params.event_id] | <code>string</code> | id ID of an event which triggers a callback Supported event ids: fill_request.done | signature_request.done | constructor.done |
+| [params.event_id] | <code>string</code> | id ID of an event which triggers a callback. Supported event ids: fill_request.done | signature_request.done | constructor.done |
 | [callback] | <code>function</code> | callback function |
 
 

@@ -73,7 +73,7 @@ Creates a new document template. The filename must contain numbers, English lett
 | --- | --- | --- |
 | templateInfo | <code>object</code> | Information for creating new template |
 | templateInfo.file | <code>string</code> \| <code>object</code> | url to file, or file |
-| templateInfo.name | <code>string</code> | some_name_for_new_template |
+| templateInfo.name | <code>string</code> | Template name |
 | templateInfo.folder_id | <code>number</code> | folder id |
 | [callback] | <code>function</code> | callback function |
 
@@ -91,7 +91,7 @@ Updates the information for a document template.
 | --- | --- | --- |
 | templateId | <code>number</code> | Id of template |
 | templateInfo | <code>object</code> | Information for updating template |
-| templateInfo.name | <code>string</code> | some_name_for_new_template |
+| templateInfo.name | <code>string</code> | Template name |
 | templateInfo.folder_id | <code>number</code> | folder id |
 | [callback] | <code>function</code> | callback function |
 

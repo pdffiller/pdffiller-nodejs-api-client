@@ -23,7 +23,7 @@ Obtains authentication token based on provided Client ID and Client Secret
 | Param | Type | Description |
 | --- | --- | --- |
 | credentials | <code>object</code> | credentials for getting access token |
-| [autoUpdate] | <code>boolean</code> | autoUpdate user token after one will expire |
+| [autoUpdate] | <code>boolean</code> | auto update user token after one will expire |
 | [callback] | <code>function</code> | callback function |
 
 

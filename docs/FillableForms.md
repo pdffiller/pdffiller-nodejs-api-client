@@ -106,21 +106,21 @@ Updates a fill request item.
 | --- | --- | --- |
 | linkToFillId | <code>number</code> | Id of fill request |
 | fillableInfo | <code>object</code> | Information for updating fillable document |
-| [fillableInfo.access] | <code>string</code> | Access level for the fill request document |
-| [fillableInfo.status] | <code>string</code> | Document access permission. |
+| fillableInfo.access | <code>string</code> | Access level for the fill request document |
+| fillableInfo.status | <code>string</code> | Document access permission. |
 | fillableInfo.email_required | <code>boolean</code> | Email required |
 | fillableInfo.allow_downloads | <code>boolean</code> | Allow to download |
 | fillableInfo.redirect_url | <code>string</code> | Redirect uri |
-| [fillableInfo.name_required] | <code>boolean</code> | Name required |
-| [fillableInfo.custom_message] | <code>string</code> | LinkToFill custom message |
+| fillableInfo.name_required | <code>boolean</code> | Name required |
+| fillableInfo.custom_message | <code>string</code> | LinkToFill custom message |
 | fillableInfo.notification_emails | <code>array</code> | LinkToFill notification emails |
 | fillableInfo.notifications | <code>string</code> | The notifications mode |
 | fillableInfo.enforce_required_fields | <code>boolean</code> | Prevent closing document before filling all fields |
 | fillableInfo.custom_logo_id | <code>boolean</code> | Document custom logo id |
-| [fillableInfo.welcome_screen] | <code>boolean</code> | Shows welcome agreement each time when user will open LinkToFill |
+| fillableInfo.welcome_screen | <code>boolean</code> | Shows welcome agreement each time when user will open LinkToFill |
 | fillableInfo.reusable | <code>boolean</code> | After filling the form it will be copied to the owner as the fillable form |
 | fillableInfo.callback_url | <code>string</code> | Callback url |
-| [fillableInfo.signature_stamp] | <code>string</code> | Signature stamp |
+| fillableInfo.signature_stamp]Signature | <code>string</code> | stamp |
 | fillableInfo.fillable_fields | <code>object</code> | Id of the document template |
 | fillableInfo.name | <code>string</code> | new document name |
 | fillableInfo.folder_id | <code>number</code> | folder id |

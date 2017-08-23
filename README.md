@@ -15,7 +15,8 @@ You can sign up for the API [here](https://developers.pdffiller.com/#tab-feature
 npm i git://github.com/pdffiller/pdffiller-nodejs-api-client.git --save
 ```
 
-## Usage
+## Quick getting started steps
+
 Require module and init one. You can require PDFfiller module as a singleton and use it in anywhere your app, or require constructor and create different instances:
 
 ```
@@ -60,7 +61,7 @@ and get current access token:
 PDFfiller.auth.getAccessToken();
 ```
 
-## Application
+## Usage
 
 Use a method to retrieve a list of all applications:
 ```
@@ -112,7 +113,9 @@ PDFfiller.applications.users(id)
   .catch(err => console.error(err));
 ```
 
-## Working with files
+All examples with other endpoints are available in the [docs](https://github.com/pdffiller/pdffiller-nodejs-api-client/tree/master/docs) folder.
+
+### Working with files
 We send request using request-promise library, so to send a file you can just pass a file stream, for example:
  ```
  PDFfiller.templates.create({
@@ -132,7 +135,7 @@ When you download files we will return Buffer object after it you can save it as
    .catch(err => console.error(err));
  ```
  
-## Callback support
+### Callback support
 Methods provide not only Promise api, you can use callbacks if you want. You can pass callback function to all methods as last argument, in this case methods dont return a Promise:
 ```
 PDFfiller.templates.create({
