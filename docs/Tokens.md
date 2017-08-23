@@ -8,8 +8,8 @@ Tokens endpoint
 * [Tokens](#Tokens)
     * [.all([searchParams], [callback])](#Tokens+all) ⇒ <code>Promise</code>
     * [.get(tokenId, [callback])](#Tokens+get) ⇒ <code>Promise</code>
-    * [.create(data, [callback])](#Tokens+create) ⇒ <code>Promise</code>
-    * [.update(id, data, [callback])](#Tokens+update) ⇒ <code>Promise</code>
+    * [.create(tokenInfo, [callback])](#Tokens+create) ⇒ <code>Promise</code>
+    * [.update(tokenId, tokenInfo, [callback])](#Tokens+update) ⇒ <code>Promise</code>
     * [.remove(tokenId, [callback])](#Tokens+remove) ⇒ <code>Promise</code>
 
 
@@ -24,11 +24,11 @@ Returns a list of all tokens.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | object with params for pagination |
-| [searchParams.per_page] | <code>number</code> | tokens on 1 page |
-| [searchParams.page] | <code>number</code> | page number |
-| [searchParams.order_by] | <code>string</code> | order by |
-| [searchParams.order] | <code>string</code> | order |
+| [searchParams] | <code>object</code> | Object with query string filters |
+| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [searchParams.page] | <code>number</code> | Filter by page |
+| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
+| [searchParams.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -37,13 +37,13 @@ Returns a list of all tokens.
 <a name="Tokens+get"></a>
 
 ### tokens.get(tokenId, [callback]) ⇒ <code>Promise</code>
-Returns a token by id.
+Information about a created token.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| tokenId | <code>number</code> | of token |
+| tokenId | <code>number</code> | Id of token |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -51,14 +51,14 @@ Returns a token by id.
 
 <a name="Tokens+create"></a>
 
-### tokens.create(data, [callback]) ⇒ <code>Promise</code>
-Create new token with given data.
+### tokens.create(tokenInfo, [callback]) ⇒ <code>Promise</code>
+Creates a new token.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| data | <code>object</code> | will be added to a token |
+| tokenInfo | <code>object</code> | Information for creating new token |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -66,15 +66,15 @@ Create new token with given data.
 
 <a name="Tokens+update"></a>
 
-### tokens.update(id, data, [callback]) ⇒ <code>Promise</code>
-Update token by id with given data.
+### tokens.update(tokenId, tokenInfo, [callback]) ⇒ <code>Promise</code>
+Updates a token.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| id | <code>number</code> | of token |
-| data | <code>object</code> | for creating new token |
+| tokenId | <code>number</code> | Id of token |
+| tokenInfo | <code>object</code> | Information for creating new token |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -83,13 +83,13 @@ Update token by id with given data.
 <a name="Tokens+remove"></a>
 
 ### tokens.remove(tokenId, [callback]) ⇒ <code>Promise</code>
-delete token by id
+Deletes a token item.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| tokenId | <code>number</code> | id of token |
+| tokenId | <code>number</code> | Id of token |
 | [callback] | <code>function</code> | callback function |
 
 

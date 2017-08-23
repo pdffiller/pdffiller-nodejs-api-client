@@ -10,7 +10,7 @@ Users endpoint
 <a name="Users+get"></a>
 
 ### users.get([callback]) ⇒ <code>Promise</code>
-Return user information.
+Returns user information.
 
 **Kind**: instance method of [<code>Users</code>](#Users)  
 

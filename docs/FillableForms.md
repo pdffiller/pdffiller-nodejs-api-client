@@ -34,11 +34,11 @@ Returns a list of all document fill requests.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | object with params for pagination |
-| [searchParams.per_page] | <code>number</code> | items on 1 page |
-| [searchParams.page] | <code>number</code> | page number |
-| [searchParams.order_by] | <code>string</code> | order by |
-| [searchParams.order] | <code>string</code> | order |
+| [searchParams] | <code>object</code> | Object with query string filters |
+| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [searchParams.page] | <code>number</code> | Filter by page |
+| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
+| [searchParams.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -53,7 +53,7 @@ Information about a created fill request item.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | of fill request |
+| linkToFillId | <code>number</code> | Id of fill request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -68,22 +68,22 @@ Creates a new document and shares it via short url.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| fillableInfo | <code>object</code> | for creating fill request |
-| [fillableInfo.access] | <code>string</code> | Access level for the fill request document |
-| [fillableInfo.status] | <code>string</code> | Document access permission. |
+| fillableInfo | <code>object</code> | Information for creating fillable document |
+| fillableInfo.access | <code>string</code> | Access level for the fill request document |
+| fillableInfo.status | <code>string</code> | Document access permission. |
 | fillableInfo.email_required | <code>boolean</code> | Email required |
 | fillableInfo.allow_downloads | <code>boolean</code> | Allow to download |
 | fillableInfo.redirect_url | <code>string</code> | Redirect uri |
-| [fillableInfo.name_required] | <code>boolean</code> | Name required |
-| [fillableInfo.custom_message] | <code>string</code> | LinkToFill custom message |
+| fillableInfo.name_required | <code>boolean</code> | Name required |
+| fillableInfo.custom_message | <code>string</code> | LinkToFill custom message |
 | fillableInfo.notification_emails | <code>array</code> | LinkToFill notification emails |
 | fillableInfo.notifications | <code>string</code> | The notifications mode |
 | fillableInfo.enforce_required_fields | <code>boolean</code> | Prevent closing document before filling all fields |
 | fillableInfo.custom_logo_id | <code>boolean</code> | Document custom logo id |
-| [fillableInfo.welcome_screen] | <code>boolean</code> | Shows welcome agreement each time when user will open LinkToFill |
+| fillableInfo.welcome_screen | <code>boolean</code> | Shows welcome agreement each time when user will open LinkToFill |
 | fillableInfo.reusable | <code>boolean</code> | After filling the form it will be copied to the owner as the fillable form |
 | fillableInfo.callback_url | <code>string</code> | Callback url |
-| [fillableInfo.signature_stamp] | <code>string</code> | Signature stamp |
+| fillableInfo.signature_stamp | <code>string</code> | Signature stamp |
 | fillableInfo.document_id | <code>number</code> | Id of the document template |
 | fillableInfo.file | <code>string</code> | File to be uploaded |
 | fillableInfo.fillable_fields | <code>object</code> | Id of the document template |
@@ -104,8 +104,8 @@ Updates a fill request item.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | of fill request |
-| fillableInfo | <code>object</code> | for updating fill request |
+| linkToFillId | <code>number</code> | Id of fill request |
+| fillableInfo | <code>object</code> | Information for updating fillable document |
 | [fillableInfo.access] | <code>string</code> | Access level for the fill request document |
 | [fillableInfo.status] | <code>string</code> | Document access permission. |
 | fillableInfo.email_required | <code>boolean</code> | Email required |
@@ -139,7 +139,7 @@ Deletes a fill request item.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | id of fill request |
+| linkToFillId | <code>number</code> | Id of fill request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -156,7 +156,7 @@ Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | id of fill request |
+| linkToFillId | <code>number</code> | Id of fill request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -171,11 +171,11 @@ Lists all filled forms for the given fill request.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | id of fill request |
-| [searchParams] | <code>object</code> | object with params for pagination |
-| [searchParams.per_page] | <code>number</code> | filled forms on 1 page |
-| [searchParams.page] | <code>number</code> | page number |
-| [searchParams.order] | <code>string</code> | order |
+| linkToFillId | <code>number</code> | Id of fill request |
+| [searchParams] | <code>object</code> | Object with query string filters |
+| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [searchParams.page] | <code>number</code> | Filter by page |
+| [searchParams.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -190,8 +190,8 @@ Information about a specific filled form.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Fill Request ID |
-| filledFormId | <code>number</code> | Filled Form ID |
+| linkToFillId | <code>number</code> | Id of fill request |
+| filledFormId | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -206,8 +206,8 @@ Deletes a filled form.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Fill Request ID |
-| filledFormId | <code>number</code> | Filled Form ID |
+| linkToFillId | <code>number</code> | Id of fill request |
+| filledFormId | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -222,8 +222,8 @@ Exports filled form data in one of the available formats: json, xls, xlsx, csv, 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Fill Request ID |
-| filledFormId | <code>number</code> | Filled Form ID |
+| linkToFillId | <code>number</code> | Id of fill request |
+| filledFormId | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -238,8 +238,8 @@ Downloads a filled PDF form.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Fill Request ID |
-| filledFormId | <code>number</code> | Filled Form ID |
+| linkToFillId | <code>number</code> | Id of fill request |
+| filledFormId | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -254,8 +254,8 @@ Returns a list of a LinkToFill recipient`s attached additional documents.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Fill Request ID |
-| filledFormId | <code>number</code> | Filled Form ID |
+| linkToFillId | <code>number</code> | Id of fill request |
+| filledFormId | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -270,9 +270,9 @@ Returns information about one LinkToFill recipient`s attached additional documen
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Fill Request ID |
-| filledFormId | <code>number</code> | Filled Form ID |
-| additionalDocumentId | <code>number</code> | Attached additional document ID |
+| linkToFillId | <code>number</code> | Id of fill request |
+| filledFormId | <code>number</code> | Id of filler form |
+| additionalDocumentId | <code>number</code> | Id of attached additional document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -287,9 +287,9 @@ Downloads a file of a LinkToFill filled form`s additional document.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Fill Request ID |
-| filledFormId | <code>number</code> | Filled Form ID |
-| additionalDocumentId | <code>number</code> | Attached additional document ID |
+| linkToFillId | <code>number</code> | Id of fill request |
+| filledFormId | <code>number</code> | Id of filler form |
+| additionalDocumentId | <code>number</code> | Id of attached additional document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -306,8 +306,8 @@ Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Fill Request ID |
-| filledFormId | <code>number</code> | Filled Form ID |
+| linkToFillId | <code>number</code> | Id of fill request |
+| filledFormId | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 

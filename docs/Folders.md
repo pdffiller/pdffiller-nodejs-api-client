@@ -18,17 +18,17 @@ Folders endpoint
 <a name="Folders+all"></a>
 
 ### folders.all([searchParams], [callback]) ⇒ <code>Promise</code>
-Returns a list of all folders.
+Retrieves a list of folders.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | object with params for pagination |
-| [searchParams.per_page] | <code>number</code> | folders on 1 page |
-| [searchParams.page] | <code>number</code> | page number |
-| [searchParams.order_by] | <code>string</code> | order by |
-| [searchParams.order] | <code>string</code> | order |
+| [searchParams] | <code>object</code> | Object with query string filters |
+| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [searchParams.page] | <code>number</code> | Filter by page |
+| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
+| [searchParams.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -37,13 +37,13 @@ Returns a list of all folders.
 <a name="Folders+get"></a>
 
 ### folders.get(folderId, [callback]) ⇒ <code>Promise</code>
-Returns a folder by id.
+Retrieves information about a created folder.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| folderId | <code>number</code> | of folder |
+| folderId | <code>number</code> | Id of folder |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -52,13 +52,13 @@ Returns a folder by id.
 <a name="Folders+create"></a>
 
 ### folders.create(params, [callback]) ⇒ <code>Promise</code>
-Create a new folder with given data.
+Creates a new folder. The folder name must contain numbers, English letters or special characters: ( ) _ .
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| params | <code>object</code> | for creating folder |
+| params | <code>object</code> | Params for new folder |
 | params.name | <code>string</code> | name of folder |
 | params.parent_id | <code>number</code> | id of parent folder |
 | [callback] | <code>function</code> | callback function |
@@ -69,13 +69,13 @@ Create a new folder with given data.
 <a name="Folders+update"></a>
 
 ### folders.update(folderId, params, [callback]) ⇒ <code>Promise</code>
-Update a folder with given data.
+Updates a folder's name.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| folderId | <code>number</code> | of folder |
+| folderId | <code>number</code> | Id of folder |
 | params | <code>object</code> | for creating folder |
 | params.name | <code>string</code> | new folder name |
 | [callback] | <code>function</code> | callback function |
@@ -86,13 +86,13 @@ Update a folder with given data.
 <a name="Folders+remove"></a>
 
 ### folders.remove(folderId, [callback]) ⇒ <code>Promise</code>
-Delete a folder by id.
+Deletes a folder item.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| folderId | <code>number</code> | of folder |
+| folderId | <code>number</code> | Id of folder |
 | [callback] | <code>function</code> | callback function |
 
 

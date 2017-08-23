@@ -18,17 +18,17 @@ Callbacks endpoint
 <a name="Callbacks+all"></a>
 
 ### callbacks.all([searchParams], [callback]) ⇒ <code>Promise</code>
-Returns a list of all callbacks.
+Returns a list of callback events.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | object with params for pagination |
-| [searchParams.per_page] | <code>number</code> | callbacks on 1 page |
-| [searchParams.page] | <code>number</code> | page number |
-| [searchParams.order_by] | <code>string</code> | order by |
-| [searchParams.order] | <code>string</code> | order |
+| [searchParams] | <code>object</code> | Object with query string filters |
+| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [searchParams.page] | <code>number</code> | Filter by page |
+| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
+| [searchParams.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -37,13 +37,13 @@ Returns a list of all callbacks.
 <a name="Callbacks+get"></a>
 
 ### callbacks.get(callbackId, [callback]) ⇒ <code>Promise</code>
-Returns a callback by id.
+Returns information about a specific callback by callback id.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callbackId | <code>number</code> | of callback |
+| callbackId | <code>number</code> | Id of callback |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -52,16 +52,16 @@ Returns a callback by id.
 <a name="Callbacks+create"></a>
 
 ### callbacks.create(params, [callback]) ⇒ <code>Promise</code>
-Create a new callback with given data.
+Creates a new callback associated with a specific document event.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| params | <code>object</code> | for creating callback |
+| params | <code>object</code> | Params for creating callback |
 | params.callback_url | <code>string</code> | Callback destination url |
 | params.document_id | <code>number</code> | Document id to associate callback information with |
-| [params.event_id] | <code>string</code> | id ID of an event which triggers a callback Supported event ids: fill_request.done | signature_request.done | constructor.done |
+| params.event_id | <code>string</code> | id ID of an event which triggers a callback Supported event ids: fill_request.done | signature_request.done | constructor.done |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -70,13 +70,13 @@ Create a new callback with given data.
 <a name="Callbacks+update"></a>
 
 ### callbacks.update(callbackId, params, [callback]) ⇒ <code>Promise</code>
-Update a new callback with given data.
+Updates a callback.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callbackId | <code>number</code> | of callback |
+| callbackId | <code>number</code> | Id of callback |
 | params | <code>object</code> | for creating callback |
 | params.callback_url | <code>string</code> | Callback destination url |
 | [params.event_id] | <code>string</code> | id ID of an event which triggers a callback Supported event ids: fill_request.done | signature_request.done | constructor.done |
@@ -88,13 +88,13 @@ Update a new callback with given data.
 <a name="Callbacks+remove"></a>
 
 ### callbacks.remove(callbackId, [callback]) ⇒ <code>Promise</code>
-Delete a callback by id.
+Delete a callback.
 
 **Kind**: instance method of [<code>Callbacks</code>](#Callbacks)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callbackId | <code>number</code> | of callback |
+| callbackId | <code>number</code> | Id of callback |
 | [callback] | <code>function</code> | callback function |
 
 

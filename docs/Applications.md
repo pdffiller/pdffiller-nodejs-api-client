@@ -25,11 +25,11 @@ Returns a list of all applications.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | object with params for pagination |
-| [searchParams.per_page] | <code>number</code> | application on 1 page |
-| [searchParams.page] | <code>number</code> | page number |
-| [searchParams.order_by] | <code>string</code> | order by |
-| [searchParams.order] | <code>string</code> | order |
+| [searchParams] | <code>object</code> | Object with query string filters |
+| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [searchParams.page] | <code>number</code> | Filter by page |
+| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
+| [searchParams.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -38,13 +38,13 @@ Returns a list of all applications.
 <a name="Applications+get"></a>
 
 ### applications.get(applicationId, [callback]) ⇒ <code>Promise</code>
-Returns an application by id.
+Lists information about the created application.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| applicationId | <code>number</code> | of application |
+| applicationId | <code>number</code> | Id of an application |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -53,19 +53,19 @@ Returns an application by id.
 <a name="Applications+create"></a>
 
 ### applications.create(applicationInfo, [callback]) ⇒ <code>Promise</code>
-Create new application with given data.
+Creates a new application. Parameters for all-domains can be 0/1 or true/false.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| applicationInfo | <code>object</code> | for creating new application |
-| applicationInfo.name | <code>string</code> | name of new application |
-| applicationInfo.description | <code>string</code> | description of new application |
-| applicationInfo.domain | <code>string</code> | application domain for authorization by grant type authorization_code |
-| [applicationInfo.logo] | <code>string</code> | PNG, JPG file. The input can be type of: base64 string, file or url. Only square images. |
-| [applicationInfo.embedded-domain] | <code>string</code> | Domain, where client will be placed |
-| [applicationInfo.all-domains] | <code>boolean</code> \| <code>number</code> | Allow all domains flag. |
+| applicationInfo | <code>object</code> | Information for creating new application |
+| applicationInfo.name | <code>string</code> | Application Name |
+| applicationInfo.description | <code>string</code> | Application Description |
+| applicationInfo.domain | <code>string</code> | Application Domain for authorization by grant type authorization_code for authorization by grant type authorization_code |
+| applicationInfo.logo | <code>string</code> | PNG, JPG file. The input can be type of: base64 string, file or url. Only square images. |
+| applicationInfo.embedded-domain | <code>string</code> | Domain, where Client will be placed |
+| applicationInfo.all-domains | <code>boolean</code> \| <code>number</code> | Allow all domains flag. All domain parameters will be: 0/1 (true/false) |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -74,20 +74,20 @@ Create new application with given data.
 <a name="Applications+update"></a>
 
 ### applications.update(applicationId, applicationInfo, [callback]) ⇒ <code>Promise</code>
-update application by id with given data.
+Updates application. Parameters for all-domains can be 0/1 or true/false.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| applicationId | <code>number</code> | of application |
-| applicationInfo | <code>object</code> | for creating new application |
-| applicationInfo.name | <code>string</code> | name of new application |
-| applicationInfo.description | <code>string</code> | description of new application |
-| applicationInfo.domain | <code>string</code> | application domain for authorization by grant type authorization_code |
+| applicationId | <code>number</code> | Id of application |
+| applicationInfo | <code>object</code> | Information for updating application |
+| applicationInfo.name | <code>string</code> | Application Name |
+| applicationInfo.description | <code>string</code> | Application Description |
+| applicationInfo.domain | <code>string</code> | Application Domain for authorization by grant type authorization_code for authorization by grant type authorization_code |
 | [applicationInfo.logo] | <code>string</code> | PNG, JPG file. The input can be type of: base64 string, file or url. Only square images. |
-| [applicationInfo.embedded-domain] | <code>string</code> | Domain, where client will be placed |
-| [applicationInfo.all-domains] | <code>boolean</code> \| <code>number</code> | Allow all domains flag. |
+| [applicationInfo.embedded-domain] | <code>string</code> | Domain, where Client will be placed |
+| [applicationInfo.all-domains] | <code>boolean</code> \| <code>number</code> | Allow all domains flag. All domain parameters will be: 0/1 (true/false) |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -96,13 +96,13 @@ update application by id with given data.
 <a name="Applications+remove"></a>
 
 ### applications.remove(applicationId, [callback]) ⇒ <code>Promise</code>
-delete application by id
+Deletes application item.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| applicationId | <code>number</code> | of application |
+| applicationId | <code>number</code> | Id of application |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -118,11 +118,11 @@ Retrieves a list of users who authorized with the requested application
 | Param | Type | Description |
 | --- | --- | --- |
 | applicationId | <code>number</code> | id of application |
-| [searchParams] | <code>object</code> | object with params for pagination |
-| [searchParams.per_page] | <code>number</code> | application on 1 page |
-| [searchParams.page] | <code>number</code> | page number |
-| [searchParams.order_by] | <code>string</code> | order by |
-| [searchParams.order] | <code>string</code> | order |
+| [searchParams] | <code>object</code> | Object with query string filters |
+| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [searchParams.page] | <code>number</code> | Filter by page |
+| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
+| [searchParams.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 

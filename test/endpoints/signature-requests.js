@@ -89,7 +89,7 @@ describe('PDFfiller signature requests', () => {
       .get(constants.SIGNATURE_REQUESTS_SIGNED_ENDPOINT.replace('{signature_request_id}', '1'))
       .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
 
-    return PDFfiller.signatureRequests.signedDocument(1)
+    return PDFfiller.signatureRequests.downloadSignedDocument(1)
       .then((response) => {
         response.should.be.Object();
       });

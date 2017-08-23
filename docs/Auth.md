@@ -16,7 +16,7 @@ Auth endpoint
 <a name="Auth+authorize"></a>
 
 ### auth.authorize(credentials, [autoUpdate], [callback]) ⇒ <code>Promise</code>
-Exchange the client access token
+Obtains authentication token based on provided Client ID and Client Secret
 
 **Kind**: instance method of [<code>Auth</code>](#Auth)  
 
@@ -32,7 +32,7 @@ Exchange the client access token
 <a name="Auth+getAccessToken"></a>
 
 ### auth.getAccessToken() ⇒ <code>string</code>
-return a access token
+Return an access token.
 
 **Kind**: instance method of [<code>Auth</code>](#Auth)  
 
@@ -41,13 +41,13 @@ return a access token
 <a name="Auth+setAccessToken"></a>
 
 ### auth.setAccessToken(token)
-set access token
+Set an access token.
 
 **Kind**: instance method of [<code>Auth</code>](#Auth)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| token | <code>string</code> | access token string |
+| token | <code>string</code> | An access token string |
 
 
 * * *

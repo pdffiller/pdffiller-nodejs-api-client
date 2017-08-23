@@ -17,17 +17,17 @@ CustomLogos endpoint
 <a name="CustomLogos+all"></a>
 
 ### customLogos.all([searchParams], [callback]) ⇒ <code>Promise</code>
-Returns a list of all custom logos.
+Retrieves a list of added user logos.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | object with params for pagination |
-| [searchParams.per_page] | <code>number</code> | custom logos on 1 page |
-| [searchParams.page] | <code>number</code> | page number |
-| [searchParams.order_by] | <code>string</code> | order by |
-| [searchParams.order] | <code>string</code> | order |
+| [searchParams] | <code>object</code> | Object with query string filters |
+| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [searchParams.page] | <code>number</code> | Filter by page |
+| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
+| [searchParams.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -36,13 +36,13 @@ Returns a list of all custom logos.
 <a name="CustomLogos+get"></a>
 
 ### customLogos.get(customLogoId, [callback]) ⇒ <code>Promise</code>
-Returns a custom logo by id.
+Retrieves information about an added custom logo.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| customLogoId | <code>number</code> | of custom logo |
+| customLogoId | <code>number</code> | Id of custom logo |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -51,7 +51,7 @@ Returns a custom logo by id.
 <a name="CustomLogos+create"></a>
 
 ### customLogos.create(customLogo, [callback]) ⇒ <code>Promise</code>
-Create new custom logo with given data.
+Adds a new custom logo from a url or multipart.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
 
@@ -66,13 +66,13 @@ Create new custom logo with given data.
 <a name="CustomLogos+remove"></a>
 
 ### customLogos.remove(customLogoId, [callback]) ⇒ <code>Promise</code>
-delete custom logo by id
+Deletes user custom logo item.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| customLogoId | <code>number</code> | of custom logos |
+| customLogoId | <code>number</code> | Id of custom logos |
 | [callback] | <code>function</code> | callback function |
 
 

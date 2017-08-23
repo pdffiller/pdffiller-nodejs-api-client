@@ -85,7 +85,7 @@ describe('PDFfiller templates', () => {
       .get(constants.TEMPLATES_ROLES_ENDPOINT.replace('{template_id}', '1'))
       .reply(200, { items: mocks.roles });
 
-    return PDFfiller.templates.roles('1')
+    return PDFfiller.templates.getRoles(1)
       .then((response) => {
         response.items.should.deepEqual(mocks.roles);
       });
@@ -107,7 +107,7 @@ describe('PDFfiller templates', () => {
       .get(constants.TEMPLATES_FIELDS_ENDPOINT.replace('{template_id}', '1'))
       .reply(200, mocks.fields);
 
-    return PDFfiller.templates.fields(1)
+    return PDFfiller.templates.getFields(1)
       .then((response) => {
         response.should.deepEqual(mocks.fields);
       });
@@ -121,7 +121,7 @@ describe('PDFfiller templates', () => {
       })
       .reply(200, { total: 1 });
 
-    return PDFfiller.templates.childs(1, {
+    return PDFfiller.templates.getChilds(1, {
       per_page: 15
     })
       .then((response) => {
@@ -145,7 +145,7 @@ describe('PDFfiller templates', () => {
       .post(constants.TEMPLATES_BY_ID_ENDPOINT.replace('{template_id}', '1'))
       .reply(200, mocks.templates[0]);
 
-    return PDFfiller.templates.fill(1, {
+    return PDFfiller.templates.fillTemplate(1, {
       fillable_fields: {
         field_1: 'sometext'
       },
