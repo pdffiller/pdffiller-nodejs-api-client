@@ -6,29 +6,29 @@ Templates endpoint
 **Kind**: global class  
 
 * [Templates](#Templates)
-    * [.all([searchParams], [callback])](#Templates+all) ⇒ <code>Promise</code>
-    * [.get(templateId, [callback])](#Templates+get) ⇒ <code>Promise</code>
-    * [.create(templateInfo, [callback])](#Templates+create) ⇒ <code>Promise</code>
-    * [.update(templateId, templateInfo, [callback])](#Templates+update) ⇒ <code>Promise</code>
-    * [.download(templateId, [callback])](#Templates+download) ⇒ <code>Promise</code>
-    * [.getRoles(templateId, [callback])](#Templates+getRoles) ⇒ <code>Promise</code>
-    * [.downloadOriginal(templateId, [callback])](#Templates+downloadOriginal) ⇒ <code>Promise</code>
-    * [.remove(templateId, [callback])](#Templates+remove) ⇒ <code>Promise</code>
-    * [.getFields(templateId, [callback])](#Templates+getFields) ⇒ <code>Promise</code>
-    * [.getChilds(templateId, [searchParams], [callback])](#Templates+getChilds) ⇒ <code>Promise</code>
-    * [.downloadSignatures(templateId, [callback])](#Templates+downloadSignatures) ⇒ <code>Promise</code>
-    * [.fillTemplate(templateId, fillableInfo, [callback])](#Templates+fillTemplate) ⇒ <code>Promise</code>
-    * [.createShareLink(templateId, shareLinkInfo, [callback])](#Templates+createShareLink) ⇒ <code>Promise</code>
-    * [.getShareLink(templateId, [callback])](#Templates+getShareLink) ⇒ <code>Promise</code>
-    * [.removeShareLinkByHash(templateId, hash, [callback])](#Templates+removeShareLinkByHash) ⇒ <code>Promise</code>
-    * [.removeAllShareLink(templateId, [callback])](#Templates+removeAllShareLink) ⇒ <code>Promise</code>
+    * [.all([searchParams], [callback])](#Templates+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(templateId, [callback])](#Templates+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(templateInfo, [callback])](#Templates+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.update(templateId, templateInfo, [callback])](#Templates+update) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.download(templateId, [callback])](#Templates+download) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getRoles(templateId, [callback])](#Templates+getRoles) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadOriginal(templateId, [callback])](#Templates+downloadOriginal) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(templateId, [callback])](#Templates+remove) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getFields(templateId, [callback])](#Templates+getFields) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getChilds(templateId, [searchParams], [callback])](#Templates+getChilds) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadSignatures(templateId, [callback])](#Templates+downloadSignatures) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.fillTemplate(templateId, fillableInfo, [callback])](#Templates+fillTemplate) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.createShareLink(templateId, shareLinkInfo, [callback])](#Templates+createShareLink) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getShareLink(templateId, [callback])](#Templates+getShareLink) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.removeShareLinkByHash(templateId, hash, [callback])](#Templates+removeShareLinkByHash) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.removeAllShareLink(templateId, [callback])](#Templates+removeAllShareLink) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="Templates+all"></a>
 
-### templates.all([searchParams], [callback]) ⇒ <code>Promise</code>
+### templates.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of uploaded documents.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -49,7 +49,7 @@ Retrieves a list of uploaded documents.
 
 <a name="Templates+get"></a>
 
-### templates.get(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.get(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves information about a created document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -64,7 +64,7 @@ Retrieves information about a created document template.
 
 <a name="Templates+create"></a>
 
-### templates.create(templateInfo, [callback]) ⇒ <code>Promise</code>
+### templates.create(templateInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new document template. The filename must contain numbers, English letters or special characters: ( ) _ . Also, the filename extension should be .ppt; .pptx; .doc; .docx; or .pdf. You can download document from multipart
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -82,7 +82,7 @@ Creates a new document template. The filename must contain numbers, English lett
 
 <a name="Templates+update"></a>
 
-### templates.update(templateId, templateInfo, [callback]) ⇒ <code>Promise</code>
+### templates.update(templateId, templateInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Updates the information for a document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -100,7 +100,7 @@ Updates the information for a document template.
 
 <a name="Templates+download"></a>
 
-### templates.download(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.download(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -115,7 +115,7 @@ Downloads a document template.
 
 <a name="Templates+getRoles"></a>
 
-### templates.getRoles(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.getRoles(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of roles for a document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -130,7 +130,7 @@ Retrieves a list of roles for a document template.
 
 <a name="Templates+downloadOriginal"></a>
 
-### templates.downloadOriginal(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.downloadOriginal(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Download original template by id.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -145,7 +145,7 @@ Download original template by id.
 
 <a name="Templates+remove"></a>
 
-### templates.remove(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.remove(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes a document template item.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -160,7 +160,7 @@ Deletes a document template item.
 
 <a name="Templates+getFields"></a>
 
-### templates.getFields(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.getFields(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Get values for a fillable form.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -175,7 +175,7 @@ Get values for a fillable form.
 
 <a name="Templates+getChilds"></a>
 
-### templates.getChilds(templateId, [searchParams], [callback]) ⇒ <code>Promise</code>
+### templates.getChilds(templateId, [searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves child documents for a selected document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -194,7 +194,7 @@ Retrieves child documents for a selected document template.
 
 <a name="Templates+downloadSignatures"></a>
 
-### templates.downloadSignatures(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.downloadSignatures(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a zip archive of document signatures.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -209,7 +209,7 @@ Downloads a zip archive of document signatures.
 
 <a name="Templates+fillTemplate"></a>
 
-### templates.fillTemplate(templateId, fillableInfo, [callback]) ⇒ <code>Promise</code>
+### templates.fillTemplate(templateId, fillableInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Populates a fillable form template which was created with the PDFfiller editor.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -228,7 +228,7 @@ Populates a fillable form template which was created with the PDFfiller editor.
 
 <a name="Templates+createShareLink"></a>
 
-### templates.createShareLink(templateId, shareLinkInfo, [callback]) ⇒ <code>Promise</code>
+### templates.createShareLink(templateId, shareLinkInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new share link to a document.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -246,7 +246,7 @@ Creates a new share link to a document.
 
 <a name="Templates+getShareLink"></a>
 
-### templates.getShareLink(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.getShareLink(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of hash.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -261,7 +261,7 @@ Retrieves a list of hash.
 
 <a name="Templates+removeShareLinkByHash"></a>
 
-### templates.removeShareLinkByHash(templateId, hash, [callback]) ⇒ <code>Promise</code>
+### templates.removeShareLinkByHash(templateId, hash, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes one share link to a document by hash.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
@@ -277,7 +277,7 @@ Deletes one share link to a document by hash.
 
 <a name="Templates+removeAllShareLink"></a>
 
-### templates.removeAllShareLink(templateId, [callback]) ⇒ <code>Promise</code>
+### templates.removeAllShareLink(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes all share links to a document by id.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  

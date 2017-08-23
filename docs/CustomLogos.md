@@ -6,17 +6,17 @@ CustomLogos endpoint
 **Kind**: global class  
 
 * [CustomLogos](#CustomLogos)
-    * [.all([searchParams], [callback])](#CustomLogos+all) ⇒ <code>Promise</code>
-    * [.get(customLogoId, [callback])](#CustomLogos+get) ⇒ <code>Promise</code>
-    * [.create(customLogo, [callback])](#CustomLogos+create) ⇒ <code>Promise</code>
-    * [.remove(customLogoId, [callback])](#CustomLogos+remove) ⇒ <code>Promise</code>
+    * [.all([searchParams], [callback])](#CustomLogos+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(customLogoId, [callback])](#CustomLogos+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(customLogo, [callback])](#CustomLogos+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(customLogoId, [callback])](#CustomLogos+remove) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="CustomLogos+all"></a>
 
-### customLogos.all([searchParams], [callback]) ⇒ <code>Promise</code>
+### customLogos.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of added user logos.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
@@ -35,7 +35,7 @@ Retrieves a list of added user logos.
 
 <a name="CustomLogos+get"></a>
 
-### customLogos.get(customLogoId, [callback]) ⇒ <code>Promise</code>
+### customLogos.get(customLogoId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves information about an added custom logo.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
@@ -50,7 +50,7 @@ Retrieves information about an added custom logo.
 
 <a name="CustomLogos+create"></a>
 
-### customLogos.create(customLogo, [callback]) ⇒ <code>Promise</code>
+### customLogos.create(customLogo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Adds a new custom logo from a url or multipart.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  
@@ -65,7 +65,7 @@ Adds a new custom logo from a url or multipart.
 
 <a name="CustomLogos+remove"></a>
 
-### customLogos.remove(customLogoId, [callback]) ⇒ <code>Promise</code>
+### customLogos.remove(customLogoId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes user custom logo item.
 
 **Kind**: instance method of [<code>CustomLogos</code>](#CustomLogos)  

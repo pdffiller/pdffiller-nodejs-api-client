@@ -6,7 +6,7 @@ Auth endpoint
 **Kind**: global class  
 
 * [Auth](#Auth)
-    * [.authorize(credentials, [autoUpdate], [callback])](#Auth+authorize) ⇒ <code>Promise</code>
+    * [.authorize(credentials, [autoUpdate], [callback])](#Auth+authorize) ⇒ <code>Promise</code> \| <code>void</code>
     * [.getAccessToken()](#Auth+getAccessToken) ⇒ <code>string</code>
     * [.setAccessToken(token)](#Auth+setAccessToken)
 
@@ -15,7 +15,7 @@ Auth endpoint
 
 <a name="Auth+authorize"></a>
 
-### auth.authorize(credentials, [autoUpdate], [callback]) ⇒ <code>Promise</code>
+### auth.authorize(credentials, [autoUpdate], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Obtains authentication token based on provided Client ID and Client Secret
 
 **Kind**: instance method of [<code>Auth</code>](#Auth)  

@@ -6,19 +6,19 @@ Applications endpoint
 **Kind**: global class  
 
 * [Applications](#Applications)
-    * [.all([searchParams], [callback])](#Applications+all) ⇒ <code>Promise</code>
-    * [.get(applicationId, [callback])](#Applications+get) ⇒ <code>Promise</code>
-    * [.create(applicationInfo, [callback])](#Applications+create) ⇒ <code>Promise</code>
-    * [.update(applicationId, applicationInfo, [callback])](#Applications+update) ⇒ <code>Promise</code>
-    * [.remove(applicationId, [callback])](#Applications+remove) ⇒ <code>Promise</code>
-    * [.getUsers(applicationId, [searchParams], [callback])](#Applications+getUsers) ⇒ <code>Promise</code>
+    * [.all([searchParams], [callback])](#Applications+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(applicationId, [callback])](#Applications+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(applicationInfo, [callback])](#Applications+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.update(applicationId, applicationInfo, [callback])](#Applications+update) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(applicationId, [callback])](#Applications+remove) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getUsers(applicationId, [searchParams], [callback])](#Applications+getUsers) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="Applications+all"></a>
 
-### applications.all([searchParams], [callback]) ⇒ <code>Promise</code>
+### applications.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns a list of all applications.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
@@ -37,7 +37,7 @@ Returns a list of all applications.
 
 <a name="Applications+get"></a>
 
-### applications.get(applicationId, [callback]) ⇒ <code>Promise</code>
+### applications.get(applicationId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Lists information about the created application.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
@@ -52,7 +52,7 @@ Lists information about the created application.
 
 <a name="Applications+create"></a>
 
-### applications.create(applicationInfo, [callback]) ⇒ <code>Promise</code>
+### applications.create(applicationInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new application. Parameters for all-domains can be 0/1 or true/false.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
@@ -73,7 +73,7 @@ Creates a new application. Parameters for all-domains can be 0/1 or true/false.
 
 <a name="Applications+update"></a>
 
-### applications.update(applicationId, applicationInfo, [callback]) ⇒ <code>Promise</code>
+### applications.update(applicationId, applicationInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Updates application. Parameters for all-domains can be 0/1 or true/false.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
@@ -95,7 +95,7 @@ Updates application. Parameters for all-domains can be 0/1 or true/false.
 
 <a name="Applications+remove"></a>
 
-### applications.remove(applicationId, [callback]) ⇒ <code>Promise</code>
+### applications.remove(applicationId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes application item.
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  
@@ -110,7 +110,7 @@ Deletes application item.
 
 <a name="Applications+getUsers"></a>
 
-### applications.getUsers(applicationId, [searchParams], [callback]) ⇒ <code>Promise</code>
+### applications.getUsers(applicationId, [searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of users who authorized with the requested application
 
 **Kind**: instance method of [<code>Applications</code>](#Applications)  

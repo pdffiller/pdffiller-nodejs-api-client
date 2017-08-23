@@ -61,7 +61,7 @@ describe('PDFfiller templates', () => {
   it('should download template', () => {
     nock(constants.BASE_URL)
       .get(constants.TEMPLATES_DOWNLOAD_ENDPOINT.replace('{template_id}', '1'))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.templates.download('1')
       .then((response) => {
@@ -72,7 +72,7 @@ describe('PDFfiller templates', () => {
   it('should download original template', () => {
     nock(constants.BASE_URL)
       .get(constants.TEMPLATES_DOWNLOAD_ORIGINAL_ENDPOINT.replace('{template_id}', '1'))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.templates.downloadOriginal('1')
       .then((response) => {
@@ -132,7 +132,7 @@ describe('PDFfiller templates', () => {
   it('should download signatures', () => {
     nock(constants.BASE_URL)
       .get(constants.TEMPLATES_DOWNLOAD_SIGNATURES_ENDPOINT.replace('{template_id}', '1'))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.templates.downloadSignatures('1')
       .then((response) => {

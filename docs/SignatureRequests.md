@@ -6,29 +6,29 @@ SignatureRequests endpoint
 **Kind**: global class  
 
 * [SignatureRequests](#SignatureRequests)
-    * [.allInbox([searchParams], [callback])](#SignatureRequests+allInbox) ⇒ <code>Promise</code>
-    * [.downloadInbox([searchParams])](#SignatureRequests+downloadInbox) ⇒ <code>Promise</code>
-    * [.all([searchParams], [callback])](#SignatureRequests+all) ⇒ <code>Promise</code>
-    * [.get(signatureRequestId, [callback])](#SignatureRequests+get) ⇒ <code>Promise</code>
-    * [.create(signatureRequestInfo, [callback])](#SignatureRequests+create) ⇒ <code>Promise</code>
-    * [.remove(signatureRequestId, [callback])](#SignatureRequests+remove) ⇒ <code>Promise</code>
-    * [.getCertificate(signatureRequestId, [callback])](#SignatureRequests+getCertificate) ⇒ <code>Promise</code>
-    * [.downloadSignedDocument(signatureRequestId, [callback])](#SignatureRequests+downloadSignedDocument) ⇒ <code>Promise</code>
-    * [.allRecipients(signatureRequestId, [searchParams], [callback])](#SignatureRequests+allRecipients) ⇒ <code>Promise</code>
-    * [.addRecipients(signatureRequestId, recipients, [callback])](#SignatureRequests+addRecipients) ⇒ <code>Promise</code>
-    * [.getRecipient(signatureRequestId, recipientId, [callback])](#SignatureRequests+getRecipient) ⇒ <code>Promise</code>
-    * [.remindRecipient(signatureRequestId, recipientId, [callback])](#SignatureRequests+remindRecipient) ⇒ <code>Promise</code>
-    * [.getRecipientAllAdditional(signatureRequestId, recipientId, [callback])](#SignatureRequests+getRecipientAllAdditional) ⇒ <code>Promise</code>
-    * [.getRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback])](#SignatureRequests+getRecipientAdditional) ⇒ <code>Promise</code>
-    * [.downloadRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback])](#SignatureRequests+downloadRecipientAdditional) ⇒ <code>Promise</code>
-    * [.downloadRecipientAllAdditional(signatureRequestId, recipientId, [callback])](#SignatureRequests+downloadRecipientAllAdditional) ⇒ <code>Promise</code>
+    * [.allInbox([searchParams], [callback])](#SignatureRequests+allInbox) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadInbox([searchParams])](#SignatureRequests+downloadInbox) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.all([searchParams], [callback])](#SignatureRequests+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(signatureRequestId, [callback])](#SignatureRequests+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(signatureRequestInfo, [callback])](#SignatureRequests+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(signatureRequestId, [callback])](#SignatureRequests+remove) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getCertificate(signatureRequestId, [callback])](#SignatureRequests+getCertificate) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadSignedDocument(signatureRequestId, [callback])](#SignatureRequests+downloadSignedDocument) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.allRecipients(signatureRequestId, [searchParams], [callback])](#SignatureRequests+allRecipients) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.addRecipients(signatureRequestId, recipients, [callback])](#SignatureRequests+addRecipients) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getRecipient(signatureRequestId, recipientId, [callback])](#SignatureRequests+getRecipient) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remindRecipient(signatureRequestId, recipientId, [callback])](#SignatureRequests+remindRecipient) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getRecipientAllAdditional(signatureRequestId, recipientId, [callback])](#SignatureRequests+getRecipientAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback])](#SignatureRequests+getRecipientAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback])](#SignatureRequests+downloadRecipientAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadRecipientAllAdditional(signatureRequestId, recipientId, [callback])](#SignatureRequests+downloadRecipientAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="SignatureRequests+allInbox"></a>
 
-### signatureRequests.allInbox([searchParams], [callback]) ⇒ <code>Promise</code>
+### signatureRequests.allInbox([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of all document signature requests in the inbox folder.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -50,7 +50,7 @@ Retrieves a list of all document signature requests in the inbox folder.
 
 <a name="SignatureRequests+downloadInbox"></a>
 
-### signatureRequests.downloadInbox([searchParams]) ⇒ <code>Promise</code>
+### signatureRequests.downloadInbox([searchParams]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads all documents which a sender has requested your signature for in a .zip archive.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -70,7 +70,7 @@ Downloads all documents which a sender has requested your signature for in a .zi
 
 <a name="SignatureRequests+all"></a>
 
-### signatureRequests.all([searchParams], [callback]) ⇒ <code>Promise</code>
+### signatureRequests.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of all document signature requests.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -91,7 +91,7 @@ Retrieves a list of all document signature requests.
 
 <a name="SignatureRequests+get"></a>
 
-### signatureRequests.get(signatureRequestId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.get(signatureRequestId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves signature request information based on the signature request ID.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -106,7 +106,7 @@ Retrieves signature request information based on the signature request ID.
 
 <a name="SignatureRequests+create"></a>
 
-### signatureRequests.create(signatureRequestInfo, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.create(signatureRequestInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new Signature request. Two Signature methods supported: SendToEach and SendToGroup. The SendToGroup method requires envelope_name, sign_in_order and role parameters.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -141,7 +141,7 @@ Creates a new Signature request. Two Signature methods supported: SendToEach and
 
 <a name="SignatureRequests+remove"></a>
 
-### signatureRequests.remove(signatureRequestId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.remove(signatureRequestId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Cancels a signature request for the specified SendToSign ID.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -156,7 +156,7 @@ Cancels a signature request for the specified SendToSign ID.
 
 <a name="SignatureRequests+getCertificate"></a>
 
-### signatureRequests.getCertificate(signatureRequestId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.getCertificate(signatureRequestId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns a signature request certificate by signature request id.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -171,7 +171,7 @@ Returns a signature request certificate by signature request id.
 
 <a name="SignatureRequests+downloadSignedDocument"></a>
 
-### signatureRequests.downloadSignedDocument(signatureRequestId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.downloadSignedDocument(signatureRequestId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns a signed document by Signature request id.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -186,7 +186,7 @@ Returns a signed document by Signature request id.
 
 <a name="SignatureRequests+allRecipients"></a>
 
-### signatureRequests.allRecipients(signatureRequestId, [searchParams], [callback]) ⇒ <code>Promise</code>
+### signatureRequests.allRecipients(signatureRequestId, [searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about sendtosign recipients and signature status.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -206,7 +206,7 @@ Returns information about sendtosign recipients and signature status.
 
 <a name="SignatureRequests+addRecipients"></a>
 
-### signatureRequests.addRecipients(signatureRequestId, recipients, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.addRecipients(signatureRequestId, recipients, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Adds an additional recipient to a sendtosign request.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -231,7 +231,7 @@ Adds an additional recipient to a sendtosign request.
 
 <a name="SignatureRequests+getRecipient"></a>
 
-### signatureRequests.getRecipient(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.getRecipient(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about a sendtosign recipient and signature status.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -247,7 +247,7 @@ Returns information about a sendtosign recipient and signature status.
 
 <a name="SignatureRequests+remindRecipient"></a>
 
-### signatureRequests.remindRecipient(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.remindRecipient(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Reminds a sendtosign recipient about the sendtosign request.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -263,7 +263,7 @@ Reminds a sendtosign recipient about the sendtosign request.
 
 <a name="SignatureRequests+getRecipientAllAdditional"></a>
 
-### signatureRequests.getRecipientAllAdditional(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.getRecipientAllAdditional(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about sendtosign recipient`s attached additional documents.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -279,7 +279,7 @@ Returns information about sendtosign recipient`s attached additional documents.
 
 <a name="SignatureRequests+getRecipientAdditional"></a>
 
-### signatureRequests.getRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.getRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about sendtosign recipient`s attached additional document.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -296,7 +296,7 @@ Returns information about sendtosign recipient`s attached additional document.
 
 <a name="SignatureRequests+downloadRecipientAdditional"></a>
 
-### signatureRequests.downloadRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.downloadRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a file of a sendtosign recipient`s additional document.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
@@ -313,7 +313,7 @@ Downloads a file of a sendtosign recipient`s additional document.
 
 <a name="SignatureRequests+downloadRecipientAllAdditional"></a>
 
-### signatureRequests.downloadRecipientAllAdditional(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code>
+### signatureRequests.downloadRecipientAllAdditional(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a zip-file of all additional documents for a sendtosign recipient. This method can give three statuses: Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content (if files ready to export).
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  

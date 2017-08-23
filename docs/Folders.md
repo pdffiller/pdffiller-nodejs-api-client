@@ -6,18 +6,18 @@ Folders endpoint
 **Kind**: global class  
 
 * [Folders](#Folders)
-    * [.all([searchParams], [callback])](#Folders+all) ⇒ <code>Promise</code>
-    * [.get(folderId, [callback])](#Folders+get) ⇒ <code>Promise</code>
-    * [.create(params, [callback])](#Folders+create) ⇒ <code>Promise</code>
-    * [.update(folderId, params, [callback])](#Folders+update) ⇒ <code>Promise</code>
-    * [.remove(folderId, [callback])](#Folders+remove) ⇒ <code>Promise</code>
+    * [.all([searchParams], [callback])](#Folders+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(folderId, [callback])](#Folders+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(params, [callback])](#Folders+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.update(folderId, params, [callback])](#Folders+update) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(folderId, [callback])](#Folders+remove) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="Folders+all"></a>
 
-### folders.all([searchParams], [callback]) ⇒ <code>Promise</code>
+### folders.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of folders.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
@@ -36,7 +36,7 @@ Retrieves a list of folders.
 
 <a name="Folders+get"></a>
 
-### folders.get(folderId, [callback]) ⇒ <code>Promise</code>
+### folders.get(folderId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves information about a created folder.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
@@ -51,7 +51,7 @@ Retrieves information about a created folder.
 
 <a name="Folders+create"></a>
 
-### folders.create(params, [callback]) ⇒ <code>Promise</code>
+### folders.create(params, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new folder. The folder name must contain numbers, English letters or special characters: ( ) _ .
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
@@ -68,7 +68,7 @@ Creates a new folder. The folder name must contain numbers, English letters or s
 
 <a name="Folders+update"></a>
 
-### folders.update(folderId, params, [callback]) ⇒ <code>Promise</code>
+### folders.update(folderId, params, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Updates a folder's name.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  
@@ -85,7 +85,7 @@ Updates a folder's name.
 
 <a name="Folders+remove"></a>
 
-### folders.remove(folderId, [callback]) ⇒ <code>Promise</code>
+### folders.remove(folderId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes a folder item.
 
 **Kind**: instance method of [<code>Folders</code>](#Folders)  

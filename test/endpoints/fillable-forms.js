@@ -93,7 +93,7 @@ describe('PDFfiller fillable form', () => {
   it('should download all filled forms', () => {
     nock(constants.BASE_URL)
       .get(constants.FILLABLE_FORMS_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', '1'))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.fillableForms.download(1)
       .then((response) => {
@@ -153,7 +153,7 @@ describe('PDFfiller fillable form', () => {
   it('should exports filled form data', () => {
     nock(constants.BASE_URL)
       .get(constants.FILLABLE_FORMS_FILLED_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.fillableForms.downloadFilled(1, 1)
       .then((response) => {
@@ -186,7 +186,7 @@ describe('PDFfiller fillable form', () => {
   it('should download a file of a LinkToFill filled form`s additional document', () => {
     nock(constants.BASE_URL)
       .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_BY_ID_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1).replace('{additional_document_id}', 1))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.fillableForms.downloadFilledAdditional(1, 1, 1)
       .then((response) => {
@@ -197,7 +197,7 @@ describe('PDFfiller fillable form', () => {
   it('should downloads a zip-file of all LinkToFill filled form`s additional documents.', () => {
     nock(constants.BASE_URL)
       .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.fillableForms.downloadFilledAllAdditional(1, 1)
       .then((response) => {

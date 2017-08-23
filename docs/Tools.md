@@ -9,7 +9,7 @@ Tools endpoint
 
 <a name="Tools+merge"></a>
 
-### tools.merge(mergeInfo, [clearCache], [callback]) ⇒ <code>Promise</code>
+### tools.merge(mergeInfo, [clearCache], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Merge up to five docs into a single document.
 
 **Kind**: instance method of [<code>Tools</code>](#Tools)  

@@ -76,7 +76,7 @@ describe('PDFfiller signature requests', () => {
   it('should return a signature request certificate by signature request id', () => {
     nock(constants.BASE_URL)
       .get(constants.SIGNATURE_REQUESTS_CERTIFICATE_ENDPOINT.replace('{signature_request_id}', '1'))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.signatureRequests.getCertificate(1)
       .then((response) => {
@@ -87,7 +87,7 @@ describe('PDFfiller signature requests', () => {
   it('should returns a signed document by Signature request id', () => {
     nock(constants.BASE_URL)
       .get(constants.SIGNATURE_REQUESTS_SIGNED_ENDPOINT.replace('{signature_request_id}', '1'))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.signatureRequests.downloadSignedDocument(1)
       .then((response) => {
@@ -117,7 +117,7 @@ describe('PDFfiller signature requests', () => {
       .query({
         per_page: 15
       })
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.signatureRequests.downloadInbox({
       per_page: 15
@@ -201,7 +201,7 @@ describe('PDFfiller signature requests', () => {
   it('should download additional document', () => {
     nock(constants.BASE_URL)
       .get(constants.SIGNATURE_REQUESTS_RECIPIENTS_ADDITIONAL_BY_ID_DOWNLOAD_ENDPOINT.replace('{signature_request_id}', '1').replace('{recipient_id}', '1').replace('{additional_document_id}', '1'))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.signatureRequests.downloadRecipientAdditional(1, 1, 1)
       .then((response) => {
@@ -212,7 +212,7 @@ describe('PDFfiller signature requests', () => {
   it('should download all additional document', () => {
     nock(constants.BASE_URL)
       .get(constants.SIGNATURE_REQUESTS_RECIPIENTS_ADDITIONAL_DOWNLOAD_ENDPOINT.replace('{signature_request_id}', '1').replace('{recipient_id}', '1'))
-      .replyWithFile(200, `${__dirname}/../mocks/test.txt`);
+      .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.signatureRequests.downloadRecipientAllAdditional(1, 1)
       .then((response) => {

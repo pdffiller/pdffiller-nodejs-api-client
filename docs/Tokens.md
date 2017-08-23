@@ -6,18 +6,18 @@ Tokens endpoint
 **Kind**: global class  
 
 * [Tokens](#Tokens)
-    * [.all([searchParams], [callback])](#Tokens+all) ⇒ <code>Promise</code>
-    * [.get(tokenId, [callback])](#Tokens+get) ⇒ <code>Promise</code>
-    * [.create(tokenInfo, [callback])](#Tokens+create) ⇒ <code>Promise</code>
-    * [.update(tokenId, tokenInfo, [callback])](#Tokens+update) ⇒ <code>Promise</code>
-    * [.remove(tokenId, [callback])](#Tokens+remove) ⇒ <code>Promise</code>
+    * [.all([searchParams], [callback])](#Tokens+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(tokenId, [callback])](#Tokens+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(tokenInfo, [callback])](#Tokens+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.update(tokenId, tokenInfo, [callback])](#Tokens+update) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(tokenId, [callback])](#Tokens+remove) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="Tokens+all"></a>
 
-### tokens.all([searchParams], [callback]) ⇒ <code>Promise</code>
+### tokens.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns a list of all tokens.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
@@ -36,7 +36,7 @@ Returns a list of all tokens.
 
 <a name="Tokens+get"></a>
 
-### tokens.get(tokenId, [callback]) ⇒ <code>Promise</code>
+### tokens.get(tokenId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Information about a created token.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
@@ -51,7 +51,7 @@ Information about a created token.
 
 <a name="Tokens+create"></a>
 
-### tokens.create(tokenInfo, [callback]) ⇒ <code>Promise</code>
+### tokens.create(tokenInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new token.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
@@ -66,7 +66,7 @@ Creates a new token.
 
 <a name="Tokens+update"></a>
 
-### tokens.update(tokenId, tokenInfo, [callback]) ⇒ <code>Promise</code>
+### tokens.update(tokenId, tokenInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Updates a token.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  
@@ -82,7 +82,7 @@ Updates a token.
 
 <a name="Tokens+remove"></a>
 
-### tokens.remove(tokenId, [callback]) ⇒ <code>Promise</code>
+### tokens.remove(tokenId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes a token item.
 
 **Kind**: instance method of [<code>Tokens</code>](#Tokens)  

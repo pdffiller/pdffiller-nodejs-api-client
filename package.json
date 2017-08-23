@@ -9,7 +9,7 @@
     "test": "node node_modules/.bin/mocha --recursive",
     "test-watch": "node node_modules/.bin/mocha -w --recursive",
     "coverage": "node_modules/.bin/istanbul cover _mocha --recursive -- -i ./test/**",
-    "docs": "node create-docs.js"
+    "generate-docs": "node create-docs.js"
   },
   "engines": {
     "node": ">= 4.8.3"
