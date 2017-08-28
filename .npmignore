@@ -2,3 +2,8 @@ test
 config.example.json
 create-docs.js
 docs
+.idea
+node_modules
+config.json
+coverage
+samples.js
