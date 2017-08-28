@@ -19,6 +19,10 @@
     "type": "git",
     "url": "https://github.com/pdffiller/pdffiller-nodejs-api-client"
   },
+  "bugs": {
+    "url" : "https://github.com/pdffiller/pdffiller-nodejs-api-client/issues"
+  , "email" : "integrations@pdffiller.com"
+  },
   "keywords": [
     "pdffiller",
     "api",
