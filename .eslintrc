@@ -9,7 +9,8 @@
   },
   "rules": {
     "comma-dangle": "off",
-    "max-len": "off"
+    "max-len": "off",
+    "strict": "off"
   },
   "settings": {
     "import/ignore": ["node_modules"]
