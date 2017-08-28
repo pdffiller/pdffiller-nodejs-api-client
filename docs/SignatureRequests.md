@@ -6,43 +6,43 @@ SignatureRequests endpoint
 **Kind**: global class  
 
 * [SignatureRequests](#SignatureRequests)
-    * [.allInbox([searchParams], [callback])](#SignatureRequests+allInbox) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadInbox([searchParams])](#SignatureRequests+downloadInbox) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.all([searchParams], [callback])](#SignatureRequests+all) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.get(signatureRequestId, [callback])](#SignatureRequests+get) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.create(signatureRequestInfo, [callback])](#SignatureRequests+create) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.remove(signatureRequestId, [callback])](#SignatureRequests+remove) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getCertificate(signatureRequestId, [callback])](#SignatureRequests+getCertificate) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadSignedDocument(signatureRequestId, [callback])](#SignatureRequests+downloadSignedDocument) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.allRecipients(signatureRequestId, [searchParams], [callback])](#SignatureRequests+allRecipients) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.addRecipients(signatureRequestId, recipients, [callback])](#SignatureRequests+addRecipients) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getRecipient(signatureRequestId, recipientId, [callback])](#SignatureRequests+getRecipient) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.remindRecipient(signatureRequestId, recipientId, [callback])](#SignatureRequests+remindRecipient) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getRecipientAllAdditional(signatureRequestId, recipientId, [callback])](#SignatureRequests+getRecipientAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback])](#SignatureRequests+getRecipientAdditional) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback])](#SignatureRequests+downloadRecipientAdditional) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadRecipientAllAdditional(signatureRequestId, recipientId, [callback])](#SignatureRequests+downloadRecipientAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.allInbox([search_params], [callback])](#SignatureRequests+allInbox) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadInbox([search_params], [callback])](#SignatureRequests+downloadInbox) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.all([search_params], [callback])](#SignatureRequests+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(signature_request_id, [callback])](#SignatureRequests+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(signature_request_info, [callback])](#SignatureRequests+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(signature_request_id, [callback])](#SignatureRequests+remove) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getCertificate(signature_request_id, [callback])](#SignatureRequests+getCertificate) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadSignedDocument(signature_request_id, [callback])](#SignatureRequests+downloadSignedDocument) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.allRecipients(signature_request_id, [search_params], [callback])](#SignatureRequests+allRecipients) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.addRecipients(signature_request_id, recipients, [callback])](#SignatureRequests+addRecipients) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getRecipient(signature_request_id, recipient_id, [callback])](#SignatureRequests+getRecipient) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remindRecipient(signature_request_id, recipient_id, [callback])](#SignatureRequests+remindRecipient) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getRecipientAllAdditional(signature_request_id, recipient_id, [callback])](#SignatureRequests+getRecipientAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getRecipientAdditional(signature_request_id, recipient_id, additional_document_id, [callback])](#SignatureRequests+getRecipientAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadRecipientAdditional(signature_request_id, recipient_id, additional_document_id, [callback])](#SignatureRequests+downloadRecipientAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadRecipientAllAdditional(signature_request_id, recipient_id, [callback])](#SignatureRequests+downloadRecipientAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="SignatureRequests+allInbox"></a>
 
-### signatureRequests.allInbox([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.allInbox([search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of all document signature requests in the inbox folder.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | Object with query string filters |
-| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
-| [searchParams.page] | <code>number</code> | Filter by page |
-| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
-| [searchParams.order] | <code>string</code> | Sort Method |
-| [searchParams.status] | <code>string</code> | Filter by signature requests status |
-| [searchParams.date_from] | <code>string</code> | Filter by date from |
-| [searchParams.date_to] | <code>string</code> | Filter by date to |
+| [search_params] | <code>object</code> | Object with query string filters |
+| [search_params.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [search_params.page] | <code>number</code> | Filter by page |
+| [search_params.order_by] | <code>string</code> | Filter for sort by selected field |
+| [search_params.order] | <code>string</code> | Sort Method |
+| [search_params.status] | <code>string</code> | Filter by signature requests status |
+| [search_params.date_from] | <code>string</code> | Filter by date from |
+| [search_params.date_to] | <code>string</code> | Filter by date to |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -50,40 +50,41 @@ Retrieves a list of all document signature requests in the inbox folder.
 
 <a name="SignatureRequests+downloadInbox"></a>
 
-### signatureRequests.downloadInbox([searchParams]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.downloadInbox([search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads all documents which a sender has requested your signature for in a .zip archive.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | Object with query string filters |
-| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
-| [searchParams.page] | <code>number</code> | Filter by page |
-| [searchParams.order] | <code>string</code> | Sort Method |
-| [searchParams.status] | <code>string</code> | Filter by signature requests status |
-| [searchParams.date_from] | <code>string</code> | Filter by date from |
-| [searchParams.date_to] | <code>string</code> | Filter by date to |
+| [search_params] | <code>object</code> | Object with query string filters |
+| [search_params.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [search_params.page] | <code>number</code> | Filter by page |
+| [search_params.order] | <code>string</code> | Sort Method |
+| [search_params.status] | <code>string</code> | Filter by signature requests status |
+| [search_params.date_from] | <code>string</code> | Filter by date from |
+| [search_params.date_to] | <code>string</code> | Filter by date to |
+| [callback] | <code>function</code> | callback function |
 
 
 * * *
 
 <a name="SignatureRequests+all"></a>
 
-### signatureRequests.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.all([search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of all document signature requests.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | Object with query string filters |
-| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
-| [searchParams.page] | <code>number</code> | Filter by page |
-| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
-| [searchParams.order] | <code>string</code> | Sort Method |
-| [searchParams.date_from] | <code>string</code> | Filter by date from |
-| [searchParams.date_to] | <code>string</code> | Filter by date to |
+| [search_params] | <code>object</code> | Object with query string filters |
+| [search_params.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [search_params.page] | <code>number</code> | Filter by page |
+| [search_params.order_by] | <code>string</code> | Filter for sort by selected field |
+| [search_params.order] | <code>string</code> | Sort Method |
+| [search_params.date_from] | <code>string</code> | Filter by date from |
+| [search_params.date_to] | <code>string</code> | Filter by date to |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -91,14 +92,14 @@ Retrieves a list of all document signature requests.
 
 <a name="SignatureRequests+get"></a>
 
-### signatureRequests.get(signatureRequestId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.get(signature_request_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves signature request information based on the signature request ID.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
+| signature_request_id | <code>number</code> | Id of signature request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -106,34 +107,34 @@ Retrieves signature request information based on the signature request ID.
 
 <a name="SignatureRequests+create"></a>
 
-### signatureRequests.create(signatureRequestInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.create(signature_request_info, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new Signature request. Two Signature methods supported: SendToEach and SendToGroup. The SendToGroup method requires envelope_name, sign_in_order and role parameters.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestInfo | <code>object</code> | Information for creating new signature request |
-| signatureRequestInfo.document_id | <code>string</code> | is required if file is omitted. |
-| signatureRequestInfo.method | <code>string</code> | SendToEach or SendToGroup |
-| signatureRequestInfo.envelope_name | <code>string</code> | is required for sengtogroup method |
-| signatureRequestInfo.security_pin | <code>string</code> | Password Protected(standard, enhanced) |
-| signatureRequestInfo.pin | <code>string</code> | is required when security pin is enhanced |
-| signatureRequestInfo.sign_in_order | <code>boolean</code> | sign in order |
-| signatureRequestInfo.recipients | <code>Array.&lt;object&gt;</code> | array of recipients |
-| signatureRequestInfo.recipients[].role | <code>number</code> | role id parameter, available only for 'sendtogroup' method |
-| signatureRequestInfo.recipients[].email | <code>string</code> | Recipient's email address |
-| signatureRequestInfo.recipients[].name | <code>string</code> | Recipient's name |
-| signatureRequestInfo.recipients[].require_photo | <code>boolean</code> | Sets the option for requirement photo |
-| signatureRequestInfo.recipients[].message_subject | <code>string</code> | Message subject |
-| signatureRequestInfo.recipients[].message_text | <code>string</code> | Message subject |
-| signatureRequestInfo.recipients[].access | <code>string</code> | full or signature |
-| signatureRequestInfo.recipients[].phone_authenticate | <code>string</code> | Option for phone notification setting |
-| signatureRequestInfo.recipients[].additional_documents | <code>array</code> | Sets the list of additional documents needed to apply after filling the template. Should not exceed the allowable 5 attachments limit. |
-| signatureRequestInfo.fillable_fields | <code>object</code> | fillable fields |
-| signatureRequestInfo.file | <code>string</code> \| <code>object</code> | file url or file |
-| signatureRequestInfo.folder_id | <code>number</code> | folder id |
-| signatureRequestInfo.name | <code>string</code> | name signature request |
+| signature_request_info | <code>object</code> | Information for creating new signature request |
+| signature_request_info.document_id | <code>string</code> | is required if file is omitted. |
+| signature_request_info.method | <code>string</code> | SendToEach or SendToGroup |
+| signature_request_info.envelope_name | <code>string</code> | is required for sengtogroup method |
+| signature_request_info.security_pin | <code>string</code> | Password Protected(standard, enhanced) |
+| signature_request_info.pin | <code>string</code> | is required when security pin is enhanced |
+| signature_request_info.sign_in_order | <code>boolean</code> | sign in order |
+| signature_request_info.recipients | <code>Array.&lt;object&gt;</code> | array of recipients |
+| signature_request_info.recipients[].role | <code>number</code> | role id parameter, available only for 'sendtogroup' method |
+| signature_request_info.recipients[].email | <code>string</code> | Recipient's email address |
+| signature_request_info.recipients[].name | <code>string</code> | Recipient's name |
+| signature_request_info.recipients[].require_photo | <code>boolean</code> | Sets the option for requirement photo |
+| signature_request_info.recipients[].message_subject | <code>string</code> | Message subject |
+| signature_request_info.recipients[].message_text | <code>string</code> | Message subject |
+| signature_request_info.recipients[].access | <code>string</code> | full or signature |
+| signature_request_info.recipients[].phone_authenticate | <code>string</code> | Option for phone notification setting |
+| signature_request_info.recipients[].additional_documents | <code>array</code> | Sets the list of additional documents needed to apply after filling the template. Should not exceed the allowable 5 attachments limit. |
+| signature_request_info.fillable_fields | <code>object</code> | fillable fields |
+| signature_request_info.file | <code>string</code> \| <code>object</code> | file url or file |
+| signature_request_info.folder_id | <code>number</code> | folder id |
+| signature_request_info.name | <code>string</code> | name signature request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -141,14 +142,14 @@ Creates a new Signature request. Two Signature methods supported: SendToEach and
 
 <a name="SignatureRequests+remove"></a>
 
-### signatureRequests.remove(signatureRequestId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.remove(signature_request_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Cancels a signature request for the specified SendToSign ID.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
+| signature_request_id | <code>number</code> | Id of signature request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -156,14 +157,14 @@ Cancels a signature request for the specified SendToSign ID.
 
 <a name="SignatureRequests+getCertificate"></a>
 
-### signatureRequests.getCertificate(signatureRequestId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.getCertificate(signature_request_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns a signature request certificate by signature request id.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
+| signature_request_id | <code>number</code> | Id of signature request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -171,14 +172,14 @@ Returns a signature request certificate by signature request id.
 
 <a name="SignatureRequests+downloadSignedDocument"></a>
 
-### signatureRequests.downloadSignedDocument(signatureRequestId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.downloadSignedDocument(signature_request_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns a signed document by Signature request id.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
+| signature_request_id | <code>number</code> | Id of signature request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -186,19 +187,19 @@ Returns a signed document by Signature request id.
 
 <a name="SignatureRequests+allRecipients"></a>
 
-### signatureRequests.allRecipients(signatureRequestId, [searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.allRecipients(signature_request_id, [search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about sendtosign recipients and signature status.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
-| [searchParams] | <code>object</code> | Object with query string filters |
-| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
-| [searchParams.page] | <code>number</code> | Filter by page |
-| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
-| [searchParams.order] | <code>string</code> | Sort Method |
+| signature_request_id | <code>number</code> | Id of signature request |
+| [search_params] | <code>object</code> | Object with query string filters |
+| [search_params.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [search_params.page] | <code>number</code> | Filter by page |
+| [search_params.order_by] | <code>string</code> | Filter for sort by selected field |
+| [search_params.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -206,14 +207,14 @@ Returns information about sendtosign recipients and signature status.
 
 <a name="SignatureRequests+addRecipients"></a>
 
-### signatureRequests.addRecipients(signatureRequestId, recipients, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.addRecipients(signature_request_id, recipients, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Adds an additional recipient to a sendtosign request.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
+| signature_request_id | <code>number</code> | Id of signature request |
 | recipients | <code>Array.&lt;object&gt;</code> | array of recipients |
 | recipients[].role | <code>number</code> | role id parameter, available only for 'sendtogroup' method |
 | recipients[].email | <code>string</code> | Recipient's email address |
@@ -231,15 +232,15 @@ Adds an additional recipient to a sendtosign request.
 
 <a name="SignatureRequests+getRecipient"></a>
 
-### signatureRequests.getRecipient(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.getRecipient(signature_request_id, recipient_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about a sendtosign recipient and signature status.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
-| recipientId | <code>number</code> | Id of recipient |
+| signature_request_id | <code>number</code> | Id of signature request |
+| recipient_id | <code>number</code> | Id of recipient |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -247,15 +248,15 @@ Returns information about a sendtosign recipient and signature status.
 
 <a name="SignatureRequests+remindRecipient"></a>
 
-### signatureRequests.remindRecipient(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.remindRecipient(signature_request_id, recipient_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Reminds a sendtosign recipient about the sendtosign request.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
-| recipientId | <code>number</code> | Id of recipient |
+| signature_request_id | <code>number</code> | Id of signature request |
+| recipient_id | <code>number</code> | Id of recipient |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -263,15 +264,15 @@ Reminds a sendtosign recipient about the sendtosign request.
 
 <a name="SignatureRequests+getRecipientAllAdditional"></a>
 
-### signatureRequests.getRecipientAllAdditional(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.getRecipientAllAdditional(signature_request_id, recipient_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about sendtosign recipient`s attached additional documents.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
-| recipientId | <code>number</code> | Id of recipient |
+| signature_request_id | <code>number</code> | Id of signature request |
+| recipient_id | <code>number</code> | Id of recipient |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -279,16 +280,16 @@ Returns information about sendtosign recipient`s attached additional documents.
 
 <a name="SignatureRequests+getRecipientAdditional"></a>
 
-### signatureRequests.getRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.getRecipientAdditional(signature_request_id, recipient_id, additional_document_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about sendtosign recipient`s attached additional document.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
-| recipientId | <code>number</code> | Id of recipient |
-| additionalDocumentId | <code>number</code> | Id of additional document |
+| signature_request_id | <code>number</code> | Id of signature request |
+| recipient_id | <code>number</code> | Id of recipient |
+| additional_document_id | <code>number</code> | Id of additional document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -296,16 +297,16 @@ Returns information about sendtosign recipient`s attached additional document.
 
 <a name="SignatureRequests+downloadRecipientAdditional"></a>
 
-### signatureRequests.downloadRecipientAdditional(signatureRequestId, recipientId, additionalDocumentId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.downloadRecipientAdditional(signature_request_id, recipient_id, additional_document_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a file of a sendtosign recipient`s additional document.
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | of signature request |
-| recipientId | <code>number</code> | Id of recipient |
-| additionalDocumentId | <code>number</code> | Id of additional document |
+| signature_request_id | <code>number</code> | of signature request |
+| recipient_id | <code>number</code> | Id of recipient |
+| additional_document_id | <code>number</code> | Id of additional document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -313,15 +314,15 @@ Downloads a file of a sendtosign recipient`s additional document.
 
 <a name="SignatureRequests+downloadRecipientAllAdditional"></a>
 
-### signatureRequests.downloadRecipientAllAdditional(signatureRequestId, recipientId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### signatureRequests.downloadRecipientAllAdditional(signature_request_id, recipient_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a zip-file of all additional documents for a sendtosign recipient. This method can give three statuses: Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content (if files ready to export).
 
 **Kind**: instance method of [<code>SignatureRequests</code>](#SignatureRequests)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| signatureRequestId | <code>number</code> | Id of signature request |
-| recipientId | <code>number</code> | Id of recipient |
+| signature_request_id | <code>number</code> | Id of signature request |
+| recipient_id | <code>number</code> | Id of recipient |
 | [callback] | <code>function</code> | callback function |
 
 

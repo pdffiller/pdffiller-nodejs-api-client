@@ -6,42 +6,42 @@ Templates endpoint
 **Kind**: global class  
 
 * [Templates](#Templates)
-    * [.all([searchParams], [callback])](#Templates+all) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.get(templateId, [callback])](#Templates+get) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.create(templateInfo, [callback])](#Templates+create) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.update(templateId, templateInfo, [callback])](#Templates+update) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.download(templateId, [callback])](#Templates+download) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getRoles(templateId, [callback])](#Templates+getRoles) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadOriginal(templateId, [callback])](#Templates+downloadOriginal) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.remove(templateId, [callback])](#Templates+remove) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getFields(templateId, [callback])](#Templates+getFields) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getChilds(templateId, [searchParams], [callback])](#Templates+getChilds) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadSignatures(templateId, [callback])](#Templates+downloadSignatures) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.fillTemplate(templateId, fillableInfo, [callback])](#Templates+fillTemplate) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.createShareLink(templateId, shareLinkInfo, [callback])](#Templates+createShareLink) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getShareLink(templateId, [callback])](#Templates+getShareLink) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.removeShareLinkByHash(templateId, hash, [callback])](#Templates+removeShareLinkByHash) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.removeAllShareLink(templateId, [callback])](#Templates+removeAllShareLink) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.all([search_params], [callback])](#Templates+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(template_id, [callback])](#Templates+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(template_info, [callback])](#Templates+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.update(template_id, template_info, [callback])](#Templates+update) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.download(template_id, [callback])](#Templates+download) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getRoles(template_id, [callback])](#Templates+getRoles) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadOriginal(template_id, [callback])](#Templates+downloadOriginal) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(template_id, [callback])](#Templates+remove) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getFields(template_id, [callback])](#Templates+getFields) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getChilds(template_id, [search_params], [callback])](#Templates+getChilds) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadSignatures(template_id, [callback])](#Templates+downloadSignatures) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.fillTemplate(template_id, fillable_info, [callback])](#Templates+fillTemplate) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.createShareLink(template_id, share_link_info, [callback])](#Templates+createShareLink) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getShareLink(template_id, [callback])](#Templates+getShareLink) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.removeShareLinkByHash(template_id, hash, [callback])](#Templates+removeShareLinkByHash) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.removeAllShareLink(template_id, [callback])](#Templates+removeAllShareLink) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="Templates+all"></a>
 
-### templates.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.all([search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of uploaded documents.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | Object with query string filters |
-| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
-| [searchParams.page] | <code>number</code> | Filter by page |
-| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
-| [searchParams.order] | <code>string</code> | Sort Method |
-| [searchParams.date_from] | <code>number</code> | Filter by date from. Example: 2016-12-31. |
-| [searchParams.date_to] | <code>number</code> | Filter by date to. Example: 2017-12-31. |
+| [search_params] | <code>object</code> | Object with query string filters |
+| [search_params.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [search_params.page] | <code>number</code> | Filter by page |
+| [search_params.order_by] | <code>string</code> | Filter for sort by selected field |
+| [search_params.order] | <code>string</code> | Sort Method |
+| [search_params.date_from] | <code>number</code> | Filter by date from. Example: 2016-12-31. |
+| [search_params.date_to] | <code>number</code> | Filter by date to. Example: 2017-12-31. |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -49,14 +49,14 @@ Retrieves a list of uploaded documents.
 
 <a name="Templates+get"></a>
 
-### templates.get(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.get(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves information about a created document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -64,17 +64,17 @@ Retrieves information about a created document template.
 
 <a name="Templates+create"></a>
 
-### templates.create(templateInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.create(template_info, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new document template. The filename must contain numbers, English letters or special characters: ( ) _ . Also, the filename extension should be .ppt; .pptx; .doc; .docx; or .pdf. You can download document from multipart
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateInfo | <code>object</code> | Information for creating new template |
-| templateInfo.file | <code>string</code> \| <code>object</code> | url to file, or file |
-| templateInfo.name | <code>string</code> | Template name |
-| templateInfo.folder_id | <code>number</code> | folder id |
+| template_info | <code>object</code> | Information for creating new template |
+| template_info.file | <code>string</code> \| <code>object</code> | url to file, or file |
+| template_info.name | <code>string</code> | Template name |
+| template_info.folder_id | <code>number</code> | folder id |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -82,17 +82,17 @@ Creates a new document template. The filename must contain numbers, English lett
 
 <a name="Templates+update"></a>
 
-### templates.update(templateId, templateInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.update(template_id, template_info, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Updates the information for a document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
-| templateInfo | <code>object</code> | Information for updating template |
-| templateInfo.name | <code>string</code> | Template name |
-| templateInfo.folder_id | <code>number</code> | folder id |
+| template_id | <code>number</code> | Id of template |
+| template_info | <code>object</code> | Information for updating template |
+| template_info.name | <code>string</code> | Template name |
+| template_info.folder_id | <code>number</code> | folder id |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -100,14 +100,14 @@ Updates the information for a document template.
 
 <a name="Templates+download"></a>
 
-### templates.download(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.download(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -115,14 +115,14 @@ Downloads a document template.
 
 <a name="Templates+getRoles"></a>
 
-### templates.getRoles(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.getRoles(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of roles for a document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -130,14 +130,14 @@ Retrieves a list of roles for a document template.
 
 <a name="Templates+downloadOriginal"></a>
 
-### templates.downloadOriginal(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.downloadOriginal(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Download original template by id.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -145,14 +145,14 @@ Download original template by id.
 
 <a name="Templates+remove"></a>
 
-### templates.remove(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.remove(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes a document template item.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -160,14 +160,14 @@ Deletes a document template item.
 
 <a name="Templates+getFields"></a>
 
-### templates.getFields(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.getFields(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Get values for a fillable form.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -175,18 +175,18 @@ Get values for a fillable form.
 
 <a name="Templates+getChilds"></a>
 
-### templates.getChilds(templateId, [searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.getChilds(template_id, [search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves child documents for a selected document template.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
-| [searchParams] | <code>object</code> | Object with query string filters |
-| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
-| [searchParams.page] | <code>number</code> | Filter by page |
-| [searchParams.order] | <code>string</code> | Sort Method |
+| template_id | <code>number</code> | Id of template |
+| [search_params] | <code>object</code> | Object with query string filters |
+| [search_params.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [search_params.page] | <code>number</code> | Filter by page |
+| [search_params.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -194,14 +194,14 @@ Retrieves child documents for a selected document template.
 
 <a name="Templates+downloadSignatures"></a>
 
-### templates.downloadSignatures(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.downloadSignatures(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a zip archive of document signatures.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -209,18 +209,18 @@ Downloads a zip archive of document signatures.
 
 <a name="Templates+fillTemplate"></a>
 
-### templates.fillTemplate(templateId, fillableInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.fillTemplate(template_id, fillable_info, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Populates a fillable form template which was created with the PDFfiller editor.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
-| fillableInfo | <code>object</code> | object with fillable params |
-| fillableInfo.fillable_fields | <code>object</code> | fields data what will be filled to template |
-| fillableInfo.folder_id | <code>number</code> | folder id |
-| fillableInfo.name | <code>string</code> | Name created for a newly filled document |
+| template_id | <code>number</code> | Id of template |
+| fillable_info | <code>object</code> | object with fillable params |
+| fillable_info.fillable_fields | <code>object</code> | fields data what will be filled to template |
+| fillable_info.folder_id | <code>number</code> | folder id |
+| fillable_info.name | <code>string</code> | Name created for a newly filled document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -228,17 +228,17 @@ Populates a fillable form template which was created with the PDFfiller editor.
 
 <a name="Templates+createShareLink"></a>
 
-### templates.createShareLink(templateId, shareLinkInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.createShareLink(template_id, share_link_info, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new share link to a document.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
-| shareLinkInfo | <code>object</code> | Share link params |
-| shareLinkInfo.expire | <code>number</code> | Number of days left until link expires. Max value - 1000 |
-| shareLinkInfo.callback_url | <code>string</code> | Callback destination url |
+| template_id | <code>number</code> | Id of template |
+| share_link_info | <code>object</code> | Share link params |
+| share_link_info.expire | <code>number</code> | Number of days left until link expires. Max value - 1000 |
+| share_link_info.callback_url | <code>string</code> | Callback destination url |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -246,14 +246,14 @@ Creates a new share link to a document.
 
 <a name="Templates+getShareLink"></a>
 
-### templates.getShareLink(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.getShareLink(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Retrieves a list of hash.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -261,14 +261,14 @@ Retrieves a list of hash.
 
 <a name="Templates+removeShareLinkByHash"></a>
 
-### templates.removeShareLinkByHash(templateId, hash, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.removeShareLinkByHash(template_id, hash, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes one share link to a document by hash.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | hash | <code>string</code> | Hash for shared link |
 | [callback] | <code>function</code> | callback function |
 
@@ -277,14 +277,14 @@ Deletes one share link to a document by hash.
 
 <a name="Templates+removeAllShareLink"></a>
 
-### templates.removeAllShareLink(templateId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### templates.removeAllShareLink(template_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes all share links to a document by id.
 
 **Kind**: instance method of [<code>Templates</code>](#Templates)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| templateId | <code>number</code> | Id of template |
+| template_id | <code>number</code> | Id of template |
 | [callback] | <code>function</code> | callback function |
 
 

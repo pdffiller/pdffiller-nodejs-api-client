@@ -10,7 +10,9 @@
   "rules": {
     "comma-dangle": "off",
     "max-len": "off",
-    "strict": "off"
+    "strict": "off",
+    "camelcase": "off",
+    "prefer-rest-params": "off"
   },
   "settings": {
     "import/ignore": ["node_modules"]

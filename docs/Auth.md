@@ -6,7 +6,7 @@ Auth endpoint
 **Kind**: global class  
 
 * [Auth](#Auth)
-    * [.authorize(credentials, [autoUpdate], [callback])](#Auth+authorize) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.authorize(credentials, [auto_update], [callback])](#Auth+authorize) ⇒ <code>Promise</code>
     * [.getAccessToken()](#Auth+getAccessToken) ⇒ <code>string</code>
     * [.setAccessToken(token)](#Auth+setAccessToken)
 
@@ -15,7 +15,7 @@ Auth endpoint
 
 <a name="Auth+authorize"></a>
 
-### auth.authorize(credentials, [autoUpdate], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### auth.authorize(credentials, [auto_update], [callback]) ⇒ <code>Promise</code>
 Obtains authentication token based on provided Client ID and Client Secret
 
 **Kind**: instance method of [<code>Auth</code>](#Auth)  
@@ -23,7 +23,7 @@ Obtains authentication token based on provided Client ID and Client Secret
 | Param | Type | Description |
 | --- | --- | --- |
 | credentials | <code>object</code> | credentials for getting access token |
-| [autoUpdate] | <code>boolean</code> | auto update user token after one will expire |
+| [auto_update] | <code>boolean</code> | auto update user token after one will expire |
 | [callback] | <code>function</code> | callback function |
 
 

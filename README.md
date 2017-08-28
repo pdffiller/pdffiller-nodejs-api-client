@@ -21,7 +21,7 @@ Require module and init one. You can require PDFfiller module as a singleton and
 
 ```javascript
 const PDFfiller = require('pdffiller-nodejs-api-client').PDFfiller;
-const PDFFillerConstructor = require('pdffiller-nodejs-api-client').PDFFillerConstructor;
+const PDFFillerConstructor = require('pdffiller-nodejs-api-client').PDFfillerConstructor;
 ```
 
 Or using ES6:
@@ -33,7 +33,7 @@ import { PDFfiller, PDFFillerConstructor } from 'pdffiller-nodejs-api-client';
 ## Authentication
 
 Access tokens will automatically initialize when you’re successfully retrieved from the given user's credentials.
-The second parameter `autoUpdate` when you set up it as `true` token will automatically update when expire
+The second parameter `auto_update` when you set up it as `true` token will automatically update when expire
 
 ```javascript
 PDFfiller.auth.authorize({
@@ -72,7 +72,7 @@ PDFfiller.applications.all()
 
 Use a method to retrieve an applications by id:
 ```javascript
-PDFfiller.applications.get(id)
+PDFfiller.applications.get(application_id)
     .then(application => console.log(application))
     .catch(err => console.error(err));
 ```
@@ -90,7 +90,7 @@ PDFfiller.applications.create({
 
 Use a method to update an application by id:
 ```javascript
-PDFfiller.applications.update(id, {
+PDFfiller.applications.update(application_id, {
     name: 'app name',
     description: 'app description',
     domain: 'http://domain.com'
@@ -101,14 +101,14 @@ PDFfiller.applications.update(id, {
 
 Use a method to delete an application by id:
 ```javascript
-PDFfiller.applications.remove(id)
+PDFfiller.applications.remove(application_id)
     .then(result => console.log(result))
     .catch(err => console.error(err));
 ```
 
 Use a method to get application users:
 ```javascript
-PDFfiller.applications.users(id)
+PDFfiller.applications.users(application_id)
     .then(users => console.log(users))
     .catch(err => console.error(err));
 ```
@@ -132,7 +132,7 @@ When you download files we will return Buffer object after you can save it as in
  ```javascript
 const fs = require('fs');
   
-PDFfiller.templates.download(1)
+PDFfiller.templates.download(template_id)
     .then(templateFileBuffer => {
         fs.writeFile('./your_file_name.pdf', templateFileBuffer, (err) => {
             if (err) {

@@ -2,13 +2,13 @@ const should = require('should'); // eslint-disable-line
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
-const constants = require('../../lib/constants/index');
+const endpoints = require('../../lib/constants/endpoints');
 const mocks = require('../mocks/mocksData').tokens;
 
 describe('PDFfiller tokens', () => {
   it('should get tokens list', () => {
-    nock(constants.BASE_URL)
-      .get(constants.TOKENS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .get(endpoints.TOKENS_ENDPOINT)
       .query({
         per_page: 15
       })
@@ -23,8 +23,8 @@ describe('PDFfiller tokens', () => {
   });
 
   it('should get token by id', () => {
-    nock(constants.BASE_URL)
-      .get(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.tokens.get(1)
@@ -34,8 +34,8 @@ describe('PDFfiller tokens', () => {
   });
 
   it('should create token', () => {
-    nock(constants.BASE_URL)
-      .post(constants.TOKENS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.TOKENS_ENDPOINT)
       .reply(200, mocks[0]);
 
     return PDFfiller.tokens.create(mocks[0].data)
@@ -45,8 +45,8 @@ describe('PDFfiller tokens', () => {
   });
 
   it('should update token', () => {
-    nock(constants.BASE_URL)
-      .put(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .put(endpoints.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.tokens.update(1, mocks[0].data)
@@ -56,8 +56,8 @@ describe('PDFfiller tokens', () => {
   });
 
   it('should delete token', () => {
-    nock(constants.BASE_URL)
-      .delete(constants.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .delete(endpoints.TOKENS_BY_ID_ENDPOINT.replace('{token_id}', '1'))
       .reply(200, { total: 1 });
 
     return PDFfiller.tokens.remove(1)

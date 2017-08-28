@@ -2,13 +2,13 @@ const should = require('should'); // eslint-disable-line
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
-const constants = require('../../lib/constants/index');
+const endpoints = require('../../lib/constants/endpoints');
 const mocks = require('../mocks/mocksData').applications;
 
 describe('PDFfiller applications', () => {
   it('should get applications list', () => {
-    nock(constants.BASE_URL)
-      .get(constants.APPLICATIONS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .get(endpoints.APPLICATIONS_ENDPOINT)
       .query({
         per_page: 15
       })
@@ -23,8 +23,8 @@ describe('PDFfiller applications', () => {
   });
 
   it('should get application by id', () => {
-    nock(constants.BASE_URL)
-      .get(constants.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.applications.get(1)
@@ -34,8 +34,8 @@ describe('PDFfiller applications', () => {
   });
 
   it('should create application', () => {
-    nock(constants.BASE_URL)
-      .post(constants.APPLICATIONS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.APPLICATIONS_ENDPOINT)
       .reply(200, mocks[0]);
 
     return PDFfiller.applications.create(mocks[0])
@@ -45,8 +45,8 @@ describe('PDFfiller applications', () => {
   });
 
   it('should update application', () => {
-    nock(constants.BASE_URL)
-      .put(constants.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .put(endpoints.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.applications.update(1, mocks[0])
@@ -56,8 +56,8 @@ describe('PDFfiller applications', () => {
   });
 
   it('should delete application', () => {
-    nock(constants.BASE_URL)
-      .delete(constants.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .delete(endpoints.APPLICATIONS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
       .reply(200, { total: 1 });
 
     return PDFfiller.applications.remove(1)
@@ -67,8 +67,8 @@ describe('PDFfiller applications', () => {
   });
 
   it('should get application users list', () => {
-    nock(constants.BASE_URL)
-      .get(constants.APPLICATIONS_USERS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.APPLICATIONS_USERS_BY_ID_ENDPOINT.replace('{application_id}', '1'))
       .query({
         per_page: 15
       })

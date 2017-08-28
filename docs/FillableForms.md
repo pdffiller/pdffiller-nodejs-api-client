@@ -6,39 +6,39 @@ FillableForms endpoint
 **Kind**: global class  
 
 * [FillableForms](#FillableForms)
-    * [.all([searchParams], [callback])](#FillableForms+all) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.get(linkToFillId, [callback])](#FillableForms+get) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.create(fillableInfo, [callback])](#FillableForms+create) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.update(linkToFillId, fillableInfo, [callback])](#FillableForms+update) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.remove(linkToFillId, [callback])](#FillableForms+remove) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.download(linkToFillId, [callback])](#FillableForms+download) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.allFilled(linkToFillId, [searchParams], [callback])](#FillableForms+allFilled) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getFilled(linkToFillId, filledFormId, [callback])](#FillableForms+getFilled) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.removeFilled(linkToFillId, filledFormId, [callback])](#FillableForms+removeFilled) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.exportFilled(linkToFillId, filledFormId, [callback])](#FillableForms+exportFilled) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadFilled(linkToFillId, filledFormId, [callback])](#FillableForms+downloadFilled) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getFilledAllAdditional(linkToFillId, filledFormId, [callback])](#FillableForms+getFilledAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.getFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback])](#FillableForms+getFilledAdditional) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback])](#FillableForms+downloadFilledAdditional) ⇒ <code>Promise</code> \| <code>void</code>
-    * [.downloadFilledAllAdditional(linkToFillId, filledFormId, [callback])](#FillableForms+downloadFilledAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.all([search_params], [callback])](#FillableForms+all) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.get(link_to_fill_id, [callback])](#FillableForms+get) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.create(fillable_info, [callback])](#FillableForms+create) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.update(link_to_fill_id, fillable_info, [callback])](#FillableForms+update) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.remove(link_to_fill_id, [callback])](#FillableForms+remove) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.download(link_to_fill_id, [callback])](#FillableForms+download) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.allFilled(link_to_fill_id, [search_params], [callback])](#FillableForms+allFilled) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getFilled(link_to_fill_id, filled_form_id, [callback])](#FillableForms+getFilled) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.removeFilled(link_to_fill_id, filled_form_id, [callback])](#FillableForms+removeFilled) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.exportFilled(link_to_fill_id, filled_form_id, [callback])](#FillableForms+exportFilled) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadFilled(link_to_fill_id, filled_form_id, [callback])](#FillableForms+downloadFilled) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getFilledAllAdditional(link_to_fill_id, filled_form_id, [callback])](#FillableForms+getFilledAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.getFilledAdditional(link_to_fill_id, filled_form_id, additional_document_id, [callback])](#FillableForms+getFilledAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadFilledAdditional(link_to_fill_id, filled_form_id, additional_document_id, [callback])](#FillableForms+downloadFilledAdditional) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.downloadFilledAllAdditional(link_to_fill_id, filled_form_id, [callback])](#FillableForms+downloadFilledAllAdditional) ⇒ <code>Promise</code> \| <code>void</code>
 
 
 * * *
 
 <a name="FillableForms+all"></a>
 
-### fillableForms.all([searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.all([search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns a list of all document fill requests.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [searchParams] | <code>object</code> | Object with query string filters |
-| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
-| [searchParams.page] | <code>number</code> | Filter by page |
-| [searchParams.order_by] | <code>string</code> | Filter for sort by selected field |
-| [searchParams.order] | <code>string</code> | Sort Method |
+| [search_params] | <code>object</code> | Object with query string filters |
+| [search_params.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [search_params.page] | <code>number</code> | Filter by page |
+| [search_params.order_by] | <code>string</code> | Filter for sort by selected field |
+| [search_params.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -46,14 +46,14 @@ Returns a list of all document fill requests.
 
 <a name="FillableForms+get"></a>
 
-### fillableForms.get(linkToFillId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.get(link_to_fill_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Information about a created fill request item.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
+| link_to_fill_id | <code>number</code> | Id of fill request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -61,35 +61,35 @@ Information about a created fill request item.
 
 <a name="FillableForms+create"></a>
 
-### fillableForms.create(fillableInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.create(fillable_info, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Creates a new document and shares it via short url.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| fillableInfo | <code>object</code> | Information for creating fillable document |
-| fillableInfo.access | <code>string</code> | Access level for the fill request document |
-| fillableInfo.status | <code>string</code> | Document access permission. |
-| fillableInfo.email_required | <code>boolean</code> | Email required |
-| fillableInfo.allow_downloads | <code>boolean</code> | Allow to download |
-| fillableInfo.redirect_url | <code>string</code> | Redirect uri |
-| fillableInfo.name_required | <code>boolean</code> | Name required |
-| fillableInfo.custom_message | <code>string</code> | LinkToFill custom message |
-| fillableInfo.notification_emails | <code>array</code> | LinkToFill notification emails |
-| fillableInfo.notifications | <code>string</code> | The notifications mode |
-| fillableInfo.enforce_required_fields | <code>boolean</code> | Prevent closing document before filling all fields |
-| fillableInfo.custom_logo_id | <code>boolean</code> | Document custom logo id |
-| fillableInfo.welcome_screen | <code>boolean</code> | Shows welcome agreement each time when user will open LinkToFill |
-| fillableInfo.reusable | <code>boolean</code> | After filling the form it will be copied to the owner as the fillable form |
-| fillableInfo.callback_url | <code>string</code> | Callback url |
-| fillableInfo.signature_stamp | <code>string</code> | Signature stamp |
-| fillableInfo.document_id | <code>number</code> | Id of the document template |
-| fillableInfo.file | <code>string</code> | File to be uploaded |
-| fillableInfo.fillable_fields | <code>object</code> | Id of the document template |
-| fillableInfo.name | <code>string</code> | new document name |
-| fillableInfo.folder_id | <code>number</code> | folder id |
-| fillableInfo.additional_documents | <code>array</code> | Additional documents required after filling the document |
+| fillable_info | <code>object</code> | Information for creating fillable document |
+| fillable_info.access | <code>string</code> | Access level for the fill request document |
+| fillable_info.status | <code>string</code> | Document access permission. |
+| fillable_info.email_required | <code>boolean</code> | Email required |
+| fillable_info.allow_downloads | <code>boolean</code> | Allow to download |
+| fillable_info.redirect_url | <code>string</code> | Redirect uri |
+| fillable_info.name_required | <code>boolean</code> | Name required |
+| fillable_info.custom_message | <code>string</code> | LinkToFill custom message |
+| fillable_info.notification_emails | <code>array</code> | LinkToFill notification emails |
+| fillable_info.notifications | <code>string</code> | The notifications mode |
+| fillable_info.enforce_required_fields | <code>boolean</code> | Prevent closing document before filling all fields |
+| fillable_info.custom_logo_id | <code>boolean</code> | Document custom logo id |
+| fillable_info.welcome_screen | <code>boolean</code> | Shows welcome agreement each time when user will open LinkToFill |
+| fillable_info.reusable | <code>boolean</code> | After filling the form it will be copied to the owner as the fillable form |
+| fillable_info.callback_url | <code>string</code> | Callback url |
+| fillable_info.signature_stamp | <code>string</code> | Signature stamp |
+| fillable_info.document_id | <code>number</code> | Id of the document template |
+| fillable_info.file | <code>string</code> | File to be uploaded |
+| fillable_info.fillable_fields | <code>object</code> | Id of the document template |
+| fillable_info.name | <code>string</code> | new document name |
+| fillable_info.folder_id | <code>number</code> | folder id |
+| fillable_info.additional_documents | <code>array</code> | Additional documents required after filling the document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -97,34 +97,34 @@ Creates a new document and shares it via short url.
 
 <a name="FillableForms+update"></a>
 
-### fillableForms.update(linkToFillId, fillableInfo, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.update(link_to_fill_id, fillable_info, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Updates a fill request item.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| fillableInfo | <code>object</code> | Information for updating fillable document |
-| fillableInfo.access | <code>string</code> | Access level for the fill request document |
-| fillableInfo.status | <code>string</code> | Document access permission. |
-| fillableInfo.email_required | <code>boolean</code> | Email required |
-| fillableInfo.allow_downloads | <code>boolean</code> | Allow to download |
-| fillableInfo.redirect_url | <code>string</code> | Redirect uri |
-| fillableInfo.name_required | <code>boolean</code> | Name required |
-| fillableInfo.custom_message | <code>string</code> | LinkToFill custom message |
-| fillableInfo.notification_emails | <code>array</code> | LinkToFill notification emails |
-| fillableInfo.notifications | <code>string</code> | The notifications mode |
-| fillableInfo.enforce_required_fields | <code>boolean</code> | Prevent closing document before filling all fields |
-| fillableInfo.custom_logo_id | <code>boolean</code> | Document custom logo id |
-| fillableInfo.welcome_screen | <code>boolean</code> | Shows welcome agreement each time when user will open LinkToFill |
-| fillableInfo.reusable | <code>boolean</code> | After filling the form it will be copied to the owner as the fillable form |
-| fillableInfo.callback_url | <code>string</code> | Callback url |
-| fillableInfo.signature_stamp]Signature | <code>string</code> | stamp |
-| fillableInfo.fillable_fields | <code>object</code> | Id of the document template |
-| fillableInfo.name | <code>string</code> | new document name |
-| fillableInfo.folder_id | <code>number</code> | folder id |
-| fillableInfo.additional_documents | <code>array</code> | Additional documents required after filling the document |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| fillable_info | <code>object</code> | Information for updating fillable document |
+| fillable_info.access | <code>string</code> | Access level for the fill request document |
+| fillable_info.status | <code>string</code> | Document access permission. |
+| fillable_info.email_required | <code>boolean</code> | Email required |
+| fillable_info.allow_downloads | <code>boolean</code> | Allow to download |
+| fillable_info.redirect_url | <code>string</code> | Redirect uri |
+| fillable_info.name_required | <code>boolean</code> | Name required |
+| fillable_info.custom_message | <code>string</code> | LinkToFill custom message |
+| fillable_info.notification_emails | <code>array</code> | LinkToFill notification emails |
+| fillable_info.notifications | <code>string</code> | The notifications mode |
+| fillable_info.enforce_required_fields | <code>boolean</code> | Prevent closing document before filling all fields |
+| fillable_info.custom_logo_id | <code>boolean</code> | Document custom logo id |
+| fillable_info.welcome_screen | <code>boolean</code> | Shows welcome agreement each time when user will open LinkToFill |
+| fillable_info.reusable | <code>boolean</code> | After filling the form it will be copied to the owner as the fillable form |
+| fillable_info.callback_url | <code>string</code> | Callback url |
+| fillable_info.signature_stamp]Signature | <code>string</code> | stamp |
+| fillable_info.fillable_fields | <code>object</code> | Id of the document template |
+| fillable_info.name | <code>string</code> | new document name |
+| fillable_info.folder_id | <code>number</code> | folder id |
+| fillable_info.additional_documents | <code>array</code> | Additional documents required after filling the document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -132,14 +132,14 @@ Updates a fill request item.
 
 <a name="FillableForms+remove"></a>
 
-### fillableForms.remove(linkToFillId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.remove(link_to_fill_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes a fill request item.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
+| link_to_fill_id | <code>number</code> | Id of fill request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -147,7 +147,7 @@ Deletes a fill request item.
 
 <a name="FillableForms+download"></a>
 
-### fillableForms.download(linkToFillId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.download(link_to_fill_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 You can easily export all the completed documents created via LinkToFill as a zip file.
 This method can give three statuses:
 Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content (if files ready to export).
@@ -156,7 +156,7 @@ Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
+| link_to_fill_id | <code>number</code> | Id of fill request |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -164,18 +164,18 @@ Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content
 
 <a name="FillableForms+allFilled"></a>
 
-### fillableForms.allFilled(linkToFillId, [searchParams], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.allFilled(link_to_fill_id, [search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Lists all filled forms for the given fill request.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| [searchParams] | <code>object</code> | Object with query string filters |
-| [searchParams.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
-| [searchParams.page] | <code>number</code> | Filter by page |
-| [searchParams.order] | <code>string</code> | Sort Method |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| [search_params] | <code>object</code> | Object with query string filters |
+| [search_params.per_page] | <code>number</code> | Filter by quantity of applications on the page on 1 page |
+| [search_params.page] | <code>number</code> | Filter by page |
+| [search_params.order] | <code>string</code> | Sort Method |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -183,15 +183,15 @@ Lists all filled forms for the given fill request.
 
 <a name="FillableForms+getFilled"></a>
 
-### fillableForms.getFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.getFilled(link_to_fill_id, filled_form_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Information about a specific filled form.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| filledFormId | <code>number</code> | Id of filler form |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| filled_form_id | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -199,15 +199,15 @@ Information about a specific filled form.
 
 <a name="FillableForms+removeFilled"></a>
 
-### fillableForms.removeFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.removeFilled(link_to_fill_id, filled_form_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Deletes a filled form.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| filledFormId | <code>number</code> | Id of filler form |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| filled_form_id | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -215,15 +215,15 @@ Deletes a filled form.
 
 <a name="FillableForms+exportFilled"></a>
 
-### fillableForms.exportFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.exportFilled(link_to_fill_id, filled_form_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Exports filled form data in one of the available formats: json, xls, xlsx, csv, html.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| filledFormId | <code>number</code> | Id of filler form |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| filled_form_id | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -231,15 +231,15 @@ Exports filled form data in one of the available formats: json, xls, xlsx, csv, 
 
 <a name="FillableForms+downloadFilled"></a>
 
-### fillableForms.downloadFilled(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.downloadFilled(link_to_fill_id, filled_form_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a filled PDF form.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| filledFormId | <code>number</code> | Id of filler form |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| filled_form_id | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -247,15 +247,15 @@ Downloads a filled PDF form.
 
 <a name="FillableForms+getFilledAllAdditional"></a>
 
-### fillableForms.getFilledAllAdditional(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.getFilledAllAdditional(link_to_fill_id, filled_form_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns a list of a LinkToFill recipient`s attached additional documents.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| filledFormId | <code>number</code> | Id of filler form |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| filled_form_id | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -263,16 +263,16 @@ Returns a list of a LinkToFill recipient`s attached additional documents.
 
 <a name="FillableForms+getFilledAdditional"></a>
 
-### fillableForms.getFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.getFilledAdditional(link_to_fill_id, filled_form_id, additional_document_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Returns information about one LinkToFill recipient`s attached additional document.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| filledFormId | <code>number</code> | Id of filler form |
-| additionalDocumentId | <code>number</code> | Id of attached additional document |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| filled_form_id | <code>number</code> | Id of filler form |
+| additional_document_id | <code>number</code> | Id of attached additional document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -280,16 +280,16 @@ Returns information about one LinkToFill recipient`s attached additional documen
 
 <a name="FillableForms+downloadFilledAdditional"></a>
 
-### fillableForms.downloadFilledAdditional(linkToFillId, filledFormId, additionalDocumentId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.downloadFilledAdditional(link_to_fill_id, filled_form_id, additional_document_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a file of a LinkToFill filled form`s additional document.
 
 **Kind**: instance method of [<code>FillableForms</code>](#FillableForms)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| filledFormId | <code>number</code> | Id of filler form |
-| additionalDocumentId | <code>number</code> | Id of attached additional document |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| filled_form_id | <code>number</code> | Id of filler form |
+| additional_document_id | <code>number</code> | Id of attached additional document |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -297,7 +297,7 @@ Downloads a file of a LinkToFill filled form`s additional document.
 
 <a name="FillableForms+downloadFilledAllAdditional"></a>
 
-### fillableForms.downloadFilledAllAdditional(linkToFillId, filledFormId, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+### fillableForms.downloadFilledAllAdditional(link_to_fill_id, filled_form_id, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
 Downloads a zip-file of all LinkToFill filled form`s additional documents.
 This method can give three statuses:
 Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content (if files ready to export).
@@ -306,8 +306,8 @@ Creating a Job with Job ID, Waiting (if zip is still in progress) or Zip content
 
 | Param | Type | Description |
 | --- | --- | --- |
-| linkToFillId | <code>number</code> | Id of fill request |
-| filledFormId | <code>number</code> | Id of filler form |
+| link_to_fill_id | <code>number</code> | Id of fill request |
+| filled_form_id | <code>number</code> | Id of filler form |
 | [callback] | <code>function</code> | callback function |
 
 

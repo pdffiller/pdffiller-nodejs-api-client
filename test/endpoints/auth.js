@@ -5,7 +5,7 @@ const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
 const config = require('../../config.example.json');
-const constants = require('../../lib/constants/index');
+const endpoints = require('../../lib/constants/endpoints');
 const mocks = require('../mocks/mocksData');
 
 describe('PDFfiller authorization', () => {
@@ -15,8 +15,8 @@ describe('PDFfiller authorization', () => {
   });
 
   it('should authorize and set a token', () => {
-    nock(constants.BASE_URL)
-      .post(constants.AUTH_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.AUTH_ENDPOINT)
       .reply(200, mocks.auth);
 
     return PDFfiller.auth.authorize({
@@ -32,8 +32,8 @@ describe('PDFfiller authorization', () => {
   });
 
   it('should authorize and call auto update token, when autoUpdate true', () => {
-    nock(constants.BASE_URL)
-      .post(constants.AUTH_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.AUTH_ENDPOINT)
       .reply(200, mocks.auth);
     const autoUpdateStub = sinon.stub(PDFfiller.auth, 'autoUpdateToken');
 
@@ -49,8 +49,8 @@ describe('PDFfiller authorization', () => {
   });
 
   it('should catch authorize error', () => {
-    nock(constants.BASE_URL)
-      .post(constants.AUTH_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.AUTH_ENDPOINT)
       .reply(400, { error: 'error' });
 
     return PDFfiller.auth.authorize({

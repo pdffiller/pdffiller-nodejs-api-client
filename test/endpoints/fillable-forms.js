@@ -2,13 +2,13 @@ const should = require('should'); // eslint-disable-line
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
-const constants = require('../../lib/constants/index');
+const endpoints = require('../../lib/constants/endpoints');
 const mocks = require('../mocks/mocksData').fillableForms;
 
 describe('PDFfiller fillable form', () => {
   it('should get fill requests list', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_ENDPOINT)
       .query({
         per_page: 15
       })
@@ -23,8 +23,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should get fill requests by id', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1))
       .reply(200, mocks.fillable[0]);
 
     return PDFfiller.fillableForms.get(1)
@@ -34,8 +34,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should create fillable document', () => {
-    nock(constants.BASE_URL)
-      .post(constants.FILLABLE_FORMS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.FILLABLE_FORMS_ENDPOINT)
       .reply(200, mocks.fillable[0]);
 
     return PDFfiller.fillableForms.create({
@@ -60,8 +60,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should update  fill request', () => {
-    nock(constants.BASE_URL)
-      .put(constants.FILLABLE_FORMS_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1))
+    nock(endpoints.BASE_URL)
+      .put(endpoints.FILLABLE_FORMS_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1))
       .reply(200, mocks.fillable[0]);
 
     return PDFfiller.fillableForms.update(1, {
@@ -80,8 +80,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should delete  fill request', () => {
-    nock(constants.BASE_URL)
-      .delete(constants.FILLABLE_FORMS_BY_ID_ENDPOINT.replace('{link_to_fill_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .delete(endpoints.FILLABLE_FORMS_BY_ID_ENDPOINT.replace('{link_to_fill_id}', '1'))
       .reply(200, { total: 1 });
 
     return PDFfiller.fillableForms.remove(1)
@@ -91,8 +91,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should download all filled forms', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', '1'))
       .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.fillableForms.download(1)
@@ -102,8 +102,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should get filled forms list', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_FILLED_ENDPOINT.replace('{link_to_fill_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_FILLED_ENDPOINT.replace('{link_to_fill_id}', '1'))
       .query({
         per_page: 15
       })
@@ -118,8 +118,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should get filled forms by id', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_FILLED_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_FILLED_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .reply(200, mocks.filled[0]);
 
     return PDFfiller.fillableForms.getFilled(1, 1)
@@ -129,8 +129,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should remove filled forms by id', () => {
-    nock(constants.BASE_URL)
-      .delete(constants.FILLABLE_FORMS_FILLED_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
+    nock(endpoints.BASE_URL)
+      .delete(endpoints.FILLABLE_FORMS_FILLED_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .reply(200, { total: 1 });
 
     return PDFfiller.fillableForms.removeFilled(1, 1)
@@ -140,8 +140,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should exports filled form data', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_FILLED_EXPORT_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_FILLED_EXPORT_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .reply(200, mocks.export);
 
     return PDFfiller.fillableForms.exportFilled(1, 1)
@@ -151,8 +151,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should exports filled form data', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_FILLED_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_FILLED_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.fillableForms.downloadFilled(1, 1)
@@ -162,8 +162,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should return a list of a LinkToFill recipient`s attached additional documents', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_FILLED_ADDITIONAL_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .reply(200, { items: mocks.additional });
 
     return PDFfiller.fillableForms.getFilledAllAdditional(1, 1)
@@ -173,8 +173,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should return information about one LinkToFill recipient`s attached additional documents', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1).replace('{additional_document_id}', 1))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_FILLED_ADDITIONAL_BY_ID_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1).replace('{additional_document_id}', 1))
       .reply(200, mocks.additional[0]);
 
     return PDFfiller.fillableForms.getFilledAdditional(1, 1, 1)
@@ -184,8 +184,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should download a file of a LinkToFill filled form`s additional document', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_BY_ID_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1).replace('{additional_document_id}', 1))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_FILLED_ADDITIONAL_BY_ID_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1).replace('{additional_document_id}', 1))
       .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.fillableForms.downloadFilledAdditional(1, 1, 1)
@@ -195,8 +195,8 @@ describe('PDFfiller fillable form', () => {
   });
 
   it('should downloads a zip-file of all LinkToFill filled form`s additional documents.', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FILLABLE_FORMS_FILLED_ADDITIONAL_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FILLABLE_FORMS_FILLED_ADDITIONAL_DOWNLOAD_ENDPOINT.replace('{link_to_fill_id}', 1).replace('{filled_form_id}', 1))
       .replyWithFile(200, `${__dirname}/../mocks/pdf-sample.pdf`);
 
     return PDFfiller.fillableForms.downloadFilledAllAdditional(1, 1)

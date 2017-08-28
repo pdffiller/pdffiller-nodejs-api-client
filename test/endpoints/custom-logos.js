@@ -2,13 +2,13 @@ const should = require('should'); // eslint-disable-line
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
-const constants = require('../../lib/constants/index');
+const endpoints = require('../../lib/constants/endpoints');
 const mocks = require('../mocks/mocksData').customLogos;
 
 describe('PDFfiller custom logos', () => {
   it('should get custom logos list', () => {
-    nock(constants.BASE_URL)
-      .get(constants.CUSTOM_LOGOS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .get(endpoints.CUSTOM_LOGOS_ENDPOINT)
       .query({
         per_page: 15
       })
@@ -23,8 +23,8 @@ describe('PDFfiller custom logos', () => {
   });
 
   it('should get custom logo by id', () => {
-    nock(constants.BASE_URL)
-      .get(constants.CUSTOM_LOGOS_BY_ID_ENDPOINT.replace('{custom_logo_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.CUSTOM_LOGOS_BY_ID_ENDPOINT.replace('{custom_logo_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.customLogos.get('1')
@@ -34,8 +34,8 @@ describe('PDFfiller custom logos', () => {
   });
 
   it('should create custom logo', () => {
-    nock(constants.BASE_URL)
-      .post(constants.CUSTOM_LOGOS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.CUSTOM_LOGOS_ENDPOINT)
       .reply(200, mocks[0]);
 
     return PDFfiller.customLogos.create('fileurl/filename.jpg')
@@ -45,8 +45,8 @@ describe('PDFfiller custom logos', () => {
   });
 
   it('should delete custom logo', () => {
-    nock(constants.BASE_URL)
-      .delete(constants.CUSTOM_LOGOS_BY_ID_ENDPOINT.replace('{custom_logo_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .delete(endpoints.CUSTOM_LOGOS_BY_ID_ENDPOINT.replace('{custom_logo_id}', '1'))
       .reply(200, { total: 1 });
 
     return PDFfiller.customLogos.remove('1')

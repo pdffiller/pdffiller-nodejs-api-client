@@ -2,13 +2,13 @@ const should = require('should'); // eslint-disable-line
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
-const constants = require('../../lib/constants/index');
+const endpoints = require('../../lib/constants/endpoints');
 const mocks = require('../mocks/mocksData').tools;
 
 describe('PDFfiller tools', () => {
   it('should merge documents', () => {
-    nock(constants.BASE_URL)
-      .post(constants.TOOLS_MERGE_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.TOOLS_MERGE_ENDPOINT)
       .reply(200, mocks.merge);
 
     return PDFfiller.tools.merge({
@@ -21,10 +21,10 @@ describe('PDFfiller tools', () => {
       });
   });
   it('should merge documents with clean cache option', () => {
-    nock(constants.BASE_URL)
-      .post(constants.TOOLS_MERGE_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.TOOLS_MERGE_ENDPOINT)
       .query({
-        clean_cache: true
+        clear_cache: true
       })
       .reply(200, mocks.merge);
 

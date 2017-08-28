@@ -2,13 +2,13 @@ const should = require('should'); // eslint-disable-line
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
-const constants = require('../../lib/constants/index');
+const endpoints = require('../../lib/constants/endpoints');
 const mocks = require('../mocks/mocksData').folders;
 
 describe('PDFfiller folders', () => {
   it('should get folders list', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FOLDERS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FOLDERS_ENDPOINT)
       .query({
         per_page: 15
       })
@@ -23,8 +23,8 @@ describe('PDFfiller folders', () => {
   });
 
   it('should get folder by id', () => {
-    nock(constants.BASE_URL)
-      .get(constants.FOLDERS_BY_ID_ENDPOINT.replace('{folder_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.FOLDERS_BY_ID_ENDPOINT.replace('{folder_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.folders.get('1')
@@ -34,8 +34,8 @@ describe('PDFfiller folders', () => {
   });
 
   it('should create folder', () => {
-    nock(constants.BASE_URL)
-      .post(constants.FOLDERS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.FOLDERS_ENDPOINT)
       .reply(200, mocks[0]);
 
     return PDFfiller.folders.create({
@@ -47,8 +47,8 @@ describe('PDFfiller folders', () => {
   });
 
   it('should update folder', () => {
-    nock(constants.BASE_URL)
-      .put(constants.FOLDERS_BY_ID_ENDPOINT.replace('{folder_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .put(endpoints.FOLDERS_BY_ID_ENDPOINT.replace('{folder_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.folders.update(1, {
@@ -60,8 +60,8 @@ describe('PDFfiller folders', () => {
   });
 
   it('should delete folder', () => {
-    nock(constants.BASE_URL)
-      .delete(constants.FOLDERS_BY_ID_ENDPOINT.replace('{folder_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .delete(endpoints.FOLDERS_BY_ID_ENDPOINT.replace('{folder_id}', '1'))
       .reply(200, { total: 1 });
 
     return PDFfiller.folders.remove(1)

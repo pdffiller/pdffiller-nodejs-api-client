@@ -2,13 +2,13 @@ const should = require('should'); // eslint-disable-line
 const nock = require('nock');
 
 const PDFfiller = require('../../index.js').PDFfiller;
-const constants = require('../../lib/constants/index');
+const endpoints = require('../../lib/constants/endpoints');
 const mocks = require('../mocks/mocksData').callbacks;
 
 describe('PDFfiller callbacks', () => {
   it('should get callbacks list', () => {
-    nock(constants.BASE_URL)
-      .get(constants.CALLBACKS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .get(endpoints.CALLBACKS_ENDPOINT)
       .query({
         per_page: 15
       })
@@ -23,8 +23,8 @@ describe('PDFfiller callbacks', () => {
   });
 
   it('should get callback by id', () => {
-    nock(constants.BASE_URL)
-      .get(constants.CALLBACKS_BY_ID_ENDPOINT.replace('{callback_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .get(endpoints.CALLBACKS_BY_ID_ENDPOINT.replace('{callback_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.callbacks.get('1')
@@ -34,8 +34,8 @@ describe('PDFfiller callbacks', () => {
   });
 
   it('should create callback', () => {
-    nock(constants.BASE_URL)
-      .post(constants.CALLBACKS_ENDPOINT)
+    nock(endpoints.BASE_URL)
+      .post(endpoints.CALLBACKS_ENDPOINT)
       .reply(200, mocks[0]);
 
     return PDFfiller.callbacks.create({
@@ -49,8 +49,8 @@ describe('PDFfiller callbacks', () => {
   });
 
   it('should update callback', () => {
-    nock(constants.BASE_URL)
-      .put(constants.CALLBACKS_BY_ID_ENDPOINT.replace('{callback_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .put(endpoints.CALLBACKS_BY_ID_ENDPOINT.replace('{callback_id}', '1'))
       .reply(200, mocks[0]);
 
     return PDFfiller.callbacks.update(1, {
@@ -63,8 +63,8 @@ describe('PDFfiller callbacks', () => {
   });
 
   it('should delete callback', () => {
-    nock(constants.BASE_URL)
-      .delete(constants.CALLBACKS_BY_ID_ENDPOINT.replace('{callback_id}', '1'))
+    nock(endpoints.BASE_URL)
+      .delete(endpoints.CALLBACKS_BY_ID_ENDPOINT.replace('{callback_id}', '1'))
       .reply(200, { total: 1 });
 
     return PDFfiller.callbacks.remove(1)
