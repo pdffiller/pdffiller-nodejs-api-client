@@ -32,8 +32,8 @@ import { PDFfiller, PDFFillerConstructor } from 'pdffiller-nodejs-api-client';
 
 ## Authentication
 
-Access tokens will automatically initialize when you’re successfully retrieved from the given user's credentials
-The second parameter `autoUpdate` when you set up it as `true` we will auto update your token when it expire
+Access tokens will automatically initialize when you’re successfully retrieved from the given user's credentials.
+The second parameter `autoUpdate` when you set up it as `true` token will automatically update when expire
 
 ```javascript
 PDFfiller.auth.authorize({
