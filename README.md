@@ -12,7 +12,7 @@ You can sign up for the API [here](https://developers.pdffiller.com/#tab-feature
 ## Installation
 
 ``` sh
-npm i git://github.com/pdffiller/pdffiller-nodejs-api-client.git --save
+npm i pdffiller-nodejs-api-client --save
 ```
 
 ## Quick getting started steps
@@ -181,7 +181,7 @@ PDFfiller.auth.authorize({
 ## Support
 If you have any problems feel free to contact us:
 * On our issues page https://github.com/pdffiller/pdffiller-nodejs-api-client/issues
-* Via chat or phone at our tech site http://developers.pdffiller.com
+* Via chat or phone at our tech site https://developers.pdffiller.com
 
 ## License
 This software is licensed under the following MIT [license](https://github.com/pdffiller/pdffiller-nodejs-api-client/blob/master/LICENSE)
