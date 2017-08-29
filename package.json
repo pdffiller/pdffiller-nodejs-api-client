@@ -20,8 +20,8 @@
     "url": "https://github.com/pdffiller/pdffiller-nodejs-api-client"
   },
   "bugs": {
-    "url" : "https://github.com/pdffiller/pdffiller-nodejs-api-client/issues"
-  , "email" : "integrations@pdffiller.com"
+    "url": "https://github.com/pdffiller/pdffiller-nodejs-api-client/issues",
+    "email": "integrations@pdffiller.com"
   },
   "keywords": [
     "pdffiller",
@@ -45,6 +45,7 @@
     "sinon": "^2.3.5"
   },
   "dependencies": {
+    "keymirror": "^0.1.1",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   }

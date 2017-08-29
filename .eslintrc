@@ -12,7 +12,8 @@
     "max-len": "off",
     "strict": "off",
     "camelcase": "off",
-    "prefer-rest-params": "off"
+    "prefer-rest-params": "off",
+    "global-require": "off"
   },
   "settings": {
     "import/ignore": ["node_modules"]
