@@ -17,11 +17,14 @@ npm i pdffiller-nodejs-api-client --save
 
 ## Quick getting started steps
 
-Require module and init one. You can require PDFfiller module as a singleton and use it in anywhere your app, or require constructor and create different instances:
+You can require PDFfiller module as a singleton and use it in anywhere your app, or require constructor and create different instances:
 
 ```javascript
 const PDFfiller = require('pdffiller-nodejs-api-client').PDFfiller;
-const PDFFillerConstructor = require('pdffiller-nodejs-api-client').PDFfillerConstructor;
+  
+// or
+  
+const PDFfillerConstructor = require('pdffiller-nodejs-api-client').PDFfillerConstructor;
 ```
 
 Or using ES6:
