@@ -9,19 +9,18 @@
   },
   "rules": {
     "comma-dangle": "off",
-    "no-new": "off",
-    "operator-assignment": "off",
-    "no-param-reassign": "off",
-    "no-plusplus": "off",
-    "consistent-return": "off",
-    "linebreak-style": "off",
-    "no-underscore-dangle": "off"
+    "max-len": "off",
+    "strict": "off",
+    "camelcase": "off",
+    "prefer-rest-params": "off",
+    "global-require": "off"
   },
   "settings": {
     "import/ignore": ["node_modules"]
   },
   "globals": {
     "describe": true,
-    "it": true
+    "it": true,
+    "xit": true
   }
 }
