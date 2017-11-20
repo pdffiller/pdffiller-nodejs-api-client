@@ -1,4 +1,6 @@
-# pdffiller-nodejs-api-client (api-v2)
+# pdffiller-nodejs-api-client (api-v2)  
+  
+[![NPM](https://nodei.co/npm/pdffiller-nodejs-api-client.png)](https://npmjs.org/package/pdffiller-nodejs-api-client)  
 
 [PDFfiller API](https://api.pdffiller.com)
 You can sign up for the API [here](https://developers.pdffiller.com/#tab-features).
