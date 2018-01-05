@@ -37,7 +37,7 @@
     "eslint-plugin-import": "^2.3.0",
     "husky": "^0.13.4",
     "istanbul": "^0.4.5",
-    "jsdoc-to-markdown": "^3.0.0",
+    "jsdoc-to-markdown": "^3.0.3",
     "mocha": "^3.4.2",
     "nock": "^9.0.13",
     "should": "^11.2.1",
