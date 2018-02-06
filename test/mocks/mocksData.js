@@ -129,7 +129,14 @@ const templates = {
       'your_custom_or_global_callback_url', 'another_custom_or_global_callback_url'
     ]
   },
-  remove: { message: 'removed' }
+  remove: { message: 'removed' },
+  preview: {
+    items: [{
+      page_number: 1,
+      image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/'
+    }],
+    total: 0
+  }
 };
 
 const fillableForms = {

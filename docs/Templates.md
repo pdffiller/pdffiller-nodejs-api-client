@@ -11,6 +11,8 @@ Templates endpoint
     * [.create(template_info, [callback])](#Templates+create) ⇒ <code>Promise</code> \| <code>void</code>
     * [.update(template_id, template_info, [callback])](#Templates+update) ⇒ <code>Promise</code> \| <code>void</code>
     * [.download(template_id, [callback])](#Templates+download) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.copy(template_id, copy_info, [callback])](#Templates+copy) ⇒ <code>Promise</code> \| <code>void</code>
+    * [.preview(template_id, [search_params], [callback])](#Templates+preview) ⇒ <code>Promise</code> \| <code>void</code>
     * [.getRoles(template_id, [callback])](#Templates+getRoles) ⇒ <code>Promise</code> \| <code>void</code>
     * [.downloadOriginal(template_id, [callback])](#Templates+downloadOriginal) ⇒ <code>Promise</code> \| <code>void</code>
     * [.remove(template_id, [callback])](#Templates+remove) ⇒ <code>Promise</code> \| <code>void</code>
@@ -108,6 +110,45 @@ Downloads a document template.
 | Param | Type | Description |
 | --- | --- | --- |
 | template_id | <code>number</code> | Id of template |
+| [callback] | <code>function</code> | callback function |
+
+
+* * *
+
+<a name="Templates+copy"></a>
+
+### templates.copy(template_id, copy_info, [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+Copy any document: name the new document and select a destination folder.
+
+**Kind**: instance method of [<code>Templates</code>](#Templates)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| template_id | <code>number</code> | Id of template |
+| copy_info | <code>object</code> | object with copy params |
+| copy_info.folder_id | <code>number</code> | folder id |
+| copy_info.name | <code>string</code> | Name created for a newly filled document |
+| copy_info.action | <code>string</code> | have to be copy for copy template |
+| [callback] | <code>function</code> | callback function |
+
+
+* * *
+
+<a name="Templates+preview"></a>
+
+### templates.preview(template_id, [search_params], [callback]) ⇒ <code>Promise</code> \| <code>void</code>
+Previews a document template.
+
+**Kind**: instance method of [<code>Templates</code>](#Templates)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| template_id | <code>number</code> | Id of template |
+| [search_params] | <code>object</code> | object with copy params |
+| search_params.scale | <code>number</code> | Scale of preview pages. Min value - 10, max value - 500. |
+| search_params.max_width | <code>number</code> | Max width of preview pages. Min value - 10, max value - 3000. |
+| search_params.max_height | <code>number</code> | Max height of preview pages. Min value - 10, max value - 3000. |
+| search_params.pages | <code>array</code> | Page numbers of the document template. Max length = 10. Default: 1 |
 | [callback] | <code>function</code> | callback function |
 
 
@@ -221,6 +262,7 @@ Populates a fillable form template which was created with the PDFfiller editor.
 | fillable_info.fillable_fields | <code>object</code> | fields data what will be filled to template |
 | fillable_info.folder_id | <code>number</code> | folder id |
 | fillable_info.name | <code>string</code> | Name created for a newly filled document |
+| fillable_info.action | <code>string</code> | have to be fill for fillTemplate |
 | [callback] | <code>function</code> | callback function |
 
 

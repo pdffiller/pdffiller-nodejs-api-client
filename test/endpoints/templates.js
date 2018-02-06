@@ -140,6 +140,32 @@ describe('PDFfiller templates', () => {
       });
   });
 
+  it('should copy template', () => {
+    nock(endpoints.BASE_URL)
+      .post(endpoints.TEMPLATES_BY_ID_ENDPOINT.replace('{template_id}', '1'))
+      .reply(200, mocks.templates[0]);
+
+    return PDFfiller.templates.copy(1, {
+      action: 'copy',
+      name: 'name_of_new_document',
+      folder_id: 1
+    })
+      .then((response) => {
+        response.should.deepEqual(mocks.templates[0]);
+      });
+  });
+
+  it('should preview template', () => {
+    nock(endpoints.BASE_URL)
+      .get(endpoints.TEMPLATES_PREVIEW.replace('{template_id}', '1'))
+      .reply(200, mocks.preview);
+
+    return PDFfiller.templates.preview(1)
+      .then((response) => {
+        response.should.deepEqual(mocks.preview);
+      });
+  });
+
   it('should populates a fillable form template', () => {
     nock(endpoints.BASE_URL)
       .post(endpoints.TEMPLATES_BY_ID_ENDPOINT.replace('{template_id}', '1'))
@@ -149,6 +175,7 @@ describe('PDFfiller templates', () => {
       fillable_fields: {
         field_1: 'sometext'
       },
+      action: 'fill',
       name: 'name_of_new_document',
       folder_id: 1
     })
