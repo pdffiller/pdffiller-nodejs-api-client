@@ -1,6 +1,6 @@
 {
   "name": "pdffiller-nodejs-api-client",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "PDFfiller API node.js client",
   "main": "index.js",
   "scripts": {
